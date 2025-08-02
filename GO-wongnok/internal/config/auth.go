@@ -1,0 +1,46 @@
+package config
+
+import (
+	"context"
+	"fmt"
+
+	"github.com/coreos/go-oidc"
+	"golang.org/x/oauth2"
+)
+
+type Keycloak struct {
+	ClientID     string `env:"KEYCLOAK_CLIENT_ID"`
+	ClientSecret string `env:"KEYCLOAK_CLIENT_SECRET"`
+	RedirectURL  string `env:"KEYCLOAK_REDIRECT_URL"`
+	Realm        string `env:"KEYCLOAK_REALM"`
+	URL          string `env:"KEYCLOAK_URL"`
+	ExternalURL  string `env:"KEYCLOAK_EXTERNAL_URL"`
+}
+
+func (kc Keycloak) RealmURL() string {
+	return fmt.Sprintf("%s/realms/%s", kc.URL, kc.Realm)
+}
+
+func (kc Keycloak) ExternalRealmURL() string {
+	if kc.ExternalURL != "" {
+		return fmt.Sprintf("%s/realms/%s", kc.ExternalURL, kc.Realm)
+	}
+	return kc.RealmURL()
+}
+
+func (kc Keycloak) LogoutURL() string {
+	return fmt.Sprintf("%s/protocol/openid-connect/logout", kc.ExternalRealmURL())
+}
+
+type IOAuth2Config interface {
+	AuthCodeURL(state string, opts ...oauth2.AuthCodeOption) string
+	Exchange(ctx context.Context, code string, opts ...oauth2.AuthCodeOption) (*oauth2.Token, error)
+}
+
+type IOIDCTokenVerifier interface {
+	Verify(ctx context.Context, rawIDToken string) (*oidc.IDToken, error)
+}
+
+type IOIDCIDToken interface {
+	Claims(v any) error
+}
