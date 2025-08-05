@@ -32,6 +32,7 @@ services:
       KC_DB_PASSWORD: pass2word
       KEYCLOAK_ADMIN: admin
       KEYCLOAK_ADMIN_PASSWORD: admin
+      KC_FEATURES: account3,admin-fine-grained-authz
       # KC_HTTP_RELATIVE_PATH: /keycloak
       # KC_HTTP_RELATIVE_PATH: /auth      
     volumes:
@@ -41,7 +42,7 @@ services:
       postgres:
         condition: service_healthy
     restart: unless-stopped
-
+ 
   nginx:
     image: nginx:alpine
     container_name: nginx-proxy
