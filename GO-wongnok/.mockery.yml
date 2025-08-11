@@ -1,0 +1,10 @@
+with-expecter: true
+mockname: "Mock{{.InterfaceName}}"
+filename: "mock_test.go"
+dir: "{{.InterfaceDir}}"
+outpkg: "{{.PackageName}}_test"
+packages:
+  wongnok:
+    config:
+      all: true
+      recursive: true
