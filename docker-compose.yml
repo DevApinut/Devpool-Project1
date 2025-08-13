@@ -19,7 +19,7 @@ services:
   keycloak:
     image: quay.io/keycloak/keycloak:24.0.4
     container_name: keycloak
-    command: start-dev
+    command: start-dev --import-realm --features=scripts --spi-script-upload-enabled=true
     ports:
       - "7000:8080"
     environment:
@@ -31,8 +31,8 @@ services:
       KC_DB_PASSWORD: pass2word
       KEYCLOAK_ADMIN: admin
       KEYCLOAK_ADMIN_PASSWORD: admin
-      KC_FEATURES: account3,admin-fine-grained-authz
-      KEYCLOAK_IMPORT: /opt/keycloak/data/import/realm-export.json
+      KC_FEATURES: account3,admin-fine-grained-authz,scripts
+      KC_SPI_SCRIPT_UPLOAD_ENABLED: true
       
     volumes:
       - ./Keycloak/themes:/opt/keycloak/themes
