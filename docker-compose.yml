@@ -15,15 +15,13 @@ services:
       test: ["CMD-SHELL", "pg_isready -U postgres"]
       interval: 10s
       timeout: 5s
-      retries: 5
-
-
+  
   keycloak:
     image: quay.io/keycloak/keycloak:24.0.4
     container_name: keycloak
     command: start-dev
-    # ports:
-    #   - "7000:8080"
+    ports:
+      - "7000:8080"
     environment:
       KC_DB: postgres
       KC_DB_URL_HOST: postgres
@@ -34,11 +32,14 @@ services:
       KEYCLOAK_ADMIN: admin
       KEYCLOAK_ADMIN_PASSWORD: admin
       KC_FEATURES: account3,admin-fine-grained-authz
+      KEYCLOAK_IMPORT: /opt/keycloak/data/import/realm-export.json
       # KC_HTTP_RELATIVE_PATH: /keycloak
-      # KC_HTTP_RELATIVE_PATH: /auth      
+      # KC_HTTP_RELATIVE_PATH: /auth
     volumes:
       - ./Keycloak/themes:/opt/keycloak/themes
       - ./Keycloak/keycloak-conf:/opt/keycloak/conf
+      - ./Keycloak/realm-export:/opt/keycloak/data/import
+      - ./Keycloak/realm-export:/tmp/realm-export
     depends_on:
       postgres:
         condition: service_healthy

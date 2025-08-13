@@ -1,0 +1,21 @@
+{
+  "realm" : "Devpool_project",
+  "users" : [ {
+    "id" : "6d72c542-3bf2-448b-8099-e923bcdd1e24",
+    "username" : "service-account-wongnok",
+    "emailVerified" : false,
+    "createdTimestamp" : 1754967428485,
+    "enabled" : true,
+    "totp" : false,
+    "serviceAccountClientId" : "wongnok",
+    "credentials" : [ ],
+    "disableableCredentialTypes" : [ ],
+    "requiredActions" : [ ],
+    "realmRoles" : [ "default-roles-devpool_project" ],
+    "clientRoles" : {
+      "wongnok" : [ "uma_protection" ]
+    },
+    "notBefore" : 0,
+    "groups" : [ ]
+  } ]
+}
