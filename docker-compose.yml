@@ -33,8 +33,7 @@ services:
       KEYCLOAK_ADMIN_PASSWORD: admin
       KC_FEATURES: account3,admin-fine-grained-authz
       KEYCLOAK_IMPORT: /opt/keycloak/data/import/realm-export.json
-      # KC_HTTP_RELATIVE_PATH: /keycloak
-      # KC_HTTP_RELATIVE_PATH: /auth
+      
     volumes:
       - ./Keycloak/themes:/opt/keycloak/themes
       - ./Keycloak/keycloak-conf:/opt/keycloak/conf
