@@ -1,6 +1,10 @@
 # Database data
 postgres/postgres-data/
 
+
+#next-wongnok
+next-wongnok/node_modules/
+
 # Logs
 *.log
 logs/
