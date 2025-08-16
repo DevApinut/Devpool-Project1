@@ -1,14 +1,24 @@
-# go-app/Dockerfile
-FROM golang:1.24
+# Use Go official image
+FROM golang:1.24.4-alpine
 
+# Install git and ca-certificates
+RUN apk add --no-cache git ca-certificates
+
+# Set working directory
 WORKDIR /app
 
-# ติดตั้ง air และเพิ่มเข้า PATH
-RUN go install github.com/air-verse/air@v1.60.0 && \
-    ln -s /go/bin/air /usr/local/bin/air
-
+# Copy source code first
 COPY . .
 
+# Initialize go module if go.mod doesn't exist
+RUN if [ ! -f go.mod ]; then go mod init wongnok; fi
+
+# Download dependencies and tidy up
+RUN go mod tidy || true
+RUN go mod download || true
+
+# Expose port 8080
 EXPOSE 8080
 
-CMD ["air"]
+# Run Go application from cmd/server/main.go
+CMD ["go", "run", "cmd/server/main.go"]

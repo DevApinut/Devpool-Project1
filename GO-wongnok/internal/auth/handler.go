@@ -49,34 +49,34 @@ func (handler Handler) Callback(ctx *gin.Context) {
 	// Verify state
 	state, err := ctx.Cookie("state")
 	if err != nil || query.State != state {
-		ctx.JSON(http.StatusBadRequest, gin.H{"message": "Invalid state"})
+		ctx.JSON(http.StatusBadRequest, gin.H{"message1": "Invalid state"})
 		return
 	}
 
 	// Exchange token
 	credential, err := handler.Service.Exchange(ctx.Request.Context(), query.Code)
 	if err != nil {
-		ctx.JSON(http.StatusInternalServerError, gin.H{"message": err.Error()})
+		ctx.JSON(http.StatusInternalServerError, gin.H{"message2": err.Error()})
 		return
 	}
 
 	// Verify
 	idToken, err := handler.Service.VerifyToken(ctx.Request.Context(), credential.IDToken)
 	if err != nil {
-		ctx.JSON(http.StatusInternalServerError, gin.H{"message": err.Error()})
+		ctx.JSON(http.StatusInternalServerError, gin.H{"message3": err.Error()})
 		return
 	}
 
 	// Parse claims
 	var claims model.Claims
 	if err := idToken.Claims(&claims); err != nil {
-		ctx.JSON(http.StatusInternalServerError, gin.H{"message": err.Error()})
+		ctx.JSON(http.StatusInternalServerError, gin.H{"message4": err.Error()})
 		return
 	}
 
 	// Ensure user
 	if _, err := handler.UserService.UpsertWithClaims(claims); err != nil {
-		ctx.JSON(http.StatusInternalServerError, gin.H{"message": err.Error()})
+		ctx.JSON(http.StatusInternalServerError, gin.H{"message5": err.Error()})
 		return
 	}
 

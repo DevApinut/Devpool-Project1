@@ -3,6 +3,7 @@ package config
 import (
 	"context"
 	"fmt"
+	"strings"
 
 	"github.com/coreos/go-oidc"
 	"golang.org/x/oauth2"
@@ -21,15 +22,21 @@ func (kc Keycloak) RealmURL() string {
 	return fmt.Sprintf("%s/realms/%s", kc.URL, kc.Realm)
 }
 
-func (kc Keycloak) ExternalRealmURL() string {
-	if kc.ExternalURL != "" {
-		return fmt.Sprintf("%s/realms/%s", kc.ExternalURL, kc.Realm)
-	}
-	return kc.RealmURL()
-}
+// func (kc Keycloak) ExternalRealmURL() string {
+// 	if kc.ExternalURL != "" {
+// 		return fmt.Sprintf("%s/realms/%s", kc.ExternalURL, kc.Realm)
+// 	}
+// 	return kc.RealmURL()
+// }
 
 func (kc Keycloak) LogoutURL() string {
-	return fmt.Sprintf("%s/protocol/openid-connect/logout", kc.ExternalRealmURL())
+	url := fmt.Sprintf("%s/protocol/openid-connect/logout", kc.RealmURL())
+	found := strings.Contains(url, "host.docker.internal")
+
+	if found {
+		url = strings.Replace(url, "host.docker.internal", "localhost", 1)
+	}
+	return url
 }
 
 type IOAuth2Config interface {

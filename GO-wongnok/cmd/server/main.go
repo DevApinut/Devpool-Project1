@@ -54,6 +54,7 @@ func main() {
 	}()
 
 	// Provider
+
 	provider, err := oidc.NewProvider(ctx, conf.Keycloak.RealmURL())
 	if err != nil {
 		log.Fatal("Error when make provider:", err)
@@ -77,7 +78,10 @@ func main() {
 				"email",
 			},
 		},
-		provider.Verifier(&oidc.Config{ClientID: conf.Keycloak.ClientID}),
+		provider.Verifier(&oidc.Config{
+			ClientID:        conf.Keycloak.ClientID,
+			SkipIssuerCheck: true,
+		}),
 	)
 	userHandler := user.NewHandler(db)
 

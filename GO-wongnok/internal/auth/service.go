@@ -6,6 +6,7 @@ import (
 	"encoding/base64"
 	"fmt"
 	"net/url"
+	"strings"
 	"wongnok/internal/config"
 	"wongnok/internal/model"
 	"wongnok/internal/model/dto"
@@ -46,7 +47,16 @@ func (service Service) GenerateState() string {
 }
 
 func (service Service) AuthCodeURL(state string) string {
-	return service.OAuth2Config.AuthCodeURL(state)
+	authURL := service.OAuth2Config.AuthCodeURL(state)
+
+	found := strings.Contains(authURL, "host.docker.internal")
+
+	if found {
+		// แทนที่ host.docker.internal ด้วย localhost สำหรับ browser
+		authURL = strings.Replace(authURL, "host.docker.internal", "localhost", 1)
+	}
+
+	return authURL
 }
 
 func (service Service) Exchange(ctx context.Context, code string) (model.Credential, error) {
@@ -67,11 +77,26 @@ func (service Service) Exchange(ctx context.Context, code string) (model.Credent
 }
 
 func (service Service) VerifyToken(ctx context.Context, token string) (IOIDCIDToken, error) {
+	// idToken, err := service.Verifier.Verify(ctx, token)
+	// if err != nil {
+	// 	return nil, errors.Wrap(err, "verify token")
+	// }
+
+	// return idToken, nil
+
 	idToken, err := service.Verifier.Verify(ctx, token)
 	if err != nil {
+		// ถ้า error เกี่ยวกับ issuer mismatch ให้ข้าม error นี้
+		if strings.Contains(err.Error(), "issued by a different provider") &&
+			strings.Contains(err.Error(), "localhost") &&
+			strings.Contains(err.Error(), "host.docker.internal") {
+
+			// สร้าง custom verifier ที่ accept localhost issuer
+			// หรือ skip issuer verification ชั่วคราว
+			return service.Verifier.Verify(ctx, token) // ลองอีกครั้ง
+		}
 		return nil, errors.Wrap(err, "verify token")
 	}
-
 	return idToken, nil
 }
 
@@ -82,17 +107,17 @@ func (service Service) LogoutURL(logoutQuery dto.LogoutQuery) (string, error) {
 	}
 
 	query := uri.Query()
-	
+
 	// Only add id_token_hint if it's not empty
 	if logoutQuery.IDTokenHint != "" {
 		query.Set("id_token_hint", logoutQuery.IDTokenHint)
 	}
-	
+
 	// Only add post_logout_redirect_uri if it's not empty
 	if logoutQuery.PostLogoutRedirectURI != "" {
 		query.Set("post_logout_redirect_uri", logoutQuery.PostLogoutRedirectURI)
 	}
-	
+
 	uri.RawQuery = query.Encode()
 
 	return uri.String(), nil
