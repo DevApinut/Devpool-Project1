@@ -1,10 +1,20 @@
-with-expecter: true
-mockname: "Mock{{.InterfaceName}}"
-filename: "mock_test.go"
+all: false
 dir: "{{.InterfaceDir}}"
-outpkg: "{{.PackageName}}_test"
+filename: mocks_test.go
+force-file-write: true
+formatter: goimports
+log-level: info
+structname: "{{.Mock}}{{.InterfaceName}}"
+pkgname: "{{.SrcPackageName}}"
+recursive: false
+require-template-schema-exists: true
+template: testify
+template-schema: "{{.Template}}.schema.json"
 packages:
   wongnok:
     config:
       all: true
       recursive: true
+      pkgname: "{{.SrcPackageName}}_test"
+      exclude-subpkg-regex:
+        - example

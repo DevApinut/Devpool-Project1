@@ -22,13 +22,6 @@ func (kc Keycloak) RealmURL() string {
 	return fmt.Sprintf("%s/realms/%s", kc.URL, kc.Realm)
 }
 
-// func (kc Keycloak) ExternalRealmURL() string {
-// 	if kc.ExternalURL != "" {
-// 		return fmt.Sprintf("%s/realms/%s", kc.ExternalURL, kc.Realm)
-// 	}
-// 	return kc.RealmURL()
-// }
-
 func (kc Keycloak) LogoutURL() string {
 	url := fmt.Sprintf("%s/protocol/openid-connect/logout", kc.RealmURL())
 	found := strings.Contains(url, "host.docker.internal")
