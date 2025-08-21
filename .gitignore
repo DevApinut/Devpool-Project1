@@ -4,6 +4,7 @@ postgres/postgres-data/
 
 #next-wongnok
 next-wongnok/node_modules/
+wongnok-web/node_modules/
 
 # Logs
 *.log
