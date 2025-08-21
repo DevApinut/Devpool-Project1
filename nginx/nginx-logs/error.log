@@ -4288,3 +4288,8 @@
 2025/08/21 09:50:02 [notice] 1#1: worker process 42 exited with code 0
 2025/08/21 09:50:02 [notice] 1#1: worker process 43 exited with code 0
 2025/08/21 09:50:02 [notice] 1#1: exit
+2025/08/21 09:53:52 [notice] 1#1: using the "epoll" event method
+2025/08/21 09:53:52 [notice] 1#1: nginx/1.29.1
+2025/08/21 09:53:52 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/08/21 09:53:52 [notice] 1#1: OS: Linux 5.15.167.4-microsoft-standard-WSL2
+2025/08/21 09:53:52 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576

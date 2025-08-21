@@ -4235,3 +4235,4 @@
 172.18.0.1 - - [21/Aug/2025:06:49:18 +0000] "GET /swagger/swagger-ui-bundle.js HTTP/1.1" 304 0 "http://localhost/swagger/index.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
 172.18.0.1 - - [21/Aug/2025:06:49:18 +0000] "GET /swagger/swagger-ui-standalone-preset.js HTTP/1.1" 304 0 "http://localhost/swagger/index.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
 172.18.0.1 - - [21/Aug/2025:06:49:18 +0000] "GET /swagger/doc.json HTTP/1.1" 200 21595 "http://localhost/swagger/index.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+172.18.0.1 - - [21/Aug/2025:09:56:07 +0000] "GET /realms/Devpool_project/.well-known/openid-configuration HTTP/1.1" 200 6025 "-" "Go-http-client/1.1"

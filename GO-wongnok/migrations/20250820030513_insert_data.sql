@@ -2,8 +2,8 @@
 -- +goose StatementBegin
 INSERT INTO "public"."users" ("id", "first_name", "last_name", "created_at", "updated_at", "deleted_at") VALUES
 ('ba9872c8-49fa-42d8-8664-d9a44babe021', 'naravit', 'bunthap', '2025-08-16 11:30:00', '2025-08-16 11:30:00', NULL),
-('ba9872c8-49fa-42d8-8664-3456571fdsfs', 'Apinut', 'Kaewmunee', '2025-08-17 11:30:00', '2025-08-17 11:30:00', NULL);
-('ba9872c8-49fa-42d8-8664-adfdberwt23w', 'john', 'smith', '2025-08-17 11:30:00', '2025-08-17 11:30:00', NULL);
+('ba9872c8-49fa-42d8-8664-3456571fdsfs', 'Apinut', 'Kaewmunee', '2025-08-17 11:30:00', '2025-08-17 11:30:00', NULL),
+('ba9872c8-49fa-42d8-8664-adfdberwt23w', 'john', 'smith', '2025-08-17 11:30:00', '2025-08-17 11:30:00', NULL),
 ('ba9872c8-49fa-42d8-8664-vbvbnjtrytry', 'jet', 'Tondy', '2025-08-17 11:30:00', '2025-08-17 11:30:00', NULL);
 
 INSERT INTO "public"."food_recipes" ("id", "name", "description", "ingredient", "instruction", "image_url", "cooking_duration_id", "difficulty_id", "created_at", "updated_at", "deleted_at", "user_id") VALUES
