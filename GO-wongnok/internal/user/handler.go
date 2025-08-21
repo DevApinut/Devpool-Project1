@@ -22,6 +22,19 @@ func NewHandler(db *gorm.DB) *Handler {
 	}
 }
 
+// GetRecipes godoc
+// @Summary Get a food recipe by user ID
+// @Description Get a food recipe by user ID
+// @Tags users
+// @Accept json
+// @Produce json
+// @Param id path string true "User ID"
+// @Success 200 {object} dto.FoodRecipesResponse
+// @Failure 400 {object} map[string]interface{}
+// @Failure 401 {object} map[string]interface{}
+// @Failure 500 {object} map[string]interface{}
+// @Security BearerAuth
+// @Router /api/v1/users/{id}/food-recipes [get]
 func (handler Handler) GetRecipes(ctx *gin.Context) {
 	userID := ctx.Param("id")
 

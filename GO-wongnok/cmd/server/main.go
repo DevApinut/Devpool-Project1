@@ -20,12 +20,17 @@ import (
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
+
+	_ "wongnok/cmd/server/docs"
+
+	swaggerFiles "github.com/swaggo/files"
+	ginSwagger "github.com/swaggo/gin-swagger"
 )
 
 // @title Wongnok API
 // @version 1.0
 // @description This is an wongnok server.
-// @host localhost:8000
+// @host localhost:8080
 // @securityDefinitions.apikey BearerAuth
 // @in header
 // @name Authorization
@@ -87,6 +92,9 @@ func main() {
 
 	// Router
 	router := gin.Default()
+
+	// Swagger
+	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 
 	// Middleware
 	router.Use(cors.Default())
