@@ -406,8 +406,8 @@
     "clientConsents" : [ {
       "clientId" : "wongnok",
       "grantedClientScopes" : [ "wongnok", "roles", "profile", "email" ],
-      "createdDate" : 1755768837974,
-      "lastUpdatedDate" : 1755768837999
+      "createdDate" : 1755783535203,
+      "lastUpdatedDate" : 1755783535223
     } ],
     "notBefore" : 0,
     "groups" : [ ]
@@ -451,8 +451,8 @@
     "clientConsents" : [ {
       "clientId" : "wongnok",
       "grantedClientScopes" : [ "wongnok", "roles", "profile", "email" ],
-      "createdDate" : 1755768838041,
-      "lastUpdatedDate" : 1755768838056
+      "createdDate" : 1755783535256,
+      "lastUpdatedDate" : 1755783535261
     } ],
     "notBefore" : 0,
     "groups" : [ ]
@@ -680,7 +680,7 @@
     "alwaysDisplayInConsole" : true,
     "clientAuthenticatorType" : "client-secret",
     "secret" : "zDFCurmEkhGN1iIxA3NhmpVlft2qCncJ",
-    "redirectUris" : [ "http://localhost/api/v1/callback" ],
+    "redirectUris" : [ "http://localhost/api/auth/callback/keycloak" ],
     "webOrigins" : [ "http://localhost" ],
     "notBefore" : 0,
     "bearerOnly" : false,
@@ -689,7 +689,6 @@
     "implicitFlowEnabled" : false,
     "directAccessGrantsEnabled" : false,
     "serviceAccountsEnabled" : true,
-    "authorizationServicesEnabled" : true,
     "publicClient" : false,
     "frontchannelLogout" : true,
     "protocol" : "openid-connect",
@@ -752,43 +751,7 @@
       }
     } ],
     "defaultClientScopes" : [ "web-origins", "acr", "roles", "profile", "email" ],
-    "optionalClientScopes" : [ "address", "phone", "offline_access", "microprofile-jwt" ],
-    "authorizationSettings" : {
-      "allowRemoteResourceManagement" : true,
-      "policyEnforcementMode" : "ENFORCING",
-      "resources" : [ {
-        "name" : "Default Resource",
-        "type" : "urn:wongnok:resources:default",
-        "ownerManagedAccess" : false,
-        "attributes" : { },
-        "_id" : "728e9c39-e72f-48c4-b92f-37d1642d66ca",
-        "uris" : [ "/*" ]
-      } ],
-      "policies" : [ {
-        "id" : "1dd1e12c-8f6e-4067-9c87-eee6a44a96e6",
-        "name" : "Default Policy",
-        "description" : "A policy that grants access only for users within this realm",
-        "type" : "js",
-        "logic" : "POSITIVE",
-        "decisionStrategy" : "AFFIRMATIVE",
-        "config" : {
-          "code" : "// by default, grants any permission associated with this policy\n$evaluation.grant();\n"
-        }
-      }, {
-        "id" : "8c3e69ca-d02b-417e-9234-f4debaf057bb",
-        "name" : "Default Permission",
-        "description" : "A permission that applies to the default resource type",
-        "type" : "resource",
-        "logic" : "POSITIVE",
-        "decisionStrategy" : "UNANIMOUS",
-        "config" : {
-          "defaultResourceType" : "urn:wongnok:resources:default",
-          "applyPolicies" : "[\"Default Policy\"]"
-        }
-      } ],
-      "scopes" : [ ],
-      "decisionStrategy" : "UNANIMOUS"
-    }
+    "optionalClientScopes" : [ "address", "phone", "offline_access", "microprofile-jwt" ]
   } ],
   "clientScopes" : [ {
     "id" : "e91b3848-d06e-40b3-86d9-307b909d88b9",
@@ -1366,7 +1329,7 @@
       "subType" : "authenticated",
       "subComponents" : { },
       "config" : {
-        "allowed-protocol-mapper-types" : [ "oidc-usermodel-attribute-mapper", "oidc-address-mapper", "oidc-full-name-mapper", "oidc-sha256-pairwise-sub-mapper", "saml-user-attribute-mapper", "oidc-usermodel-property-mapper", "saml-role-list-mapper", "saml-user-property-mapper" ]
+        "allowed-protocol-mapper-types" : [ "oidc-full-name-mapper", "oidc-usermodel-attribute-mapper", "oidc-sha256-pairwise-sub-mapper", "saml-user-property-mapper", "saml-user-attribute-mapper", "oidc-usermodel-property-mapper", "saml-role-list-mapper", "oidc-address-mapper" ]
       }
     }, {
       "id" : "f94a9b5f-6d05-4fb4-8986-a8bb1d64086e",
@@ -1375,7 +1338,7 @@
       "subType" : "anonymous",
       "subComponents" : { },
       "config" : {
-        "allowed-protocol-mapper-types" : [ "oidc-usermodel-attribute-mapper", "saml-user-attribute-mapper", "saml-role-list-mapper", "oidc-sha256-pairwise-sub-mapper", "oidc-address-mapper", "saml-user-property-mapper", "oidc-usermodel-property-mapper", "oidc-full-name-mapper" ]
+        "allowed-protocol-mapper-types" : [ "oidc-sha256-pairwise-sub-mapper", "oidc-usermodel-property-mapper", "saml-role-list-mapper", "oidc-address-mapper", "oidc-usermodel-attribute-mapper", "saml-user-attribute-mapper", "oidc-full-name-mapper", "saml-user-property-mapper" ]
       }
     } ],
     "org.keycloak.keys.KeyProvider" : [ {

@@ -4321,3 +4321,1514 @@
 2025/08/21 09:58:31 [error] 38#38: *41 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", upstream: "http://192.168.65.254:3000/favicon.ico", host: "localhost", referrer: "http://localhost/api/v1/callback?state=1UsKTfmnFJTZws-JayjnPF2XnEkDFkGvEsAAOyaEDJ4%3D&session_state=56d07aaf-a2b4-4b6f-b0bd-89004c5c7673&iss=http%3A%2F%2Flocalhost%2Frealms%2FDevpool_project&code=09f83f9a-9671-4670-a6e8-a0390619109a.56d07aaf-a2b4-4b6f-b0bd-89004c5c7673.3f8f078e-b12f-44d4-a6a8-ca510f2d1bb1"
 2025/08/21 09:58:31 [error] 38#38: *41 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/favicon.ico", host: "localhost", referrer: "http://localhost/api/v1/callback?state=1UsKTfmnFJTZws-JayjnPF2XnEkDFkGvEsAAOyaEDJ4%3D&session_state=56d07aaf-a2b4-4b6f-b0bd-89004c5c7673&iss=http%3A%2F%2Flocalhost%2Frealms%2FDevpool_project&code=09f83f9a-9671-4670-a6e8-a0390619109a.56d07aaf-a2b4-4b6f-b0bd-89004c5c7673.3f8f078e-b12f-44d4-a6a8-ca510f2d1bb1"
 2025/08/21 10:01:13 [error] 43#43: *97 connect() to [fdc4:f303:9324::254]:8080 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /swagger/swagger-ui-bundle.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:8080/swagger/swagger-ui-bundle.js", host: "localhost", referrer: "http://localhost/swagger/index.html"
+2025/08/21 13:06:53 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/08/21 13:06:53 [notice] 29#29: gracefully shutting down
+2025/08/21 13:06:53 [notice] 34#34: gracefully shutting down
+2025/08/21 13:06:53 [notice] 33#33: gracefully shutting down
+2025/08/21 13:06:53 [notice] 38#38: gracefully shutting down
+2025/08/21 13:06:53 [notice] 37#37: gracefully shutting down
+2025/08/21 13:06:53 [notice] 35#35: gracefully shutting down
+2025/08/21 13:06:53 [notice] 30#30: gracefully shutting down
+2025/08/21 13:06:53 [notice] 32#32: gracefully shutting down
+2025/08/21 13:06:53 [notice] 40#40: gracefully shutting down
+2025/08/21 13:06:53 [notice] 39#39: gracefully shutting down
+2025/08/21 13:06:53 [notice] 42#42: gracefully shutting down
+2025/08/21 13:06:53 [notice] 41#41: gracefully shutting down
+2025/08/21 13:06:53 [notice] 36#36: gracefully shutting down
+2025/08/21 13:06:53 [notice] 44#44: gracefully shutting down
+2025/08/21 13:06:53 [notice] 43#43: gracefully shutting down
+2025/08/21 13:06:53 [notice] 31#31: gracefully shutting down
+2025/08/21 13:06:53 [notice] 29#29: exiting
+2025/08/21 13:06:53 [notice] 34#34: exiting
+2025/08/21 13:06:53 [notice] 33#33: exiting
+2025/08/21 13:06:53 [notice] 38#38: exiting
+2025/08/21 13:06:53 [notice] 37#37: exiting
+2025/08/21 13:06:53 [notice] 35#35: exiting
+2025/08/21 13:06:53 [notice] 30#30: exiting
+2025/08/21 13:06:53 [notice] 32#32: exiting
+2025/08/21 13:06:53 [notice] 40#40: exiting
+2025/08/21 13:06:53 [notice] 39#39: exiting
+2025/08/21 13:06:53 [notice] 42#42: exiting
+2025/08/21 13:06:53 [notice] 41#41: exiting
+2025/08/21 13:06:53 [notice] 44#44: exiting
+2025/08/21 13:06:53 [notice] 42#42: exit
+2025/08/21 13:06:53 [notice] 43#43: exiting
+2025/08/21 13:06:53 [notice] 36#36: exiting
+2025/08/21 13:06:53 [notice] 43#43: exit
+2025/08/21 13:06:53 [notice] 29#29: exit
+2025/08/21 13:06:53 [notice] 34#34: exit
+2025/08/21 13:06:53 [notice] 36#36: exit
+2025/08/21 13:06:53 [notice] 31#31: exiting
+2025/08/21 13:06:53 [notice] 33#33: exit
+2025/08/21 13:06:53 [notice] 38#38: exit
+2025/08/21 13:06:53 [notice] 37#37: exit
+2025/08/21 13:06:53 [notice] 35#35: exit
+2025/08/21 13:06:53 [notice] 30#30: exit
+2025/08/21 13:06:53 [notice] 32#32: exit
+2025/08/21 13:06:53 [notice] 40#40: exit
+2025/08/21 13:06:53 [notice] 39#39: exit
+2025/08/21 13:06:53 [notice] 41#41: exit
+2025/08/21 13:06:53 [notice] 44#44: exit
+2025/08/21 13:06:53 [notice] 31#31: exit
+2025/08/21 13:06:53 [notice] 1#1: signal 17 (SIGCHLD) received from 37
+2025/08/21 13:06:53 [notice] 1#1: worker process 31 exited with code 0
+2025/08/21 13:06:53 [notice] 1#1: worker process 33 exited with code 0
+2025/08/21 13:06:53 [notice] 1#1: worker process 37 exited with code 0
+2025/08/21 13:06:53 [notice] 1#1: worker process 38 exited with code 0
+2025/08/21 13:06:53 [notice] 1#1: worker process 42 exited with code 0
+2025/08/21 13:06:53 [notice] 1#1: signal 29 (SIGIO) received
+2025/08/21 13:06:53 [notice] 1#1: signal 17 (SIGCHLD) received from 38
+2025/08/21 13:06:53 [notice] 1#1: signal 17 (SIGCHLD) received from 44
+2025/08/21 13:06:53 [notice] 1#1: worker process 35 exited with code 0
+2025/08/21 13:06:53 [notice] 1#1: worker process 44 exited with code 0
+2025/08/21 13:06:53 [notice] 1#1: signal 29 (SIGIO) received
+2025/08/21 13:06:53 [notice] 1#1: signal 17 (SIGCHLD) received from 35
+2025/08/21 13:06:53 [notice] 1#1: signal 17 (SIGCHLD) received from 34
+2025/08/21 13:06:53 [notice] 1#1: worker process 34 exited with code 0
+2025/08/21 13:06:53 [notice] 1#1: signal 29 (SIGIO) received
+2025/08/21 13:06:53 [notice] 1#1: signal 17 (SIGCHLD) received from 39
+2025/08/21 13:06:53 [notice] 1#1: worker process 32 exited with code 0
+2025/08/21 13:06:53 [notice] 1#1: worker process 39 exited with code 0
+2025/08/21 13:06:53 [notice] 1#1: signal 29 (SIGIO) received
+2025/08/21 13:06:53 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2025/08/21 13:06:53 [notice] 1#1: worker process 29 exited with code 0
+2025/08/21 13:06:53 [notice] 1#1: worker process 40 exited with code 0
+2025/08/21 13:06:53 [notice] 1#1: signal 29 (SIGIO) received
+2025/08/21 13:06:53 [notice] 1#1: signal 17 (SIGCHLD) received from 40
+2025/08/21 13:06:53 [notice] 1#1: signal 17 (SIGCHLD) received from 36
+2025/08/21 13:06:53 [notice] 1#1: worker process 36 exited with code 0
+2025/08/21 13:06:53 [notice] 1#1: worker process 41 exited with code 0
+2025/08/21 13:06:53 [notice] 1#1: worker process 43 exited with code 0
+2025/08/21 13:06:53 [notice] 1#1: signal 29 (SIGIO) received
+2025/08/21 13:06:53 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2025/08/21 13:06:53 [notice] 1#1: worker process 30 exited with code 0
+2025/08/21 13:06:53 [notice] 1#1: exit
+2025/08/21 13:08:25 [notice] 1#1: using the "epoll" event method
+2025/08/21 13:08:25 [notice] 1#1: nginx/1.29.1
+2025/08/21 13:08:25 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/08/21 13:08:25 [notice] 1#1: OS: Linux 5.15.167.4-microsoft-standard-WSL2
+2025/08/21 13:08:25 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/08/21 13:08:25 [notice] 1#1: start worker processes
+2025/08/21 13:08:25 [notice] 1#1: start worker process 29
+2025/08/21 13:08:25 [notice] 1#1: start worker process 30
+2025/08/21 13:08:25 [notice] 1#1: start worker process 31
+2025/08/21 13:08:25 [notice] 1#1: start worker process 32
+2025/08/21 13:08:25 [notice] 1#1: start worker process 33
+2025/08/21 13:08:25 [notice] 1#1: start worker process 34
+2025/08/21 13:08:25 [notice] 1#1: start worker process 35
+2025/08/21 13:08:25 [notice] 1#1: start worker process 36
+2025/08/21 13:08:25 [notice] 1#1: start worker process 37
+2025/08/21 13:08:25 [notice] 1#1: start worker process 38
+2025/08/21 13:08:25 [notice] 1#1: start worker process 39
+2025/08/21 13:08:25 [notice] 1#1: start worker process 40
+2025/08/21 13:08:25 [notice] 1#1: start worker process 41
+2025/08/21 13:08:25 [notice] 1#1: start worker process 42
+2025/08/21 13:08:25 [notice] 1#1: start worker process 43
+2025/08/21 13:08:25 [notice] 1#1: start worker process 44
+2025/08/21 13:37:56 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/08/21 13:37:56 [notice] 29#29: gracefully shutting down
+2025/08/21 13:37:56 [notice] 31#31: gracefully shutting down
+2025/08/21 13:37:56 [notice] 30#30: gracefully shutting down
+2025/08/21 13:37:56 [notice] 33#33: gracefully shutting down
+2025/08/21 13:37:56 [notice] 32#32: gracefully shutting down
+2025/08/21 13:37:56 [notice] 35#35: gracefully shutting down
+2025/08/21 13:37:56 [notice] 37#37: gracefully shutting down
+2025/08/21 13:37:56 [notice] 37#37: exiting
+2025/08/21 13:37:56 [notice] 36#36: gracefully shutting down
+2025/08/21 13:37:56 [notice] 34#34: gracefully shutting down
+2025/08/21 13:37:56 [notice] 29#29: exiting
+2025/08/21 13:37:56 [notice] 40#40: gracefully shutting down
+2025/08/21 13:37:56 [notice] 41#41: gracefully shutting down
+2025/08/21 13:37:56 [notice] 44#44: gracefully shutting down
+2025/08/21 13:37:56 [notice] 43#43: gracefully shutting down
+2025/08/21 13:37:56 [notice] 38#38: gracefully shutting down
+2025/08/21 13:37:56 [notice] 42#42: gracefully shutting down
+2025/08/21 13:37:56 [notice] 31#31: exiting
+2025/08/21 13:37:56 [notice] 39#39: gracefully shutting down
+2025/08/21 13:37:56 [notice] 30#30: exiting
+2025/08/21 13:37:56 [notice] 33#33: exiting
+2025/08/21 13:37:56 [notice] 32#32: exiting
+2025/08/21 13:37:56 [notice] 35#35: exiting
+2025/08/21 13:37:56 [notice] 37#37: exit
+2025/08/21 13:37:56 [notice] 36#36: exiting
+2025/08/21 13:37:56 [notice] 34#34: exiting
+2025/08/21 13:37:56 [notice] 29#29: exit
+2025/08/21 13:37:56 [notice] 40#40: exiting
+2025/08/21 13:37:56 [notice] 41#41: exiting
+2025/08/21 13:37:56 [notice] 44#44: exiting
+2025/08/21 13:37:56 [notice] 43#43: exiting
+2025/08/21 13:37:56 [notice] 38#38: exiting
+2025/08/21 13:37:56 [notice] 42#42: exiting
+2025/08/21 13:37:56 [notice] 31#31: exit
+2025/08/21 13:37:56 [notice] 42#42: exit
+2025/08/21 13:37:56 [notice] 39#39: exiting
+2025/08/21 13:37:56 [notice] 30#30: exit
+2025/08/21 13:37:56 [notice] 33#33: exit
+2025/08/21 13:37:56 [notice] 32#32: exit
+2025/08/21 13:37:56 [notice] 35#35: exit
+2025/08/21 13:37:56 [notice] 36#36: exit
+2025/08/21 13:37:56 [notice] 34#34: exit
+2025/08/21 13:37:56 [notice] 40#40: exit
+2025/08/21 13:37:56 [notice] 41#41: exit
+2025/08/21 13:37:56 [notice] 44#44: exit
+2025/08/21 13:37:56 [notice] 43#43: exit
+2025/08/21 13:37:56 [notice] 38#38: exit
+2025/08/21 13:37:56 [notice] 39#39: exit
+2025/08/21 13:37:57 [notice] 1#1: signal 17 (SIGCHLD) received from 43
+2025/08/21 13:37:57 [notice] 1#1: worker process 43 exited with code 0
+2025/08/21 13:37:57 [notice] 1#1: signal 29 (SIGIO) received
+2025/08/21 13:37:57 [notice] 1#1: signal 17 (SIGCHLD) received from 41
+2025/08/21 13:37:57 [notice] 1#1: worker process 35 exited with code 0
+2025/08/21 13:37:57 [notice] 1#1: worker process 36 exited with code 0
+2025/08/21 13:37:57 [notice] 1#1: worker process 41 exited with code 0
+2025/08/21 13:37:57 [notice] 1#1: worker process 42 exited with code 0
+2025/08/21 13:37:57 [notice] 1#1: worker process 44 exited with code 0
+2025/08/21 13:37:57 [notice] 1#1: signal 29 (SIGIO) received
+2025/08/21 13:37:57 [notice] 1#1: signal 17 (SIGCHLD) received from 34
+2025/08/21 13:37:57 [notice] 1#1: worker process 29 exited with code 0
+2025/08/21 13:37:57 [notice] 1#1: worker process 30 exited with code 0
+2025/08/21 13:37:57 [notice] 1#1: worker process 31 exited with code 0
+2025/08/21 13:37:57 [notice] 1#1: worker process 32 exited with code 0
+2025/08/21 13:37:57 [notice] 1#1: worker process 33 exited with code 0
+2025/08/21 13:37:57 [notice] 1#1: worker process 34 exited with code 0
+2025/08/21 13:37:57 [notice] 1#1: worker process 37 exited with code 0
+2025/08/21 13:37:57 [notice] 1#1: worker process 38 exited with code 0
+2025/08/21 13:37:57 [notice] 1#1: worker process 39 exited with code 0
+2025/08/21 13:37:57 [notice] 1#1: worker process 40 exited with code 0
+2025/08/21 13:37:57 [notice] 1#1: exit
+2025/08/21 13:38:39 [notice] 1#1: using the "epoll" event method
+2025/08/21 13:38:39 [notice] 1#1: nginx/1.29.1
+2025/08/21 13:38:39 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/08/21 13:38:39 [notice] 1#1: OS: Linux 5.15.167.4-microsoft-standard-WSL2
+2025/08/21 13:38:39 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/08/21 13:38:39 [notice] 1#1: start worker processes
+2025/08/21 13:38:39 [notice] 1#1: start worker process 29
+2025/08/21 13:38:39 [notice] 1#1: start worker process 30
+2025/08/21 13:38:39 [notice] 1#1: start worker process 31
+2025/08/21 13:38:39 [notice] 1#1: start worker process 32
+2025/08/21 13:38:39 [notice] 1#1: start worker process 33
+2025/08/21 13:38:39 [notice] 1#1: start worker process 34
+2025/08/21 13:38:39 [notice] 1#1: start worker process 35
+2025/08/21 13:38:39 [notice] 1#1: start worker process 36
+2025/08/21 13:38:39 [notice] 1#1: start worker process 37
+2025/08/21 13:38:39 [notice] 1#1: start worker process 38
+2025/08/21 13:38:39 [notice] 1#1: start worker process 39
+2025/08/21 13:38:39 [notice] 1#1: start worker process 40
+2025/08/21 13:38:39 [notice] 1#1: start worker process 41
+2025/08/21 13:38:39 [notice] 1#1: start worker process 42
+2025/08/21 13:38:39 [notice] 1#1: start worker process 43
+2025/08/21 13:38:39 [notice] 1#1: start worker process 44
+2025/08/21 13:41:26 [error] 30#30: *3 connect() to [fdc4:f303:9324::254]:8080 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /swagger/swagger-ui.css HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:8080/swagger/swagger-ui.css", host: "localhost", referrer: "http://localhost/swagger/index.html"
+2025/08/21 13:41:26 [error] 31#31: *5 connect() to [fdc4:f303:9324::254]:8080 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /swagger/doc.json HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:8080/swagger/doc.json", host: "localhost", referrer: "http://localhost/swagger/index.html"
+2025/08/21 13:41:34 [error] 31#31: *5 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/media/208e0ff3887cc6c6-s.p.dba9a014.woff2 HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/media/208e0ff3887cc6c6-s.p.dba9a014.woff2", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:41:34 [error] 33#33: *18 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/node_modules_next_dist_compiled_0f1b9fd4._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/node_modules_next_dist_compiled_0f1b9fd4._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:41:34 [error] 32#32: *9 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/node_modules_next_dist_client_20b209c9._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/node_modules_next_dist_client_20b209c9._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:41:34 [error] 30#30: *3 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/node_modules_%40swc_helpers_cjs_8e433861._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/node_modules_%40swc_helpers_cjs_8e433861._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:41:34 [error] 34#34: *19 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/node_modules_50cb4983._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/node_modules_50cb4983._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:41:34 [error] 35#35: *22 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /favicon.ico?favicon.45db1c09.ico HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/favicon.ico?favicon.45db1c09.ico", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:41:34 [error] 32#32: *9 connect() to [fdc4:f303:9324::254]:8080 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "POST /api/auth/_log HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:8080/api/auth/_log", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:41:40 [error] 34#34: *19 connect() to [fdc4:f303:9324::254]:8080 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/auth/error HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:8080/api/auth/error", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:41:42 [error] 35#35: *22 connect() to [fdc4:f303:9324::254]:8080 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "POST /api/auth/_log HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:8080/api/auth/_log", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:41:45 [error] 33#33: *18 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/node_modules_next_dist_445d8acf._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/node_modules_next_dist_445d8acf._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:41:45 [error] 30#30: *3 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/_01f48b92._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/_01f48b92._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:41:45 [error] 38#38: *124 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/src_d3363091._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/src_d3363091._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:41:45 [error] 31#31: *5 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/src_app_layout_tsx_68b267f5._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/src_app_layout_tsx_68b267f5._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:41:46 [error] 35#35: *22 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /icons/av_timer.svg HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/icons/av_timer.svg", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:41:46 [error] 32#32: *9 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/image?url=https%3A%2F%2Ffoodish-api.com%2Fimages%2Frice%2Frice35.jpg&w=1920&q=75 HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/image?url=https%3A%2F%2Ffoodish-api.com%2Fimages%2Frice%2Frice35.jpg&w=1920&q=75", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:42:15 [error] 32#32: *9 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/node_modules_next_dist_445d8acf._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/node_modules_next_dist_445d8acf._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:42:15 [error] 38#38: *124 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/_01f48b92._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/_01f48b92._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:42:15 [error] 35#35: *22 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/src_app_layout_tsx_68b267f5._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/src_app_layout_tsx_68b267f5._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:42:15 [error] 31#31: *5 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/image?url=%2Fwongnok-with-name-logo.png&w=384&q=75 HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/image?url=%2Fwongnok-with-name-logo.png&w=384&q=75", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:42:15 [error] 33#33: *18 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_5af4a3bc._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_5af4a3bc._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:42:15 [error] 30#30: *3 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/image?url=https%3A%2F%2Ffoodish-api.com%2Fimages%2Fpizza%2Fpizza28.jpg&w=1920&q=75 HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/image?url=https%3A%2F%2Ffoodish-api.com%2Fimages%2Fpizza%2Fpizza28.jpg&w=1920&q=75", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:42:23 [error] 30#30: *3 connect() to [fdc4:f303:9324::254]:8080 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/auth/session HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:8080/api/auth/session", host: "localhost", referrer: "http://localhost/create-recipe"
+2025/08/21 13:42:27 [error] 30#30: *3 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/_01f48b92._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/_01f48b92._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:42:27 [error] 35#35: *22 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/node_modules_46cbe555._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/node_modules_46cbe555._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:42:27 [error] 38#38: *124 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/src_d3363091._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/src_d3363091._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:42:27 [error] 33#33: *18 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/src_app_layout_tsx_68b267f5._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/src_app_layout_tsx_68b267f5._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:42:27 [error] 33#33: *18 connect() to [fdc4:f303:9324::254]:8080 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/auth/session HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:8080/api/auth/session", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:42:27 [error] 32#32: *9 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_5af4a3bc._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_5af4a3bc._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:42:27 [error] 31#31: *5 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "POST /__nextjs_original-stack-frames HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/__nextjs_original-stack-frames", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:42:30 [error] 35#35: *22 connect() to [fdc4:f303:9324::254]:8080 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/auth/error HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:8080/api/auth/error", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:42:39 [error] 35#35: *22 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/_01f48b92._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/_01f48b92._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:42:39 [error] 30#30: *3 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/node_modules_46cbe555._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/node_modules_46cbe555._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:42:39 [error] 32#32: *9 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/src_d3363091._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/src_d3363091._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:42:39 [error] 31#31: *5 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/node_modules_next_dist_01fcdebf._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/node_modules_next_dist_01fcdebf._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:42:39 [error] 30#30: *3 connect() to [fdc4:f303:9324::254]:8080 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/auth/session HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:8080/api/auth/session", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:42:39 [error] 33#33: *18 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /icons/level.svg HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/icons/level.svg", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:42:39 [error] 38#38: *124 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/image?url=https%3A%2F%2Ffoodish-api.com%2Fimages%2Frice%2Frice35.jpg&w=1920&q=75 HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/image?url=https%3A%2F%2Ffoodish-api.com%2Fimages%2Frice%2Frice35.jpg&w=1920&q=75", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:43:01 [error] 32#32: *9 connect() to [fdc4:f303:9324::254]:8080 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/auth/error HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:8080/api/auth/error", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:43:02 [error] 32#32: *9 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/node_modules_%40swc_helpers_cjs_8e433861._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/node_modules_%40swc_helpers_cjs_8e433861._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:43:02 [error] 35#35: *22 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/node_modules_46cbe555._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/node_modules_46cbe555._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:43:02 [error] 31#31: *5 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/node_modules_next_dist_01fcdebf._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/node_modules_next_dist_01fcdebf._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:43:02 [error] 30#30: *3 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/node_modules_50cb4983._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/node_modules_50cb4983._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:43:02 [error] 33#33: *18 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /icons/av_timer.svg HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/icons/av_timer.svg", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:43:02 [error] 38#38: *124 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/image?url=https%3A%2F%2Ffoodish-api.com%2Fimages%2Fdessert%2Fdessert17.jpg&w=1920&q=75 HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/image?url=https%3A%2F%2Ffoodish-api.com%2Fimages%2Fdessert%2Fdessert17.jpg&w=1920&q=75", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:43:04 [error] 33#33: *18 connect() to [fdc4:f303:9324::254]:8080 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/auth/providers HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:8080/api/auth/providers", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:43:05 [error] 29#29: *455 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/webpack-hmr", host: "localhost"
+2025/08/21 13:43:48 [error] 35#35: *22 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/node_modules_next_dist_445d8acf._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/node_modules_next_dist_445d8acf._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:43:48 [error] 30#30: *3 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/_01f48b92._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/_01f48b92._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:43:48 [error] 38#38: *124 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/node_modules_46cbe555._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/node_modules_46cbe555._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:43:48 [error] 32#32: *9 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/src_app_favicon_ico_mjs_f9cadd25._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/src_app_favicon_ico_mjs_f9cadd25._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:43:48 [error] 31#31: *5 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/node_modules_next_dist_client_components_builtin_global-error_6e7bbb6e.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/node_modules_next_dist_client_components_builtin_global-error_6e7bbb6e.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:43:48 [error] 38#38: *124 connect() to [fdc4:f303:9324::254]:8080 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "POST /api/auth/_log HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:8080/api/auth/_log", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:43:48 [error] 33#33: *18 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/image?url=https%3A%2F%2Ffoodish-api.com%2Fimages%2Fpadthai%2Fpadthai5.jpg&w=1920&q=75 HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/image?url=https%3A%2F%2Ffoodish-api.com%2Fimages%2Fpadthai%2Fpadthai5.jpg&w=1920&q=75", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:43:49 [error] 35#35: *22 connect() to [fdc4:f303:9324::254]:8080 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/auth/error HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:8080/api/auth/error", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:48:23 [error] 29#29: *524 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/%5Broot-of-the-server%5D__ba4ce2ff._.css HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/%5Broot-of-the-server%5D__ba4ce2ff._.css", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:48:23 [error] 30#30: *526 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/node_modules_next_dist_445d8acf._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/node_modules_next_dist_445d8acf._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:48:24 [error] 30#30: *526 connect() to [fdc4:f303:9324::254]:8080 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/auth/providers HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:8080/api/auth/providers", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:48:24 [error] 29#29: *524 connect() to [fdc4:f303:9324::254]:8080 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/auth/error HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:8080/api/auth/error", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:48:34 [error] 29#29: *532 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/node_modules_next_dist_compiled_next-devtools_index_d575f738.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/node_modules_next_dist_compiled_next-devtools_index_d575f738.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:48:34 [error] 30#30: *526 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/node_modules_%40swc_helpers_cjs_8e433861._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/node_modules_%40swc_helpers_cjs_8e433861._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:48:59 [error] 29#29: *532 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/%5Broot-of-the-server%5D__ba4ce2ff._.css HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/%5Broot-of-the-server%5D__ba4ce2ff._.css", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:48:59 [error] 30#30: *535 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/node_modules_next_dist_compiled_next-devtools_index_d575f738.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/node_modules_next_dist_compiled_next-devtools_index_d575f738.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:48:59 [error] 30#30: *535 connect() to [fdc4:f303:9324::254]:8080 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/auth/session HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:8080/api/auth/session", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:50:23 [error] 29#29: *669 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_6aaa83c7._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_6aaa83c7._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:50:23 [error] 30#30: *697 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/webpack-hmr HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/webpack-hmr", host: "localhost"
+2025/08/21 13:50:23 [error] 29#29: *667 connect() to [fdc4:f303:9324::254]:8080 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "POST /api/auth/_log HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:8080/api/auth/_log", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:52:18 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/08/21 13:52:18 [notice] 29#29: gracefully shutting down
+2025/08/21 13:52:18 [notice] 30#30: gracefully shutting down
+2025/08/21 13:52:18 [notice] 31#31: gracefully shutting down
+2025/08/21 13:52:18 [notice] 34#34: gracefully shutting down
+2025/08/21 13:52:18 [notice] 37#37: gracefully shutting down
+2025/08/21 13:52:18 [notice] 32#32: gracefully shutting down
+2025/08/21 13:52:18 [notice] 36#36: gracefully shutting down
+2025/08/21 13:52:18 [notice] 40#40: gracefully shutting down
+2025/08/21 13:52:18 [notice] 35#35: gracefully shutting down
+2025/08/21 13:52:18 [notice] 39#39: gracefully shutting down
+2025/08/21 13:52:18 [notice] 38#38: gracefully shutting down
+2025/08/21 13:52:18 [notice] 43#43: gracefully shutting down
+2025/08/21 13:52:18 [notice] 33#33: gracefully shutting down
+2025/08/21 13:52:18 [notice] 41#41: gracefully shutting down
+2025/08/21 13:52:18 [notice] 44#44: gracefully shutting down
+2025/08/21 13:52:18 [notice] 42#42: gracefully shutting down
+2025/08/21 13:52:18 [notice] 29#29: exiting
+2025/08/21 13:52:18 [notice] 30#30: exiting
+2025/08/21 13:52:18 [notice] 31#31: exiting
+2025/08/21 13:52:18 [notice] 34#34: exiting
+2025/08/21 13:52:18 [notice] 37#37: exiting
+2025/08/21 13:52:18 [notice] 32#32: exiting
+2025/08/21 13:52:18 [notice] 36#36: exiting
+2025/08/21 13:52:18 [notice] 40#40: exiting
+2025/08/21 13:52:18 [notice] 35#35: exiting
+2025/08/21 13:52:18 [notice] 39#39: exiting
+2025/08/21 13:52:18 [notice] 38#38: exiting
+2025/08/21 13:52:18 [notice] 43#43: exiting
+2025/08/21 13:52:18 [notice] 33#33: exiting
+2025/08/21 13:52:18 [notice] 41#41: exiting
+2025/08/21 13:52:18 [notice] 44#44: exiting
+2025/08/21 13:52:18 [notice] 42#42: exiting
+2025/08/21 13:52:18 [notice] 29#29: exit
+2025/08/21 13:52:18 [notice] 30#30: exit
+2025/08/21 13:52:18 [notice] 31#31: exit
+2025/08/21 13:52:18 [notice] 34#34: exit
+2025/08/21 13:52:18 [notice] 37#37: exit
+2025/08/21 13:52:18 [notice] 32#32: exit
+2025/08/21 13:52:18 [notice] 36#36: exit
+2025/08/21 13:52:18 [notice] 40#40: exit
+2025/08/21 13:52:18 [notice] 35#35: exit
+2025/08/21 13:52:18 [notice] 39#39: exit
+2025/08/21 13:52:18 [notice] 38#38: exit
+2025/08/21 13:52:18 [notice] 43#43: exit
+2025/08/21 13:52:18 [notice] 33#33: exit
+2025/08/21 13:52:18 [notice] 41#41: exit
+2025/08/21 13:52:18 [notice] 44#44: exit
+2025/08/21 13:52:18 [notice] 42#42: exit
+2025/08/21 13:52:18 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2025/08/21 13:52:18 [notice] 1#1: worker process 29 exited with code 0
+2025/08/21 13:52:18 [notice] 1#1: worker process 30 exited with code 0
+2025/08/21 13:52:18 [notice] 1#1: worker process 32 exited with code 0
+2025/08/21 13:52:18 [notice] 1#1: worker process 34 exited with code 0
+2025/08/21 13:52:18 [notice] 1#1: worker process 40 exited with code 0
+2025/08/21 13:52:18 [notice] 1#1: signal 29 (SIGIO) received
+2025/08/21 13:52:18 [notice] 1#1: signal 17 (SIGCHLD) received from 40
+2025/08/21 13:52:18 [notice] 1#1: signal 17 (SIGCHLD) received from 31
+2025/08/21 13:52:18 [notice] 1#1: worker process 31 exited with code 0
+2025/08/21 13:52:18 [notice] 1#1: worker process 37 exited with code 0
+2025/08/21 13:52:18 [notice] 1#1: signal 29 (SIGIO) received
+2025/08/21 13:52:18 [notice] 1#1: signal 17 (SIGCHLD) received from 38
+2025/08/21 13:52:18 [notice] 1#1: worker process 33 exited with code 0
+2025/08/21 13:52:18 [notice] 1#1: worker process 35 exited with code 0
+2025/08/21 13:52:18 [notice] 1#1: worker process 36 exited with code 0
+2025/08/21 13:52:18 [notice] 1#1: worker process 38 exited with code 0
+2025/08/21 13:52:18 [notice] 1#1: worker process 39 exited with code 0
+2025/08/21 13:52:18 [notice] 1#1: worker process 41 exited with code 0
+2025/08/21 13:52:18 [notice] 1#1: worker process 43 exited with code 0
+2025/08/21 13:52:18 [notice] 1#1: worker process 44 exited with code 0
+2025/08/21 13:52:18 [notice] 1#1: signal 29 (SIGIO) received
+2025/08/21 13:52:18 [notice] 1#1: signal 17 (SIGCHLD) received from 43
+2025/08/21 13:52:18 [notice] 1#1: signal 17 (SIGCHLD) received from 42
+2025/08/21 13:52:18 [notice] 1#1: worker process 42 exited with code 0
+2025/08/21 13:52:18 [notice] 1#1: exit
+2025/08/21 13:52:19 [notice] 1#1: using the "epoll" event method
+2025/08/21 13:52:19 [notice] 1#1: nginx/1.29.1
+2025/08/21 13:52:19 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/08/21 13:52:19 [notice] 1#1: OS: Linux 5.15.167.4-microsoft-standard-WSL2
+2025/08/21 13:52:19 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/08/21 13:52:19 [notice] 1#1: start worker processes
+2025/08/21 13:52:19 [notice] 1#1: start worker process 28
+2025/08/21 13:52:19 [notice] 1#1: start worker process 29
+2025/08/21 13:52:19 [notice] 1#1: start worker process 30
+2025/08/21 13:52:19 [notice] 1#1: start worker process 31
+2025/08/21 13:52:19 [notice] 1#1: start worker process 32
+2025/08/21 13:52:19 [notice] 1#1: start worker process 33
+2025/08/21 13:52:19 [notice] 1#1: start worker process 34
+2025/08/21 13:52:19 [notice] 1#1: start worker process 35
+2025/08/21 13:52:19 [notice] 1#1: start worker process 36
+2025/08/21 13:52:19 [notice] 1#1: start worker process 37
+2025/08/21 13:52:19 [notice] 1#1: start worker process 38
+2025/08/21 13:52:19 [notice] 1#1: start worker process 39
+2025/08/21 13:52:19 [notice] 1#1: start worker process 40
+2025/08/21 13:52:19 [notice] 1#1: start worker process 41
+2025/08/21 13:52:19 [notice] 1#1: start worker process 42
+2025/08/21 13:52:19 [notice] 1#1: start worker process 43
+2025/08/21 13:52:29 [error] 29#29: *3 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/node_modules_next_dist_compiled_react-dom_1f56dc06._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_1f56dc06._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:52:29 [error] 30#30: *5 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/node_modules_next_dist_445d8acf._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/node_modules_next_dist_445d8acf._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:52:29 [error] 28#28: *1 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/node_modules_%40swc_helpers_cjs_8e433861._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/node_modules_%40swc_helpers_cjs_8e433861._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:52:29 [error] 32#32: *12 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/node_modules_46cbe555._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/node_modules_46cbe555._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:52:29 [error] 33#33: *15 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/src_app_favicon_ico_mjs_f9cadd25._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/src_app_favicon_ico_mjs_f9cadd25._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:52:29 [error] 28#28: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/auth/session HTTP/1.1", upstream: "http://[::1]:3000/api/auth/session", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:52:29 [error] 31#31: *9 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_61dcf9ba._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_61dcf9ba._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:52:29 [error] 28#28: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/auth/session HTTP/1.1", upstream: "http://127.0.0.1:3000/api/auth/session", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:52:29 [error] 28#28: *1 no live upstreams while connecting to upstream, client: 172.18.0.1, server: localhost, request: "POST /api/auth/_log HTTP/1.1", upstream: "http://localhost/api/auth/_log", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:52:30 [error] 28#28: *1 no live upstreams while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/auth/providers HTTP/1.1", upstream: "http://localhost/api/auth/providers", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:52:30 [error] 28#28: *1 no live upstreams while connecting to upstream, client: 172.18.0.1, server: localhost, request: "POST /api/auth/_log HTTP/1.1", upstream: "http://localhost/api/auth/_log", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:52:31 [error] 28#28: *1 no live upstreams while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/auth/error HTTP/1.1", upstream: "http://localhost/api/auth/error", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:53:14 [error] 33#33: *15 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/_01f48b92._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/_01f48b92._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:53:14 [error] 28#28: *1 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/node_modules_46cbe555._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/node_modules_46cbe555._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:53:14 [error] 29#29: *3 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/src_d3363091._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/src_d3363091._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:53:14 [error] 31#31: *9 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/src_app_layout_tsx_68b267f5._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/src_app_layout_tsx_68b267f5._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:53:14 [error] 32#32: *12 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/auth/session HTTP/1.1", upstream: "http://[::1]:3000/api/auth/session", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:53:14 [error] 32#32: *12 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/auth/session HTTP/1.1", upstream: "http://127.0.0.1:3000/api/auth/session", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:53:14 [error] 32#32: *12 no live upstreams while connecting to upstream, client: 172.18.0.1, server: localhost, request: "POST /api/auth/_log HTTP/1.1", upstream: "http://localhost/api/auth/_log", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:53:14 [error] 32#32: *12 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /icons/level.svg HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/icons/level.svg", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:53:14 [error] 30#30: *5 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /icons/av_timer.svg HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/icons/av_timer.svg", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:53:47 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/08/21 13:53:47 [notice] 30#30: gracefully shutting down
+2025/08/21 13:53:47 [notice] 32#32: gracefully shutting down
+2025/08/21 13:53:47 [notice] 33#33: gracefully shutting down
+2025/08/21 13:53:47 [notice] 28#28: gracefully shutting down
+2025/08/21 13:53:47 [notice] 40#40: gracefully shutting down
+2025/08/21 13:53:47 [notice] 34#34: gracefully shutting down
+2025/08/21 13:53:47 [notice] 35#35: gracefully shutting down
+2025/08/21 13:53:47 [notice] 35#35: exiting
+2025/08/21 13:53:47 [notice] 36#36: gracefully shutting down
+2025/08/21 13:53:47 [notice] 41#41: gracefully shutting down
+2025/08/21 13:53:47 [notice] 37#37: gracefully shutting down
+2025/08/21 13:53:47 [notice] 38#38: gracefully shutting down
+2025/08/21 13:53:47 [notice] 39#39: gracefully shutting down
+2025/08/21 13:53:47 [notice] 31#31: gracefully shutting down
+2025/08/21 13:53:47 [notice] 42#42: gracefully shutting down
+2025/08/21 13:53:47 [notice] 43#43: gracefully shutting down
+2025/08/21 13:53:47 [notice] 29#29: gracefully shutting down
+2025/08/21 13:53:47 [notice] 30#30: exiting
+2025/08/21 13:53:47 [notice] 32#32: exiting
+2025/08/21 13:53:47 [notice] 33#33: exiting
+2025/08/21 13:53:47 [notice] 28#28: exiting
+2025/08/21 13:53:47 [notice] 40#40: exiting
+2025/08/21 13:53:47 [notice] 34#34: exiting
+2025/08/21 13:53:47 [notice] 35#35: exit
+2025/08/21 13:53:47 [notice] 36#36: exiting
+2025/08/21 13:53:47 [notice] 41#41: exiting
+2025/08/21 13:53:47 [notice] 37#37: exiting
+2025/08/21 13:53:47 [notice] 38#38: exiting
+2025/08/21 13:53:47 [notice] 39#39: exiting
+2025/08/21 13:53:47 [notice] 31#31: exiting
+2025/08/21 13:53:47 [notice] 42#42: exiting
+2025/08/21 13:53:47 [notice] 43#43: exiting
+2025/08/21 13:53:47 [notice] 29#29: exiting
+2025/08/21 13:53:47 [notice] 30#30: exit
+2025/08/21 13:53:47 [notice] 32#32: exit
+2025/08/21 13:53:47 [notice] 33#33: exit
+2025/08/21 13:53:47 [notice] 28#28: exit
+2025/08/21 13:53:47 [notice] 40#40: exit
+2025/08/21 13:53:47 [notice] 34#34: exit
+2025/08/21 13:53:47 [notice] 36#36: exit
+2025/08/21 13:53:47 [notice] 41#41: exit
+2025/08/21 13:53:47 [notice] 37#37: exit
+2025/08/21 13:53:47 [notice] 38#38: exit
+2025/08/21 13:53:47 [notice] 39#39: exit
+2025/08/21 13:53:47 [notice] 31#31: exit
+2025/08/21 13:53:47 [notice] 42#42: exit
+2025/08/21 13:53:47 [notice] 43#43: exit
+2025/08/21 13:53:47 [notice] 29#29: exit
+2025/08/21 13:53:47 [notice] 1#1: signal 17 (SIGCHLD) received from 37
+2025/08/21 13:53:47 [notice] 1#1: worker process 28 exited with code 0
+2025/08/21 13:53:47 [notice] 1#1: worker process 29 exited with code 0
+2025/08/21 13:53:47 [notice] 1#1: worker process 30 exited with code 0
+2025/08/21 13:53:47 [notice] 1#1: worker process 31 exited with code 0
+2025/08/21 13:53:47 [notice] 1#1: worker process 32 exited with code 0
+2025/08/21 13:53:47 [notice] 1#1: worker process 33 exited with code 0
+2025/08/21 13:53:47 [notice] 1#1: worker process 34 exited with code 0
+2025/08/21 13:53:47 [notice] 1#1: worker process 35 exited with code 0
+2025/08/21 13:53:47 [notice] 1#1: worker process 36 exited with code 0
+2025/08/21 13:53:47 [notice] 1#1: worker process 37 exited with code 0
+2025/08/21 13:53:47 [notice] 1#1: worker process 38 exited with code 0
+2025/08/21 13:53:47 [notice] 1#1: worker process 39 exited with code 0
+2025/08/21 13:53:47 [notice] 1#1: worker process 40 exited with code 0
+2025/08/21 13:53:47 [notice] 1#1: worker process 41 exited with code 0
+2025/08/21 13:53:47 [notice] 1#1: worker process 42 exited with code 0
+2025/08/21 13:53:47 [notice] 1#1: worker process 43 exited with code 0
+2025/08/21 13:53:47 [notice] 1#1: exit
+2025/08/21 13:53:48 [notice] 1#1: using the "epoll" event method
+2025/08/21 13:53:48 [notice] 1#1: nginx/1.29.1
+2025/08/21 13:53:48 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/08/21 13:53:48 [notice] 1#1: OS: Linux 5.15.167.4-microsoft-standard-WSL2
+2025/08/21 13:53:48 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/08/21 13:53:48 [notice] 1#1: start worker processes
+2025/08/21 13:53:48 [notice] 1#1: start worker process 29
+2025/08/21 13:53:48 [notice] 1#1: start worker process 30
+2025/08/21 13:53:48 [notice] 1#1: start worker process 31
+2025/08/21 13:53:48 [notice] 1#1: start worker process 32
+2025/08/21 13:53:48 [notice] 1#1: start worker process 33
+2025/08/21 13:53:48 [notice] 1#1: start worker process 34
+2025/08/21 13:53:48 [notice] 1#1: start worker process 35
+2025/08/21 13:53:48 [notice] 1#1: start worker process 36
+2025/08/21 13:53:48 [notice] 1#1: start worker process 37
+2025/08/21 13:53:48 [notice] 1#1: start worker process 38
+2025/08/21 13:53:48 [notice] 1#1: start worker process 39
+2025/08/21 13:53:48 [notice] 1#1: start worker process 40
+2025/08/21 13:53:48 [notice] 1#1: start worker process 41
+2025/08/21 13:53:48 [notice] 1#1: start worker process 42
+2025/08/21 13:53:48 [notice] 1#1: start worker process 43
+2025/08/21 13:53:48 [notice] 1#1: start worker process 44
+2025/08/21 13:53:53 [error] 29#29: *1 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/%5Broot-of-the-server%5D__ba4ce2ff._.css HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/%5Broot-of-the-server%5D__ba4ce2ff._.css", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:53:53 [error] 30#30: *6 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/node_modules_next_dist_compiled_next-devtools_index_d575f738.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/node_modules_next_dist_compiled_next-devtools_index_d575f738.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:53:53 [error] 31#31: *12 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/src_app_layout_tsx_68b267f5._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/src_app_layout_tsx_68b267f5._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:53:54 [error] 32#32: *24 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/node_modules_next_dist_client_components_builtin_global-error_6e7bbb6e.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/node_modules_next_dist_client_components_builtin_global-error_6e7bbb6e.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:53:54 [error] 33#33: *25 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/auth/session HTTP/1.1", upstream: "http://[::1]:7000/api/auth/session", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:53:54 [error] 33#33: *25 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/auth/session HTTP/1.1", upstream: "http://127.0.0.1:7000/api/auth/session", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:53:54 [error] 32#32: *24 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "POST /api/auth/_log HTTP/1.1", upstream: "http://[::1]:7000/api/auth/_log", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:53:54 [error] 32#32: *24 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "POST /api/auth/_log HTTP/1.1", upstream: "http://127.0.0.1:7000/api/auth/_log", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:53:54 [error] 33#33: *25 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /icons/level.svg HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/icons/level.svg", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:53:54 [error] 34#34: *28 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/image?url=https%3A%2F%2Ffoodish-api.com%2Fimages%2Frice%2Frice35.jpg&w=1920&q=75 HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/image?url=https%3A%2F%2Ffoodish-api.com%2Fimages%2Frice%2Frice35.jpg&w=1920&q=75", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:53:55 [error] 34#34: *28 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/auth/providers HTTP/1.1", upstream: "http://[::1]:7000/api/auth/providers", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:53:55 [error] 34#34: *28 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/auth/providers HTTP/1.1", upstream: "http://127.0.0.1:7000/api/auth/providers", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:53:55 [error] 32#32: *24 no live upstreams while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/auth/error HTTP/1.1", upstream: "http://localhost/api/auth/error", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:53:55 [error] 34#34: *28 no live upstreams while connecting to upstream, client: 172.18.0.1, server: localhost, request: "POST /api/auth/_log HTTP/1.1", upstream: "http://localhost/api/auth/_log", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:57:34 [error] 37#37: *60 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_6aaa83c7._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_6aaa83c7._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:57:34 [error] 38#38: *62 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/node_modules_next_dist_compiled_next-devtools_index_d575f738.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/node_modules_next_dist_compiled_next-devtools_index_d575f738.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:57:34 [error] 39#39: *66 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/node_modules_next_dist_client_20b209c9._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/node_modules_next_dist_client_20b209c9._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:57:34 [error] 38#38: *62 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/auth/session HTTP/1.1", upstream: "http://[::1]:7000/api/auth/session", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:57:34 [error] 38#38: *62 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/auth/session HTTP/1.1", upstream: "http://127.0.0.1:7000/api/auth/session", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:57:34 [error] 38#38: *62 no live upstreams while connecting to upstream, client: 172.18.0.1, server: localhost, request: "POST /api/auth/_log HTTP/1.1", upstream: "http://localhost/api/auth/_log", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:57:43 [error] 38#38: *62 no live upstreams while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/auth/providers HTTP/1.1", upstream: "http://localhost/api/auth/providers", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:57:43 [error] 37#37: *60 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/auth/error HTTP/1.1", upstream: "http://[::1]:7000/api/auth/error", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:57:43 [error] 37#37: *60 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/auth/error HTTP/1.1", upstream: "http://127.0.0.1:7000/api/auth/error", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:57:43 [error] 38#38: *62 no live upstreams while connecting to upstream, client: 172.18.0.1, server: localhost, request: "POST /api/auth/_log HTTP/1.1", upstream: "http://localhost/api/auth/_log", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:57:47 [error] 38#38: *62 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/auth/error HTTP/1.1", upstream: "http://127.0.0.1:7000/api/auth/error", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:57:47 [error] 38#38: *62 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/auth/error HTTP/1.1", upstream: "http://[::1]:7000/api/auth/error", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:57:48 [error] 37#37: *60 no live upstreams while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/auth/error HTTP/1.1", upstream: "http://localhost/api/auth/error", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:57:49 [error] 37#37: *60 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/node_modules_next_dist_client_20b209c9._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/node_modules_next_dist_client_20b209c9._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:57:49 [error] 41#41: *115 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/node_modules_%40swc_helpers_cjs_8e433861._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/node_modules_%40swc_helpers_cjs_8e433861._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:57:49 [error] 44#44: *121 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/_e69f0d32._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/_e69f0d32._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:57:49 [error] 39#39: *66 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/node_modules_46cbe555._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/node_modules_46cbe555._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:57:49 [error] 42#42: *117 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/src_6bf3a08d._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/src_6bf3a08d._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:57:49 [error] 43#43: *119 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_5af4a3bc._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_5af4a3bc._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:57:49 [error] 37#37: *60 no live upstreams while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/auth/session HTTP/1.1", upstream: "http://localhost/api/auth/session", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:57:49 [error] 37#37: *60 no live upstreams while connecting to upstream, client: 172.18.0.1, server: localhost, request: "POST /api/auth/_log HTTP/1.1", upstream: "http://localhost/api/auth/_log", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:57:50 [error] 42#42: *117 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/auth/providers HTTP/1.1", upstream: "http://[::1]:7000/api/auth/providers", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:57:50 [error] 42#42: *117 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/auth/providers HTTP/1.1", upstream: "http://127.0.0.1:7000/api/auth/providers", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:57:50 [error] 41#41: *115 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/auth/error HTTP/1.1", upstream: "http://[::1]:7000/api/auth/error", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:57:50 [error] 41#41: *115 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/auth/error HTTP/1.1", upstream: "http://127.0.0.1:7000/api/auth/error", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:57:50 [error] 42#42: *117 no live upstreams while connecting to upstream, client: 172.18.0.1, server: localhost, request: "POST /api/auth/_log HTTP/1.1", upstream: "http://localhost/api/auth/_log", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:57:51 [error] 37#37: *60 no live upstreams while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/auth/session HTTP/1.1", upstream: "http://localhost/api/auth/session", host: "localhost", referrer: "http://localhost/"
+2025/08/21 13:57:51 [error] 42#42: *117 no live upstreams while connecting to upstream, client: 172.18.0.1, server: localhost, request: "POST /api/auth/_log HTTP/1.1", upstream: "http://localhost/api/auth/_log", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:00:35 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/08/21 14:00:35 [notice] 29#29: gracefully shutting down
+2025/08/21 14:00:35 [notice] 31#31: gracefully shutting down
+2025/08/21 14:00:35 [notice] 30#30: gracefully shutting down
+2025/08/21 14:00:35 [notice] 33#33: gracefully shutting down
+2025/08/21 14:00:35 [notice] 34#34: gracefully shutting down
+2025/08/21 14:00:35 [notice] 35#35: gracefully shutting down
+2025/08/21 14:00:35 [notice] 36#36: gracefully shutting down
+2025/08/21 14:00:35 [notice] 38#38: gracefully shutting down
+2025/08/21 14:00:35 [notice] 39#39: gracefully shutting down
+2025/08/21 14:00:35 [notice] 40#40: gracefully shutting down
+2025/08/21 14:00:35 [notice] 42#42: gracefully shutting down
+2025/08/21 14:00:35 [notice] 44#44: gracefully shutting down
+2025/08/21 14:00:35 [notice] 32#32: gracefully shutting down
+2025/08/21 14:00:35 [notice] 43#43: gracefully shutting down
+2025/08/21 14:00:35 [notice] 41#41: gracefully shutting down
+2025/08/21 14:00:35 [notice] 41#41: exiting
+2025/08/21 14:00:35 [notice] 37#37: gracefully shutting down
+2025/08/21 14:00:35 [notice] 29#29: exiting
+2025/08/21 14:00:35 [notice] 31#31: exiting
+2025/08/21 14:00:35 [notice] 30#30: exiting
+2025/08/21 14:00:35 [notice] 33#33: exiting
+2025/08/21 14:00:35 [notice] 34#34: exiting
+2025/08/21 14:00:35 [notice] 35#35: exiting
+2025/08/21 14:00:35 [notice] 36#36: exiting
+2025/08/21 14:00:35 [notice] 38#38: exiting
+2025/08/21 14:00:35 [notice] 39#39: exiting
+2025/08/21 14:00:35 [notice] 40#40: exiting
+2025/08/21 14:00:35 [notice] 42#42: exiting
+2025/08/21 14:00:35 [notice] 44#44: exiting
+2025/08/21 14:00:35 [notice] 32#32: exiting
+2025/08/21 14:00:35 [notice] 43#43: exiting
+2025/08/21 14:00:35 [notice] 41#41: exit
+2025/08/21 14:00:35 [notice] 37#37: exiting
+2025/08/21 14:00:35 [notice] 29#29: exit
+2025/08/21 14:00:35 [notice] 31#31: exit
+2025/08/21 14:00:35 [notice] 30#30: exit
+2025/08/21 14:00:35 [notice] 33#33: exit
+2025/08/21 14:00:35 [notice] 34#34: exit
+2025/08/21 14:00:35 [notice] 35#35: exit
+2025/08/21 14:00:35 [notice] 36#36: exit
+2025/08/21 14:00:35 [notice] 38#38: exit
+2025/08/21 14:00:35 [notice] 39#39: exit
+2025/08/21 14:00:35 [notice] 40#40: exit
+2025/08/21 14:00:35 [notice] 42#42: exit
+2025/08/21 14:00:35 [notice] 44#44: exit
+2025/08/21 14:00:35 [notice] 32#32: exit
+2025/08/21 14:00:35 [notice] 43#43: exit
+2025/08/21 14:00:35 [notice] 37#37: exit
+2025/08/21 14:00:35 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2025/08/21 14:00:35 [notice] 1#1: worker process 29 exited with code 0
+2025/08/21 14:00:35 [notice] 1#1: worker process 30 exited with code 0
+2025/08/21 14:00:35 [notice] 1#1: worker process 31 exited with code 0
+2025/08/21 14:00:35 [notice] 1#1: worker process 32 exited with code 0
+2025/08/21 14:00:35 [notice] 1#1: worker process 33 exited with code 0
+2025/08/21 14:00:35 [notice] 1#1: worker process 34 exited with code 0
+2025/08/21 14:00:35 [notice] 1#1: worker process 35 exited with code 0
+2025/08/21 14:00:35 [notice] 1#1: worker process 36 exited with code 0
+2025/08/21 14:00:35 [notice] 1#1: worker process 37 exited with code 0
+2025/08/21 14:00:35 [notice] 1#1: worker process 38 exited with code 0
+2025/08/21 14:00:35 [notice] 1#1: worker process 39 exited with code 0
+2025/08/21 14:00:35 [notice] 1#1: worker process 41 exited with code 0
+2025/08/21 14:00:35 [notice] 1#1: worker process 42 exited with code 0
+2025/08/21 14:00:35 [notice] 1#1: worker process 43 exited with code 0
+2025/08/21 14:00:35 [notice] 1#1: worker process 44 exited with code 0
+2025/08/21 14:00:35 [notice] 1#1: signal 29 (SIGIO) received
+2025/08/21 14:00:35 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2025/08/21 14:00:35 [notice] 1#1: signal 17 (SIGCHLD) received from 40
+2025/08/21 14:00:35 [notice] 1#1: worker process 40 exited with code 0
+2025/08/21 14:00:35 [notice] 1#1: exit
+2025/08/21 14:00:36 [notice] 1#1: using the "epoll" event method
+2025/08/21 14:00:36 [notice] 1#1: nginx/1.29.1
+2025/08/21 14:00:36 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/08/21 14:00:36 [notice] 1#1: OS: Linux 5.15.167.4-microsoft-standard-WSL2
+2025/08/21 14:00:36 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/08/21 14:00:36 [notice] 1#1: start worker processes
+2025/08/21 14:00:36 [notice] 1#1: start worker process 29
+2025/08/21 14:00:36 [notice] 1#1: start worker process 30
+2025/08/21 14:00:36 [notice] 1#1: start worker process 31
+2025/08/21 14:00:36 [notice] 1#1: start worker process 32
+2025/08/21 14:00:36 [notice] 1#1: start worker process 33
+2025/08/21 14:00:36 [notice] 1#1: start worker process 34
+2025/08/21 14:00:36 [notice] 1#1: start worker process 35
+2025/08/21 14:00:36 [notice] 1#1: start worker process 36
+2025/08/21 14:00:36 [notice] 1#1: start worker process 37
+2025/08/21 14:00:36 [notice] 1#1: start worker process 38
+2025/08/21 14:00:36 [notice] 1#1: start worker process 39
+2025/08/21 14:00:36 [notice] 1#1: start worker process 40
+2025/08/21 14:00:36 [notice] 1#1: start worker process 41
+2025/08/21 14:00:36 [notice] 1#1: start worker process 42
+2025/08/21 14:00:36 [notice] 1#1: start worker process 43
+2025/08/21 14:00:36 [notice] 1#1: start worker process 44
+2025/08/21 14:00:57 [error] 29#29: *1 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/node_modules_next_dist_compiled_react-dom_1f56dc06._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_1f56dc06._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:00:57 [error] 30#30: *3 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_6aaa83c7._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_6aaa83c7._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:00:57 [error] 31#31: *9 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/node_modules_next_dist_445d8acf._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/node_modules_next_dist_445d8acf._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:00:57 [error] 30#30: *3 connect() to [fdc4:f303:9324::254]:8080 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "POST /api/auth/_log HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:8080/api/auth/_log", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:01:02 [error] 29#29: *1 connect() to [fdc4:f303:9324::254]:8080 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "POST /api/auth/_log HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:8080/api/auth/_log", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:02:35 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/08/21 14:02:35 [notice] 29#29: gracefully shutting down
+2025/08/21 14:02:35 [notice] 30#30: gracefully shutting down
+2025/08/21 14:02:35 [notice] 31#31: gracefully shutting down
+2025/08/21 14:02:35 [notice] 32#32: gracefully shutting down
+2025/08/21 14:02:35 [notice] 33#33: gracefully shutting down
+2025/08/21 14:02:35 [notice] 34#34: gracefully shutting down
+2025/08/21 14:02:35 [notice] 35#35: gracefully shutting down
+2025/08/21 14:02:35 [notice] 36#36: gracefully shutting down
+2025/08/21 14:02:35 [notice] 37#37: gracefully shutting down
+2025/08/21 14:02:35 [notice] 38#38: gracefully shutting down
+2025/08/21 14:02:35 [notice] 39#39: gracefully shutting down
+2025/08/21 14:02:35 [notice] 40#40: gracefully shutting down
+2025/08/21 14:02:35 [notice] 41#41: gracefully shutting down
+2025/08/21 14:02:35 [notice] 42#42: gracefully shutting down
+2025/08/21 14:02:35 [notice] 43#43: gracefully shutting down
+2025/08/21 14:02:35 [notice] 44#44: gracefully shutting down
+2025/08/21 14:02:35 [notice] 29#29: exiting
+2025/08/21 14:02:35 [notice] 30#30: exiting
+2025/08/21 14:02:35 [notice] 31#31: exiting
+2025/08/21 14:02:35 [notice] 32#32: exiting
+2025/08/21 14:02:35 [notice] 33#33: exiting
+2025/08/21 14:02:35 [notice] 34#34: exiting
+2025/08/21 14:02:35 [notice] 35#35: exiting
+2025/08/21 14:02:35 [notice] 36#36: exiting
+2025/08/21 14:02:35 [notice] 37#37: exiting
+2025/08/21 14:02:35 [notice] 38#38: exiting
+2025/08/21 14:02:35 [notice] 39#39: exiting
+2025/08/21 14:02:35 [notice] 40#40: exiting
+2025/08/21 14:02:35 [notice] 41#41: exiting
+2025/08/21 14:02:35 [notice] 42#42: exiting
+2025/08/21 14:02:35 [notice] 43#43: exiting
+2025/08/21 14:02:35 [notice] 44#44: exiting
+2025/08/21 14:02:35 [notice] 29#29: exit
+2025/08/21 14:02:35 [notice] 30#30: exit
+2025/08/21 14:02:35 [notice] 31#31: exit
+2025/08/21 14:02:35 [notice] 32#32: exit
+2025/08/21 14:02:35 [notice] 33#33: exit
+2025/08/21 14:02:35 [notice] 34#34: exit
+2025/08/21 14:02:35 [notice] 35#35: exit
+2025/08/21 14:02:35 [notice] 36#36: exit
+2025/08/21 14:02:35 [notice] 37#37: exit
+2025/08/21 14:02:35 [notice] 38#38: exit
+2025/08/21 14:02:35 [notice] 39#39: exit
+2025/08/21 14:02:35 [notice] 40#40: exit
+2025/08/21 14:02:35 [notice] 41#41: exit
+2025/08/21 14:02:35 [notice] 42#42: exit
+2025/08/21 14:02:35 [notice] 43#43: exit
+2025/08/21 14:02:35 [notice] 44#44: exit
+2025/08/21 14:02:35 [notice] 1#1: signal 17 (SIGCHLD) received from 34
+2025/08/21 14:02:35 [notice] 1#1: worker process 29 exited with code 0
+2025/08/21 14:02:35 [notice] 1#1: worker process 30 exited with code 0
+2025/08/21 14:02:35 [notice] 1#1: worker process 33 exited with code 0
+2025/08/21 14:02:35 [notice] 1#1: worker process 34 exited with code 0
+2025/08/21 14:02:35 [notice] 1#1: worker process 35 exited with code 0
+2025/08/21 14:02:35 [notice] 1#1: worker process 37 exited with code 0
+2025/08/21 14:02:35 [notice] 1#1: worker process 38 exited with code 0
+2025/08/21 14:02:35 [notice] 1#1: worker process 39 exited with code 0
+2025/08/21 14:02:35 [notice] 1#1: worker process 41 exited with code 0
+2025/08/21 14:02:35 [notice] 1#1: worker process 43 exited with code 0
+2025/08/21 14:02:35 [notice] 1#1: worker process 44 exited with code 0
+2025/08/21 14:02:35 [notice] 1#1: signal 29 (SIGIO) received
+2025/08/21 14:02:35 [notice] 1#1: signal 17 (SIGCHLD) received from 37
+2025/08/21 14:02:35 [notice] 1#1: signal 17 (SIGCHLD) received from 32
+2025/08/21 14:02:35 [notice] 1#1: worker process 32 exited with code 0
+2025/08/21 14:02:35 [notice] 1#1: signal 29 (SIGIO) received
+2025/08/21 14:02:35 [notice] 1#1: signal 17 (SIGCHLD) received from 36
+2025/08/21 14:02:35 [notice] 1#1: worker process 31 exited with code 0
+2025/08/21 14:02:35 [notice] 1#1: worker process 36 exited with code 0
+2025/08/21 14:02:35 [notice] 1#1: worker process 42 exited with code 0
+2025/08/21 14:02:35 [notice] 1#1: signal 29 (SIGIO) received
+2025/08/21 14:02:35 [notice] 1#1: signal 17 (SIGCHLD) received from 42
+2025/08/21 14:02:35 [notice] 1#1: signal 17 (SIGCHLD) received from 40
+2025/08/21 14:02:35 [notice] 1#1: worker process 40 exited with code 0
+2025/08/21 14:02:35 [notice] 1#1: exit
+2025/08/21 14:02:36 [notice] 1#1: using the "epoll" event method
+2025/08/21 14:02:36 [notice] 1#1: nginx/1.29.1
+2025/08/21 14:02:36 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/08/21 14:02:36 [notice] 1#1: OS: Linux 5.15.167.4-microsoft-standard-WSL2
+2025/08/21 14:02:36 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/08/21 14:02:36 [notice] 1#1: start worker processes
+2025/08/21 14:02:36 [notice] 1#1: start worker process 29
+2025/08/21 14:02:36 [notice] 1#1: start worker process 30
+2025/08/21 14:02:36 [notice] 1#1: start worker process 31
+2025/08/21 14:02:36 [notice] 1#1: start worker process 32
+2025/08/21 14:02:36 [notice] 1#1: start worker process 33
+2025/08/21 14:02:36 [notice] 1#1: start worker process 34
+2025/08/21 14:02:36 [notice] 1#1: start worker process 35
+2025/08/21 14:02:36 [notice] 1#1: start worker process 36
+2025/08/21 14:02:36 [notice] 1#1: start worker process 37
+2025/08/21 14:02:36 [notice] 1#1: start worker process 38
+2025/08/21 14:02:36 [notice] 1#1: start worker process 39
+2025/08/21 14:02:36 [notice] 1#1: start worker process 40
+2025/08/21 14:02:36 [notice] 1#1: start worker process 41
+2025/08/21 14:02:36 [notice] 1#1: start worker process 42
+2025/08/21 14:02:36 [notice] 1#1: start worker process 43
+2025/08/21 14:02:36 [notice] 1#1: start worker process 44
+2025/08/21 14:02:41 [error] 29#29: *1 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/%5Broot-of-the-server%5D__ba4ce2ff._.css HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/%5Broot-of-the-server%5D__ba4ce2ff._.css", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:02:41 [error] 31#31: *8 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/node_modules_next_dist_client_20b209c9._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/node_modules_next_dist_client_20b209c9._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:02:41 [error] 30#30: *6 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/_01f48b92._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/_01f48b92._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:02:41 [error] 32#32: *25 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/auth/session HTTP/1.1", upstream: "http://[::1]:3000/api/auth/session", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:02:41 [error] 32#32: *25 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/auth/session HTTP/1.1", upstream: "http://127.0.0.1:3000/api/auth/session", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:02:41 [error] 32#32: *25 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_61dcf9ba._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_61dcf9ba._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:02:41 [error] 34#34: *29 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /icons/level.svg HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/icons/level.svg", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:02:41 [error] 33#33: *27 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "POST /api/auth/_log HTTP/1.1", upstream: "http://[::1]:3000/api/auth/_log", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:02:41 [error] 33#33: *27 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "POST /api/auth/_log HTTP/1.1", upstream: "http://127.0.0.1:3000/api/auth/_log", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:02:41 [error] 33#33: *27 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/image?url=https%3A%2F%2Ffoodish-api.com%2Fimages%2Frice%2Frice13.jpg&w=1920&q=75 HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/image?url=https%3A%2F%2Ffoodish-api.com%2Fimages%2Frice%2Frice13.jpg&w=1920&q=75", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:02:42 [error] 30#30: *6 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/auth/providers HTTP/1.1", upstream: "http://[::1]:3000/api/auth/providers", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:02:42 [error] 30#30: *6 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/auth/providers HTTP/1.1", upstream: "http://127.0.0.1:3000/api/auth/providers", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:02:42 [error] 34#34: *29 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/auth/error HTTP/1.1", upstream: "http://[::1]:3000/api/auth/error", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:02:42 [error] 34#34: *29 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/auth/error HTTP/1.1", upstream: "http://127.0.0.1:3000/api/auth/error", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:02:42 [error] 30#30: *6 no live upstreams while connecting to upstream, client: 172.18.0.1, server: localhost, request: "POST /api/auth/_log HTTP/1.1", upstream: "http://localhost/api/auth/_log", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:02:58 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/08/21 14:02:58 [notice] 29#29: gracefully shutting down
+2025/08/21 14:02:58 [notice] 44#44: gracefully shutting down
+2025/08/21 14:02:58 [notice] 30#30: gracefully shutting down
+2025/08/21 14:02:58 [notice] 31#31: gracefully shutting down
+2025/08/21 14:02:58 [notice] 33#33: gracefully shutting down
+2025/08/21 14:02:58 [notice] 34#34: gracefully shutting down
+2025/08/21 14:02:58 [notice] 32#32: gracefully shutting down
+2025/08/21 14:02:58 [notice] 36#36: gracefully shutting down
+2025/08/21 14:02:58 [notice] 35#35: gracefully shutting down
+2025/08/21 14:02:58 [notice] 37#37: gracefully shutting down
+2025/08/21 14:02:58 [notice] 39#39: gracefully shutting down
+2025/08/21 14:02:58 [notice] 38#38: gracefully shutting down
+2025/08/21 14:02:58 [notice] 42#42: gracefully shutting down
+2025/08/21 14:02:58 [notice] 40#40: gracefully shutting down
+2025/08/21 14:02:58 [notice] 41#41: gracefully shutting down
+2025/08/21 14:02:58 [notice] 43#43: gracefully shutting down
+2025/08/21 14:02:58 [notice] 29#29: exiting
+2025/08/21 14:02:58 [notice] 44#44: exiting
+2025/08/21 14:02:58 [notice] 30#30: exiting
+2025/08/21 14:02:58 [notice] 31#31: exiting
+2025/08/21 14:02:58 [notice] 33#33: exiting
+2025/08/21 14:02:58 [notice] 34#34: exiting
+2025/08/21 14:02:58 [notice] 32#32: exiting
+2025/08/21 14:02:58 [notice] 36#36: exiting
+2025/08/21 14:02:58 [notice] 35#35: exiting
+2025/08/21 14:02:58 [notice] 37#37: exiting
+2025/08/21 14:02:58 [notice] 39#39: exiting
+2025/08/21 14:02:58 [notice] 38#38: exiting
+2025/08/21 14:02:58 [notice] 42#42: exiting
+2025/08/21 14:02:58 [notice] 40#40: exiting
+2025/08/21 14:02:58 [notice] 41#41: exiting
+2025/08/21 14:02:58 [notice] 43#43: exiting
+2025/08/21 14:02:58 [notice] 29#29: exit
+2025/08/21 14:02:58 [notice] 44#44: exit
+2025/08/21 14:02:58 [notice] 30#30: exit
+2025/08/21 14:02:58 [notice] 31#31: exit
+2025/08/21 14:02:58 [notice] 33#33: exit
+2025/08/21 14:02:58 [notice] 34#34: exit
+2025/08/21 14:02:58 [notice] 32#32: exit
+2025/08/21 14:02:58 [notice] 36#36: exit
+2025/08/21 14:02:58 [notice] 35#35: exit
+2025/08/21 14:02:58 [notice] 37#37: exit
+2025/08/21 14:02:58 [notice] 39#39: exit
+2025/08/21 14:02:58 [notice] 38#38: exit
+2025/08/21 14:02:58 [notice] 42#42: exit
+2025/08/21 14:02:58 [notice] 40#40: exit
+2025/08/21 14:02:58 [notice] 41#41: exit
+2025/08/21 14:02:58 [notice] 43#43: exit
+2025/08/21 14:02:59 [notice] 1#1: signal 17 (SIGCHLD) received from 41
+2025/08/21 14:02:59 [notice] 1#1: worker process 34 exited with code 0
+2025/08/21 14:02:59 [notice] 1#1: worker process 41 exited with code 0
+2025/08/21 14:02:59 [notice] 1#1: signal 29 (SIGIO) received
+2025/08/21 14:02:59 [notice] 1#1: signal 17 (SIGCHLD) received from 40
+2025/08/21 14:02:59 [notice] 1#1: worker process 30 exited with code 0
+2025/08/21 14:02:59 [notice] 1#1: worker process 40 exited with code 0
+2025/08/21 14:02:59 [notice] 1#1: signal 29 (SIGIO) received
+2025/08/21 14:02:59 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2025/08/21 14:02:59 [notice] 1#1: signal 17 (SIGCHLD) received from 38
+2025/08/21 14:02:59 [notice] 1#1: worker process 38 exited with code 0
+2025/08/21 14:02:59 [notice] 1#1: worker process 44 exited with code 0
+2025/08/21 14:02:59 [notice] 1#1: signal 29 (SIGIO) received
+2025/08/21 14:02:59 [notice] 1#1: signal 17 (SIGCHLD) received from 31
+2025/08/21 14:02:59 [notice] 1#1: worker process 29 exited with code 0
+2025/08/21 14:02:59 [notice] 1#1: worker process 31 exited with code 0
+2025/08/21 14:02:59 [notice] 1#1: worker process 32 exited with code 0
+2025/08/21 14:02:59 [notice] 1#1: worker process 33 exited with code 0
+2025/08/21 14:02:59 [notice] 1#1: worker process 35 exited with code 0
+2025/08/21 14:02:59 [notice] 1#1: worker process 37 exited with code 0
+2025/08/21 14:02:59 [notice] 1#1: worker process 39 exited with code 0
+2025/08/21 14:02:59 [notice] 1#1: worker process 42 exited with code 0
+2025/08/21 14:02:59 [notice] 1#1: worker process 43 exited with code 0
+2025/08/21 14:02:59 [notice] 1#1: signal 29 (SIGIO) received
+2025/08/21 14:02:59 [notice] 1#1: signal 17 (SIGCHLD) received from 42
+2025/08/21 14:02:59 [notice] 1#1: signal 17 (SIGCHLD) received from 36
+2025/08/21 14:02:59 [notice] 1#1: worker process 36 exited with code 0
+2025/08/21 14:02:59 [notice] 1#1: exit
+2025/08/21 14:02:59 [notice] 1#1: using the "epoll" event method
+2025/08/21 14:02:59 [notice] 1#1: nginx/1.29.1
+2025/08/21 14:02:59 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/08/21 14:02:59 [notice] 1#1: OS: Linux 5.15.167.4-microsoft-standard-WSL2
+2025/08/21 14:02:59 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/08/21 14:02:59 [notice] 1#1: start worker processes
+2025/08/21 14:02:59 [notice] 1#1: start worker process 29
+2025/08/21 14:02:59 [notice] 1#1: start worker process 30
+2025/08/21 14:02:59 [notice] 1#1: start worker process 31
+2025/08/21 14:02:59 [notice] 1#1: start worker process 32
+2025/08/21 14:02:59 [notice] 1#1: start worker process 33
+2025/08/21 14:02:59 [notice] 1#1: start worker process 34
+2025/08/21 14:02:59 [notice] 1#1: start worker process 35
+2025/08/21 14:02:59 [notice] 1#1: start worker process 36
+2025/08/21 14:02:59 [notice] 1#1: start worker process 37
+2025/08/21 14:02:59 [notice] 1#1: start worker process 38
+2025/08/21 14:02:59 [notice] 1#1: start worker process 39
+2025/08/21 14:02:59 [notice] 1#1: start worker process 40
+2025/08/21 14:02:59 [notice] 1#1: start worker process 41
+2025/08/21 14:02:59 [notice] 1#1: start worker process 42
+2025/08/21 14:02:59 [notice] 1#1: start worker process 43
+2025/08/21 14:02:59 [notice] 1#1: start worker process 44
+2025/08/21 14:03:03 [error] 29#29: *1 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/%5Broot-of-the-server%5D__ba4ce2ff._.css HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/%5Broot-of-the-server%5D__ba4ce2ff._.css", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:03:03 [error] 30#30: *3 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/node_modules_%40swc_helpers_cjs_8e433861._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/node_modules_%40swc_helpers_cjs_8e433861._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:03:03 [error] 33#33: *11 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/_e69f0d32._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/_e69f0d32._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:03:03 [error] 34#34: *13 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/node_modules_next_dist_01fcdebf._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/node_modules_next_dist_01fcdebf._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:03:03 [error] 31#31: *6 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/src_app_favicon_ico_mjs_f9cadd25._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/src_app_favicon_ico_mjs_f9cadd25._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:03:03 [error] 32#32: *9 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/node_modules_50cb4983._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/node_modules_50cb4983._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:03:03 [error] 32#32: *9 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "POST /api/auth/_log HTTP/1.1", upstream: "http://[::1]:7000/api/auth/_log", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:03:03 [error] 32#32: *9 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "POST /api/auth/_log HTTP/1.1", upstream: "http://127.0.0.1:7000/api/auth/_log", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:03:04 [error] 30#30: *3 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/auth/providers HTTP/1.1", upstream: "http://[::1]:7000/api/auth/providers", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:03:04 [error] 30#30: *3 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/auth/providers HTTP/1.1", upstream: "http://127.0.0.1:7000/api/auth/providers", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:03:04 [error] 32#32: *9 no live upstreams while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/auth/error HTTP/1.1", upstream: "http://localhost/api/auth/error", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:03:04 [error] 30#30: *3 no live upstreams while connecting to upstream, client: 172.18.0.1, server: localhost, request: "POST /api/auth/_log HTTP/1.1", upstream: "http://localhost/api/auth/_log", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:03:09 [error] 30#30: *3 no live upstreams while connecting to upstream, client: 172.18.0.1, server: localhost, request: "POST /api/auth/_log HTTP/1.1", upstream: "http://localhost/api/auth/_log", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:03:11 [error] 30#30: *3 no live upstreams while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/auth/providers HTTP/1.1", upstream: "http://localhost/api/auth/providers", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:03:11 [error] 29#29: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/auth/error HTTP/1.1", upstream: "http://[::1]:7000/api/auth/error", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:03:11 [error] 29#29: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/auth/error HTTP/1.1", upstream: "http://127.0.0.1:7000/api/auth/error", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:03:11 [error] 30#30: *3 no live upstreams while connecting to upstream, client: 172.18.0.1, server: localhost, request: "POST /api/auth/_log HTTP/1.1", upstream: "http://localhost/api/auth/_log", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:03:12 [error] 32#32: *9 no live upstreams while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/auth/session HTTP/1.1", upstream: "http://localhost/api/auth/session", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:03:12 [error] 32#32: *9 no live upstreams while connecting to upstream, client: 172.18.0.1, server: localhost, request: "POST /api/auth/_log HTTP/1.1", upstream: "http://localhost/api/auth/_log", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:03:26 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/08/21 14:03:26 [notice] 29#29: gracefully shutting down
+2025/08/21 14:03:26 [notice] 30#30: gracefully shutting down
+2025/08/21 14:03:26 [notice] 31#31: gracefully shutting down
+2025/08/21 14:03:26 [notice] 33#33: gracefully shutting down
+2025/08/21 14:03:26 [notice] 34#34: gracefully shutting down
+2025/08/21 14:03:26 [notice] 32#32: gracefully shutting down
+2025/08/21 14:03:26 [notice] 35#35: gracefully shutting down
+2025/08/21 14:03:26 [notice] 36#36: gracefully shutting down
+2025/08/21 14:03:26 [notice] 38#38: gracefully shutting down
+2025/08/21 14:03:26 [notice] 37#37: gracefully shutting down
+2025/08/21 14:03:26 [notice] 39#39: gracefully shutting down
+2025/08/21 14:03:26 [notice] 39#39: exiting
+2025/08/21 14:03:26 [notice] 40#40: gracefully shutting down
+2025/08/21 14:03:26 [notice] 41#41: gracefully shutting down
+2025/08/21 14:03:26 [notice] 41#41: exiting
+2025/08/21 14:03:26 [notice] 43#43: gracefully shutting down
+2025/08/21 14:03:26 [notice] 42#42: gracefully shutting down
+2025/08/21 14:03:26 [notice] 44#44: gracefully shutting down
+2025/08/21 14:03:26 [notice] 29#29: exiting
+2025/08/21 14:03:26 [notice] 30#30: exiting
+2025/08/21 14:03:26 [notice] 31#31: exiting
+2025/08/21 14:03:26 [notice] 33#33: exiting
+2025/08/21 14:03:26 [notice] 34#34: exiting
+2025/08/21 14:03:26 [notice] 32#32: exiting
+2025/08/21 14:03:26 [notice] 35#35: exiting
+2025/08/21 14:03:26 [notice] 36#36: exiting
+2025/08/21 14:03:26 [notice] 38#38: exiting
+2025/08/21 14:03:26 [notice] 39#39: exit
+2025/08/21 14:03:26 [notice] 40#40: exiting
+2025/08/21 14:03:26 [notice] 41#41: exit
+2025/08/21 14:03:26 [notice] 43#43: exiting
+2025/08/21 14:03:26 [notice] 42#42: exiting
+2025/08/21 14:03:26 [notice] 44#44: exiting
+2025/08/21 14:03:26 [notice] 29#29: exit
+2025/08/21 14:03:26 [notice] 30#30: exit
+2025/08/21 14:03:26 [notice] 31#31: exit
+2025/08/21 14:03:26 [notice] 33#33: exit
+2025/08/21 14:03:26 [notice] 34#34: exit
+2025/08/21 14:03:26 [notice] 32#32: exit
+2025/08/21 14:03:26 [notice] 35#35: exit
+2025/08/21 14:03:26 [notice] 36#36: exit
+2025/08/21 14:03:26 [notice] 38#38: exit
+2025/08/21 14:03:26 [notice] 40#40: exit
+2025/08/21 14:03:26 [notice] 43#43: exit
+2025/08/21 14:03:26 [notice] 42#42: exit
+2025/08/21 14:03:26 [notice] 44#44: exit
+2025/08/21 14:03:26 [notice] 1#1: signal 17 (SIGCHLD) received from 34
+2025/08/21 14:03:26 [notice] 1#1: worker process 32 exited with code 0
+2025/08/21 14:03:26 [notice] 1#1: worker process 34 exited with code 0
+2025/08/21 14:03:26 [notice] 1#1: worker process 39 exited with code 0
+2025/08/21 14:03:26 [notice] 1#1: worker process 43 exited with code 0
+2025/08/21 14:03:26 [notice] 1#1: worker process 44 exited with code 0
+2025/08/21 14:03:26 [notice] 1#1: signal 29 (SIGIO) received
+2025/08/21 14:03:26 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2025/08/21 14:03:26 [notice] 1#1: worker process 29 exited with code 0
+2025/08/21 14:03:26 [notice] 1#1: worker process 30 exited with code 0
+2025/08/21 14:03:26 [notice] 1#1: worker process 33 exited with code 0
+2025/08/21 14:03:26 [notice] 1#1: worker process 35 exited with code 0
+2025/08/21 14:03:26 [notice] 1#1: worker process 36 exited with code 0
+2025/08/21 14:03:26 [notice] 1#1: worker process 40 exited with code 0
+2025/08/21 14:03:26 [notice] 1#1: worker process 41 exited with code 0
+2025/08/21 14:03:26 [notice] 1#1: worker process 42 exited with code 0
+2025/08/21 14:03:26 [notice] 1#1: signal 29 (SIGIO) received
+2025/08/21 14:03:26 [notice] 1#1: signal 17 (SIGCHLD) received from 36
+2025/08/21 14:03:26 [notice] 1#1: signal 17 (SIGCHLD) received from 38
+2025/08/21 14:03:26 [notice] 1#1: worker process 31 exited with code 0
+2025/08/21 14:03:26 [notice] 1#1: worker process 38 exited with code 0
+2025/08/21 14:03:26 [notice] 1#1: signal 29 (SIGIO) received
+2025/08/21 14:03:37 [notice] 1#1: using the "epoll" event method
+2025/08/21 14:03:37 [notice] 1#1: nginx/1.29.1
+2025/08/21 14:03:37 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/08/21 14:03:37 [notice] 1#1: OS: Linux 5.15.167.4-microsoft-standard-WSL2
+2025/08/21 14:03:37 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/08/21 14:03:37 [notice] 1#1: start worker processes
+2025/08/21 14:03:37 [notice] 1#1: start worker process 30
+2025/08/21 14:03:37 [notice] 1#1: start worker process 31
+2025/08/21 14:03:37 [notice] 1#1: start worker process 32
+2025/08/21 14:03:37 [notice] 1#1: start worker process 33
+2025/08/21 14:03:37 [notice] 1#1: start worker process 34
+2025/08/21 14:03:37 [notice] 1#1: start worker process 35
+2025/08/21 14:03:37 [notice] 1#1: start worker process 36
+2025/08/21 14:03:37 [notice] 1#1: start worker process 37
+2025/08/21 14:03:37 [notice] 1#1: start worker process 38
+2025/08/21 14:03:37 [notice] 1#1: start worker process 39
+2025/08/21 14:03:37 [notice] 1#1: start worker process 40
+2025/08/21 14:03:37 [notice] 1#1: start worker process 41
+2025/08/21 14:03:37 [notice] 1#1: start worker process 42
+2025/08/21 14:03:37 [notice] 1#1: start worker process 43
+2025/08/21 14:03:37 [notice] 1#1: start worker process 44
+2025/08/21 14:03:37 [notice] 1#1: start worker process 45
+2025/08/21 14:03:40 [error] 30#30: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/auth/providers HTTP/1.1", upstream: "http://[::1]:3000/api/auth/providers", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:03:40 [error] 30#30: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/auth/providers HTTP/1.1", upstream: "http://127.0.0.1:3000/api/auth/providers", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:03:40 [error] 31#31: *4 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/auth/error HTTP/1.1", upstream: "http://[::1]:3000/api/auth/error", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:03:40 [error] 31#31: *4 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/auth/error HTTP/1.1", upstream: "http://127.0.0.1:3000/api/auth/error", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:03:40 [error] 30#30: *1 no live upstreams while connecting to upstream, client: 172.18.0.1, server: localhost, request: "POST /api/auth/_log HTTP/1.1", upstream: "http://localhost/api/auth/_log", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:03:43 [error] 30#30: *1 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/%5Broot-of-the-server%5D__ba4ce2ff._.css HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/%5Broot-of-the-server%5D__ba4ce2ff._.css", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:03:43 [error] 31#31: *4 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/node_modules_%40swc_helpers_cjs_8e433861._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/node_modules_%40swc_helpers_cjs_8e433861._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:03:43 [error] 34#34: *15 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/_e69f0d32._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/_e69f0d32._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:03:43 [error] 35#35: *16 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/node_modules_46cbe555._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/node_modules_46cbe555._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:03:43 [error] 32#32: *11 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/src_6bf3a08d._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/src_6bf3a08d._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:03:43 [error] 30#30: *1 no live upstreams while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/auth/session HTTP/1.1", upstream: "http://localhost/api/auth/session", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:03:43 [error] 33#33: *13 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /icons/level.svg HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/icons/level.svg", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:03:43 [error] 30#30: *1 no live upstreams while connecting to upstream, client: 172.18.0.1, server: localhost, request: "POST /api/auth/_log HTTP/1.1", upstream: "http://localhost/api/auth/_log", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:03:49 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/08/21 14:03:49 [notice] 30#30: gracefully shutting down
+2025/08/21 14:03:49 [notice] 34#34: gracefully shutting down
+2025/08/21 14:03:49 [notice] 33#33: gracefully shutting down
+2025/08/21 14:03:49 [notice] 35#35: gracefully shutting down
+2025/08/21 14:03:49 [notice] 31#31: gracefully shutting down
+2025/08/21 14:03:49 [notice] 38#38: gracefully shutting down
+2025/08/21 14:03:49 [notice] 41#41: gracefully shutting down
+2025/08/21 14:03:49 [notice] 44#44: gracefully shutting down
+2025/08/21 14:03:49 [notice] 43#43: gracefully shutting down
+2025/08/21 14:03:49 [notice] 45#45: gracefully shutting down
+2025/08/21 14:03:49 [notice] 32#32: gracefully shutting down
+2025/08/21 14:03:49 [notice] 37#37: gracefully shutting down
+2025/08/21 14:03:49 [notice] 39#39: gracefully shutting down
+2025/08/21 14:03:49 [notice] 42#42: gracefully shutting down
+2025/08/21 14:03:49 [notice] 36#36: gracefully shutting down
+2025/08/21 14:03:49 [notice] 40#40: gracefully shutting down
+2025/08/21 14:03:49 [notice] 30#30: exiting
+2025/08/21 14:03:49 [notice] 34#34: exiting
+2025/08/21 14:03:49 [notice] 33#33: exiting
+2025/08/21 14:03:49 [notice] 35#35: exiting
+2025/08/21 14:03:49 [notice] 31#31: exiting
+2025/08/21 14:03:49 [notice] 38#38: exiting
+2025/08/21 14:03:49 [notice] 41#41: exiting
+2025/08/21 14:03:49 [notice] 44#44: exiting
+2025/08/21 14:03:49 [notice] 43#43: exiting
+2025/08/21 14:03:49 [notice] 45#45: exiting
+2025/08/21 14:03:49 [notice] 32#32: exiting
+2025/08/21 14:03:49 [notice] 37#37: exiting
+2025/08/21 14:03:49 [notice] 39#39: exiting
+2025/08/21 14:03:49 [notice] 42#42: exiting
+2025/08/21 14:03:49 [notice] 40#40: exiting
+2025/08/21 14:03:49 [notice] 30#30: exit
+2025/08/21 14:03:49 [notice] 34#34: exit
+2025/08/21 14:03:49 [notice] 33#33: exit
+2025/08/21 14:03:49 [notice] 35#35: exit
+2025/08/21 14:03:49 [notice] 31#31: exit
+2025/08/21 14:03:49 [notice] 38#38: exit
+2025/08/21 14:03:49 [notice] 41#41: exit
+2025/08/21 14:03:49 [notice] 44#44: exit
+2025/08/21 14:03:49 [notice] 43#43: exit
+2025/08/21 14:03:49 [notice] 45#45: exit
+2025/08/21 14:03:49 [notice] 32#32: exit
+2025/08/21 14:03:49 [notice] 37#37: exit
+2025/08/21 14:03:49 [notice] 39#39: exit
+2025/08/21 14:03:49 [notice] 42#42: exit
+2025/08/21 14:03:49 [notice] 40#40: exit
+2025/08/21 14:03:49 [notice] 1#1: signal 17 (SIGCHLD) received from 34
+2025/08/21 14:03:49 [notice] 1#1: worker process 34 exited with code 0
+2025/08/21 14:03:49 [notice] 1#1: signal 29 (SIGIO) received
+2025/08/21 14:03:49 [notice] 1#1: signal 17 (SIGCHLD) received from 44
+2025/08/21 14:03:49 [notice] 1#1: worker process 30 exited with code 0
+2025/08/21 14:03:49 [notice] 1#1: worker process 31 exited with code 0
+2025/08/21 14:03:49 [notice] 1#1: worker process 32 exited with code 0
+2025/08/21 14:03:49 [notice] 1#1: worker process 33 exited with code 0
+2025/08/21 14:03:49 [notice] 1#1: worker process 35 exited with code 0
+2025/08/21 14:03:49 [notice] 1#1: worker process 37 exited with code 0
+2025/08/21 14:03:49 [notice] 1#1: worker process 38 exited with code 0
+2025/08/21 14:03:49 [notice] 1#1: worker process 39 exited with code 0
+2025/08/21 14:03:49 [notice] 1#1: worker process 40 exited with code 0
+2025/08/21 14:03:49 [notice] 1#1: worker process 41 exited with code 0
+2025/08/21 14:03:49 [notice] 1#1: worker process 42 exited with code 0
+2025/08/21 14:03:49 [notice] 1#1: worker process 43 exited with code 0
+2025/08/21 14:03:49 [notice] 1#1: worker process 44 exited with code 0
+2025/08/21 14:03:49 [notice] 1#1: worker process 45 exited with code 0
+2025/08/21 14:03:49 [notice] 1#1: signal 29 (SIGIO) received
+2025/08/21 14:03:49 [notice] 1#1: signal 17 (SIGCHLD) received from 33
+2025/08/21 14:04:00 [notice] 1#1: using the "epoll" event method
+2025/08/21 14:04:00 [notice] 1#1: nginx/1.29.1
+2025/08/21 14:04:00 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/08/21 14:04:00 [notice] 1#1: OS: Linux 5.15.167.4-microsoft-standard-WSL2
+2025/08/21 14:04:00 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/08/21 14:04:00 [notice] 1#1: start worker processes
+2025/08/21 14:04:00 [notice] 1#1: start worker process 29
+2025/08/21 14:04:00 [notice] 1#1: start worker process 30
+2025/08/21 14:04:00 [notice] 1#1: start worker process 31
+2025/08/21 14:04:00 [notice] 1#1: start worker process 32
+2025/08/21 14:04:00 [notice] 1#1: start worker process 33
+2025/08/21 14:04:00 [notice] 1#1: start worker process 34
+2025/08/21 14:04:00 [notice] 1#1: start worker process 35
+2025/08/21 14:04:00 [notice] 1#1: start worker process 36
+2025/08/21 14:04:00 [notice] 1#1: start worker process 37
+2025/08/21 14:04:00 [notice] 1#1: start worker process 38
+2025/08/21 14:04:00 [notice] 1#1: start worker process 39
+2025/08/21 14:04:00 [notice] 1#1: start worker process 40
+2025/08/21 14:04:00 [notice] 1#1: start worker process 41
+2025/08/21 14:04:00 [notice] 1#1: start worker process 42
+2025/08/21 14:04:00 [notice] 1#1: start worker process 43
+2025/08/21 14:04:00 [notice] 1#1: start worker process 44
+2025/08/21 14:05:19 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/08/21 14:05:19 [notice] 29#29: gracefully shutting down
+2025/08/21 14:05:19 [notice] 29#29: exiting
+2025/08/21 14:05:19 [notice] 30#30: gracefully shutting down
+2025/08/21 14:05:19 [notice] 32#32: gracefully shutting down
+2025/08/21 14:05:19 [notice] 31#31: gracefully shutting down
+2025/08/21 14:05:19 [notice] 33#33: gracefully shutting down
+2025/08/21 14:05:19 [notice] 35#35: gracefully shutting down
+2025/08/21 14:05:19 [notice] 36#36: gracefully shutting down
+2025/08/21 14:05:19 [notice] 34#34: gracefully shutting down
+2025/08/21 14:05:19 [notice] 38#38: gracefully shutting down
+2025/08/21 14:05:19 [notice] 39#39: gracefully shutting down
+2025/08/21 14:05:19 [notice] 37#37: gracefully shutting down
+2025/08/21 14:05:19 [notice] 40#40: gracefully shutting down
+2025/08/21 14:05:19 [notice] 41#41: gracefully shutting down
+2025/08/21 14:05:19 [notice] 42#42: gracefully shutting down
+2025/08/21 14:05:19 [notice] 42#42: exiting
+2025/08/21 14:05:19 [notice] 43#43: gracefully shutting down
+2025/08/21 14:05:19 [notice] 44#44: gracefully shutting down
+2025/08/21 14:05:19 [notice] 44#44: exiting
+2025/08/21 14:05:19 [notice] 29#29: exit
+2025/08/21 14:05:19 [notice] 30#30: exiting
+2025/08/21 14:05:19 [notice] 32#32: exiting
+2025/08/21 14:05:19 [notice] 31#31: exiting
+2025/08/21 14:05:19 [notice] 33#33: exiting
+2025/08/21 14:05:19 [notice] 35#35: exiting
+2025/08/21 14:05:19 [notice] 36#36: exiting
+2025/08/21 14:05:19 [notice] 34#34: exiting
+2025/08/21 14:05:19 [notice] 38#38: exiting
+2025/08/21 14:05:19 [notice] 39#39: exiting
+2025/08/21 14:05:19 [notice] 37#37: exiting
+2025/08/21 14:05:19 [notice] 40#40: exiting
+2025/08/21 14:05:19 [notice] 41#41: exiting
+2025/08/21 14:05:19 [notice] 42#42: exit
+2025/08/21 14:05:19 [notice] 43#43: exiting
+2025/08/21 14:05:19 [notice] 44#44: exit
+2025/08/21 14:05:19 [notice] 30#30: exit
+2025/08/21 14:05:19 [notice] 32#32: exit
+2025/08/21 14:05:19 [notice] 31#31: exit
+2025/08/21 14:05:19 [notice] 33#33: exit
+2025/08/21 14:05:19 [notice] 35#35: exit
+2025/08/21 14:05:19 [notice] 36#36: exit
+2025/08/21 14:05:19 [notice] 34#34: exit
+2025/08/21 14:05:19 [notice] 38#38: exit
+2025/08/21 14:05:19 [notice] 39#39: exit
+2025/08/21 14:05:19 [notice] 37#37: exit
+2025/08/21 14:05:19 [notice] 40#40: exit
+2025/08/21 14:05:19 [notice] 41#41: exit
+2025/08/21 14:05:19 [notice] 43#43: exit
+2025/08/21 14:05:19 [notice] 1#1: signal 17 (SIGCHLD) received from 32
+2025/08/21 14:05:19 [notice] 1#1: worker process 29 exited with code 0
+2025/08/21 14:05:19 [notice] 1#1: worker process 30 exited with code 0
+2025/08/21 14:05:19 [notice] 1#1: worker process 32 exited with code 0
+2025/08/21 14:05:19 [notice] 1#1: worker process 33 exited with code 0
+2025/08/21 14:05:19 [notice] 1#1: worker process 36 exited with code 0
+2025/08/21 14:05:19 [notice] 1#1: worker process 40 exited with code 0
+2025/08/21 14:05:19 [notice] 1#1: worker process 43 exited with code 0
+2025/08/21 14:05:19 [notice] 1#1: signal 29 (SIGIO) received
+2025/08/21 14:05:19 [notice] 1#1: signal 17 (SIGCHLD) received from 38
+2025/08/21 14:05:19 [notice] 1#1: worker process 31 exited with code 0
+2025/08/21 14:05:19 [notice] 1#1: worker process 37 exited with code 0
+2025/08/21 14:05:19 [notice] 1#1: worker process 38 exited with code 0
+2025/08/21 14:05:19 [notice] 1#1: signal 29 (SIGIO) received
+2025/08/21 14:05:19 [notice] 1#1: signal 17 (SIGCHLD) received from 31
+2025/08/21 14:05:19 [notice] 1#1: signal 17 (SIGCHLD) received from 44
+2025/08/21 14:05:19 [notice] 1#1: worker process 35 exited with code 0
+2025/08/21 14:05:19 [notice] 1#1: worker process 44 exited with code 0
+2025/08/21 14:05:19 [notice] 1#1: signal 29 (SIGIO) received
+2025/08/21 14:05:19 [notice] 1#1: signal 17 (SIGCHLD) received from 39
+2025/08/21 14:05:19 [notice] 1#1: worker process 34 exited with code 0
+2025/08/21 14:05:19 [notice] 1#1: worker process 39 exited with code 0
+2025/08/21 14:05:19 [notice] 1#1: worker process 41 exited with code 0
+2025/08/21 14:05:19 [notice] 1#1: worker process 42 exited with code 0
+2025/08/21 14:05:19 [notice] 1#1: exit
+2025/08/21 14:05:20 [notice] 1#1: using the "epoll" event method
+2025/08/21 14:05:20 [notice] 1#1: nginx/1.29.1
+2025/08/21 14:05:20 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/08/21 14:05:20 [notice] 1#1: OS: Linux 5.15.167.4-microsoft-standard-WSL2
+2025/08/21 14:05:20 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/08/21 14:05:20 [notice] 1#1: start worker processes
+2025/08/21 14:05:20 [notice] 1#1: start worker process 29
+2025/08/21 14:05:20 [notice] 1#1: start worker process 30
+2025/08/21 14:05:20 [notice] 1#1: start worker process 31
+2025/08/21 14:05:20 [notice] 1#1: start worker process 32
+2025/08/21 14:05:20 [notice] 1#1: start worker process 33
+2025/08/21 14:05:20 [notice] 1#1: start worker process 34
+2025/08/21 14:05:20 [notice] 1#1: start worker process 35
+2025/08/21 14:05:20 [notice] 1#1: start worker process 36
+2025/08/21 14:05:20 [notice] 1#1: start worker process 37
+2025/08/21 14:05:20 [notice] 1#1: start worker process 38
+2025/08/21 14:05:20 [notice] 1#1: start worker process 39
+2025/08/21 14:05:20 [notice] 1#1: start worker process 40
+2025/08/21 14:05:20 [notice] 1#1: start worker process 41
+2025/08/21 14:05:20 [notice] 1#1: start worker process 42
+2025/08/21 14:05:20 [notice] 1#1: start worker process 43
+2025/08/21 14:05:20 [notice] 1#1: start worker process 44
+2025/08/21 14:05:55 [error] 30#30: *3 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/%5Broot-of-the-server%5D__ba4ce2ff._.css HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/%5Broot-of-the-server%5D__ba4ce2ff._.css", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:05:55 [error] 31#31: *5 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/node_modules_next_dist_445d8acf._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/node_modules_next_dist_445d8acf._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:05:55 [error] 34#34: *12 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/node_modules_46cbe555._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/node_modules_46cbe555._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:05:55 [error] 35#35: *15 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/src_app_layout_tsx_68b267f5._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/src_app_layout_tsx_68b267f5._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:05:55 [error] 32#32: *9 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/node_modules_50cb4983._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/node_modules_50cb4983._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:05:55 [error] 33#33: *11 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/image?url=%2Fwongnok-with-name-logo.png&w=384&q=75 HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/image?url=%2Fwongnok-with-name-logo.png&w=384&q=75", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:05:55 [error] 34#34: *12 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/auth/session HTTP/1.1", upstream: "http://[::1]:3000/api/auth/session", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:05:55 [error] 34#34: *12 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/auth/session HTTP/1.1", upstream: "http://127.0.0.1:3000/api/auth/session", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:05:55 [error] 34#34: *12 no live upstreams while connecting to upstream, client: 172.18.0.1, server: localhost, request: "POST /api/auth/_log HTTP/1.1", upstream: "http://localhost/api/auth/_log", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:05:56 [error] 33#33: *11 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/auth/providers HTTP/1.1", upstream: "http://[::1]:3000/api/auth/providers", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:05:56 [error] 33#33: *11 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/auth/providers HTTP/1.1", upstream: "http://127.0.0.1:3000/api/auth/providers", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:05:56 [error] 35#35: *15 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/auth/error HTTP/1.1", upstream: "http://[::1]:3000/api/auth/error", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:05:56 [error] 35#35: *15 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /api/auth/error HTTP/1.1", upstream: "http://127.0.0.1:3000/api/auth/error", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:05:56 [error] 33#33: *11 no live upstreams while connecting to upstream, client: 172.18.0.1, server: localhost, request: "POST /api/auth/_log HTTP/1.1", upstream: "http://localhost/api/auth/_log", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:07:19 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/08/21 14:07:19 [notice] 29#29: gracefully shutting down
+2025/08/21 14:07:19 [notice] 30#30: gracefully shutting down
+2025/08/21 14:07:19 [notice] 31#31: gracefully shutting down
+2025/08/21 14:07:19 [notice] 32#32: gracefully shutting down
+2025/08/21 14:07:19 [notice] 33#33: gracefully shutting down
+2025/08/21 14:07:19 [notice] 34#34: gracefully shutting down
+2025/08/21 14:07:19 [notice] 35#35: gracefully shutting down
+2025/08/21 14:07:19 [notice] 36#36: gracefully shutting down
+2025/08/21 14:07:19 [notice] 39#39: gracefully shutting down
+2025/08/21 14:07:19 [notice] 40#40: gracefully shutting down
+2025/08/21 14:07:19 [notice] 41#41: gracefully shutting down
+2025/08/21 14:07:19 [notice] 38#38: gracefully shutting down
+2025/08/21 14:07:19 [notice] 43#43: gracefully shutting down
+2025/08/21 14:07:19 [notice] 37#37: gracefully shutting down
+2025/08/21 14:07:19 [notice] 44#44: gracefully shutting down
+2025/08/21 14:07:19 [notice] 44#44: exiting
+2025/08/21 14:07:19 [notice] 42#42: gracefully shutting down
+2025/08/21 14:07:19 [notice] 29#29: exiting
+2025/08/21 14:07:19 [notice] 30#30: exiting
+2025/08/21 14:07:19 [notice] 31#31: exiting
+2025/08/21 14:07:19 [notice] 32#32: exiting
+2025/08/21 14:07:19 [notice] 33#33: exiting
+2025/08/21 14:07:19 [notice] 34#34: exiting
+2025/08/21 14:07:19 [notice] 35#35: exiting
+2025/08/21 14:07:19 [notice] 36#36: exiting
+2025/08/21 14:07:19 [notice] 39#39: exiting
+2025/08/21 14:07:19 [notice] 40#40: exiting
+2025/08/21 14:07:19 [notice] 41#41: exiting
+2025/08/21 14:07:19 [notice] 38#38: exiting
+2025/08/21 14:07:19 [notice] 43#43: exiting
+2025/08/21 14:07:19 [notice] 37#37: exiting
+2025/08/21 14:07:19 [notice] 44#44: exit
+2025/08/21 14:07:19 [notice] 42#42: exiting
+2025/08/21 14:07:19 [notice] 29#29: exit
+2025/08/21 14:07:19 [notice] 30#30: exit
+2025/08/21 14:07:19 [notice] 31#31: exit
+2025/08/21 14:07:19 [notice] 32#32: exit
+2025/08/21 14:07:19 [notice] 33#33: exit
+2025/08/21 14:07:19 [notice] 34#34: exit
+2025/08/21 14:07:19 [notice] 35#35: exit
+2025/08/21 14:07:19 [notice] 36#36: exit
+2025/08/21 14:07:19 [notice] 39#39: exit
+2025/08/21 14:07:19 [notice] 40#40: exit
+2025/08/21 14:07:19 [notice] 41#41: exit
+2025/08/21 14:07:19 [notice] 38#38: exit
+2025/08/21 14:07:19 [notice] 43#43: exit
+2025/08/21 14:07:19 [notice] 37#37: exit
+2025/08/21 14:07:19 [notice] 42#42: exit
+2025/08/21 14:07:19 [notice] 1#1: signal 17 (SIGCHLD) received from 37
+2025/08/21 14:07:19 [notice] 1#1: worker process 37 exited with code 0
+2025/08/21 14:07:19 [notice] 1#1: worker process 38 exited with code 0
+2025/08/21 14:07:19 [notice] 1#1: signal 29 (SIGIO) received
+2025/08/21 14:07:19 [notice] 1#1: signal 17 (SIGCHLD) received from 34
+2025/08/21 14:07:19 [notice] 1#1: worker process 29 exited with code 0
+2025/08/21 14:07:19 [notice] 1#1: worker process 31 exited with code 0
+2025/08/21 14:07:19 [notice] 1#1: worker process 32 exited with code 0
+2025/08/21 14:07:19 [notice] 1#1: worker process 33 exited with code 0
+2025/08/21 14:07:19 [notice] 1#1: worker process 34 exited with code 0
+2025/08/21 14:07:19 [notice] 1#1: worker process 35 exited with code 0
+2025/08/21 14:07:19 [notice] 1#1: worker process 41 exited with code 0
+2025/08/21 14:07:19 [notice] 1#1: worker process 42 exited with code 0
+2025/08/21 14:07:19 [notice] 1#1: worker process 43 exited with code 0
+2025/08/21 14:07:19 [notice] 1#1: worker process 44 exited with code 0
+2025/08/21 14:07:19 [notice] 1#1: signal 29 (SIGIO) received
+2025/08/21 14:07:19 [notice] 1#1: signal 17 (SIGCHLD) received from 43
+2025/08/21 14:07:19 [notice] 1#1: signal 17 (SIGCHLD) received from 40
+2025/08/21 14:07:19 [notice] 1#1: worker process 30 exited with code 0
+2025/08/21 14:07:19 [notice] 1#1: worker process 36 exited with code 0
+2025/08/21 14:07:19 [notice] 1#1: worker process 39 exited with code 0
+2025/08/21 14:07:19 [notice] 1#1: worker process 40 exited with code 0
+2025/08/21 14:07:19 [notice] 1#1: exit
+2025/08/21 14:07:20 [notice] 1#1: using the "epoll" event method
+2025/08/21 14:07:20 [notice] 1#1: nginx/1.29.1
+2025/08/21 14:07:20 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/08/21 14:07:20 [notice] 1#1: OS: Linux 5.15.167.4-microsoft-standard-WSL2
+2025/08/21 14:07:20 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/08/21 14:07:20 [notice] 1#1: start worker processes
+2025/08/21 14:07:20 [notice] 1#1: start worker process 29
+2025/08/21 14:07:20 [notice] 1#1: start worker process 30
+2025/08/21 14:07:20 [notice] 1#1: start worker process 31
+2025/08/21 14:07:20 [notice] 1#1: start worker process 32
+2025/08/21 14:07:20 [notice] 1#1: start worker process 33
+2025/08/21 14:07:20 [notice] 1#1: start worker process 34
+2025/08/21 14:07:20 [notice] 1#1: start worker process 35
+2025/08/21 14:07:20 [notice] 1#1: start worker process 36
+2025/08/21 14:07:20 [notice] 1#1: start worker process 37
+2025/08/21 14:07:20 [notice] 1#1: start worker process 38
+2025/08/21 14:07:20 [notice] 1#1: start worker process 39
+2025/08/21 14:07:20 [notice] 1#1: start worker process 40
+2025/08/21 14:07:20 [notice] 1#1: start worker process 41
+2025/08/21 14:07:20 [notice] 1#1: start worker process 42
+2025/08/21 14:07:20 [notice] 1#1: start worker process 43
+2025/08/21 14:07:20 [notice] 1#1: start worker process 44
+2025/08/21 14:07:24 [error] 29#29: *1 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/%5Broot-of-the-server%5D__ba4ce2ff._.css HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/%5Broot-of-the-server%5D__ba4ce2ff._.css", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:07:24 [error] 30#30: *6 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/node_modules_next_dist_compiled_next-devtools_index_d575f738.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/node_modules_next_dist_compiled_next-devtools_index_d575f738.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:07:24 [error] 31#31: *12 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/_01f48b92._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/_01f48b92._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:07:24 [error] 33#33: *26 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/node_modules_next_dist_client_components_builtin_global-error_6e7bbb6e.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/node_modules_next_dist_client_components_builtin_global-error_6e7bbb6e.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:07:25 [error] 32#32: *24 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/image?url=https%3A%2F%2Ffoodish-api.com%2Fimages%2Frice%2Frice35.jpg&w=1920&q=75 HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/image?url=https%3A%2F%2Ffoodish-api.com%2Fimages%2Frice%2Frice35.jpg&w=1920&q=75", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:07:25 [error] 34#34: *28 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/image?url=https%3A%2F%2Ffoodish-api.com%2Fimages%2Frice%2Frice6.jpg&w=1920&q=75 HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/image?url=https%3A%2F%2Ffoodish-api.com%2Fimages%2Frice%2Frice6.jpg&w=1920&q=75", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:13:37 [error] 38#38: *91 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/%5Broot-of-the-server%5D__ba4ce2ff._.css HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/%5Broot-of-the-server%5D__ba4ce2ff._.css", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:13:37 [error] 39#39: *95 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/node_modules_next_dist_compiled_react-dom_1f56dc06._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_1f56dc06._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:13:37 [error] 40#40: *100 connect() to [fdc4:f303:9324::254]:3000 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /_next/static/chunks/_01f48b92._.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:3000/_next/static/chunks/_01f48b92._.js", host: "localhost", referrer: "http://localhost/"
+2025/08/21 14:13:39 [error] 39#39: *95 connect() to [fdc4:f303:9324::254]:8080 failed (101: Network unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /swagger/swagger-ui-bundle.js HTTP/1.1", upstream: "http://[fdc4:f303:9324::254]:8080/swagger/swagger-ui-bundle.js", host: "localhost", referrer: "http://localhost/swagger/index.html"
+2025/08/21 14:19:15 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/08/21 14:19:15 [notice] 29#29: gracefully shutting down
+2025/08/21 14:19:15 [notice] 39#39: gracefully shutting down
+2025/08/21 14:19:15 [notice] 30#30: gracefully shutting down
+2025/08/21 14:19:15 [notice] 33#33: gracefully shutting down
+2025/08/21 14:19:15 [notice] 32#32: gracefully shutting down
+2025/08/21 14:19:15 [notice] 34#34: gracefully shutting down
+2025/08/21 14:19:15 [notice] 31#31: gracefully shutting down
+2025/08/21 14:19:15 [notice] 35#35: gracefully shutting down
+2025/08/21 14:19:15 [notice] 36#36: gracefully shutting down
+2025/08/21 14:19:15 [notice] 37#37: gracefully shutting down
+2025/08/21 14:19:15 [notice] 38#38: gracefully shutting down
+2025/08/21 14:19:15 [notice] 40#40: gracefully shutting down
+2025/08/21 14:19:15 [notice] 42#42: gracefully shutting down
+2025/08/21 14:19:15 [notice] 43#43: gracefully shutting down
+2025/08/21 14:19:15 [notice] 41#41: gracefully shutting down
+2025/08/21 14:19:15 [notice] 29#29: exiting
+2025/08/21 14:19:15 [notice] 44#44: gracefully shutting down
+2025/08/21 14:19:15 [notice] 39#39: exiting
+2025/08/21 14:19:15 [notice] 30#30: exiting
+2025/08/21 14:19:15 [notice] 33#33: exiting
+2025/08/21 14:19:15 [notice] 32#32: exiting
+2025/08/21 14:19:15 [notice] 34#34: exiting
+2025/08/21 14:19:15 [notice] 31#31: exiting
+2025/08/21 14:19:15 [notice] 35#35: exiting
+2025/08/21 14:19:15 [notice] 36#36: exiting
+2025/08/21 14:19:15 [notice] 37#37: exiting
+2025/08/21 14:19:15 [notice] 38#38: exiting
+2025/08/21 14:19:15 [notice] 40#40: exiting
+2025/08/21 14:19:15 [notice] 42#42: exiting
+2025/08/21 14:19:15 [notice] 43#43: exiting
+2025/08/21 14:19:15 [notice] 41#41: exiting
+2025/08/21 14:19:15 [notice] 29#29: exit
+2025/08/21 14:19:15 [notice] 44#44: exiting
+2025/08/21 14:19:15 [notice] 39#39: exit
+2025/08/21 14:19:15 [notice] 30#30: exit
+2025/08/21 14:19:15 [notice] 33#33: exit
+2025/08/21 14:19:15 [notice] 32#32: exit
+2025/08/21 14:19:15 [notice] 34#34: exit
+2025/08/21 14:19:15 [notice] 31#31: exit
+2025/08/21 14:19:15 [notice] 35#35: exit
+2025/08/21 14:19:15 [notice] 36#36: exit
+2025/08/21 14:19:15 [notice] 37#37: exit
+2025/08/21 14:19:15 [notice] 38#38: exit
+2025/08/21 14:19:15 [notice] 40#40: exit
+2025/08/21 14:19:15 [notice] 42#42: exit
+2025/08/21 14:19:15 [notice] 43#43: exit
+2025/08/21 14:19:15 [notice] 41#41: exit
+2025/08/21 14:19:15 [notice] 44#44: exit
+2025/08/21 14:19:15 [notice] 1#1: signal 17 (SIGCHLD) received from 40
+2025/08/21 14:19:15 [notice] 1#1: worker process 29 exited with code 0
+2025/08/21 14:19:15 [notice] 1#1: worker process 30 exited with code 0
+2025/08/21 14:19:15 [notice] 1#1: worker process 31 exited with code 0
+2025/08/21 14:19:15 [notice] 1#1: worker process 32 exited with code 0
+2025/08/21 14:19:15 [notice] 1#1: worker process 33 exited with code 0
+2025/08/21 14:19:15 [notice] 1#1: worker process 34 exited with code 0
+2025/08/21 14:19:15 [notice] 1#1: worker process 35 exited with code 0
+2025/08/21 14:19:15 [notice] 1#1: worker process 36 exited with code 0
+2025/08/21 14:19:15 [notice] 1#1: worker process 37 exited with code 0
+2025/08/21 14:19:15 [notice] 1#1: worker process 38 exited with code 0
+2025/08/21 14:19:15 [notice] 1#1: worker process 39 exited with code 0
+2025/08/21 14:19:15 [notice] 1#1: worker process 40 exited with code 0
+2025/08/21 14:19:15 [notice] 1#1: worker process 41 exited with code 0
+2025/08/21 14:19:15 [notice] 1#1: worker process 42 exited with code 0
+2025/08/21 14:19:15 [notice] 1#1: worker process 43 exited with code 0
+2025/08/21 14:19:15 [notice] 1#1: worker process 44 exited with code 0
+2025/08/21 14:19:15 [notice] 1#1: exit
+2025/08/21 14:19:38 [notice] 1#1: using the "epoll" event method
+2025/08/21 14:19:38 [notice] 1#1: nginx/1.29.1
+2025/08/21 14:19:38 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/08/21 14:19:38 [notice] 1#1: OS: Linux 5.15.167.4-microsoft-standard-WSL2
+2025/08/21 14:19:38 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/08/21 14:19:38 [notice] 1#1: start worker processes
+2025/08/21 14:19:38 [notice] 1#1: start worker process 30
+2025/08/21 14:19:38 [notice] 1#1: start worker process 31
+2025/08/21 14:19:38 [notice] 1#1: start worker process 32
+2025/08/21 14:19:38 [notice] 1#1: start worker process 33
+2025/08/21 14:19:38 [notice] 1#1: start worker process 34
+2025/08/21 14:19:38 [notice] 1#1: start worker process 35
+2025/08/21 14:19:38 [notice] 1#1: start worker process 36
+2025/08/21 14:19:38 [notice] 1#1: start worker process 37
+2025/08/21 14:19:38 [notice] 1#1: start worker process 38
+2025/08/21 14:19:38 [notice] 1#1: start worker process 39
+2025/08/21 14:19:38 [notice] 1#1: start worker process 40
+2025/08/21 14:19:38 [notice] 1#1: start worker process 41
+2025/08/21 14:19:38 [notice] 1#1: start worker process 42
+2025/08/21 14:19:38 [notice] 1#1: start worker process 43
+2025/08/21 14:19:38 [notice] 1#1: start worker process 44
+2025/08/21 14:19:38 [notice] 1#1: start worker process 45
+2025/08/21 14:20:49 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/08/21 14:20:49 [notice] 30#30: gracefully shutting down
+2025/08/21 14:20:49 [notice] 32#32: gracefully shutting down
+2025/08/21 14:20:49 [notice] 34#34: gracefully shutting down
+2025/08/21 14:20:49 [notice] 35#35: gracefully shutting down
+2025/08/21 14:20:49 [notice] 36#36: gracefully shutting down
+2025/08/21 14:20:49 [notice] 39#39: gracefully shutting down
+2025/08/21 14:20:49 [notice] 33#33: gracefully shutting down
+2025/08/21 14:20:49 [notice] 40#40: gracefully shutting down
+2025/08/21 14:20:49 [notice] 42#42: gracefully shutting down
+2025/08/21 14:20:49 [notice] 43#43: gracefully shutting down
+2025/08/21 14:20:49 [notice] 37#37: gracefully shutting down
+2025/08/21 14:20:49 [notice] 31#31: gracefully shutting down
+2025/08/21 14:20:49 [notice] 41#41: gracefully shutting down
+2025/08/21 14:20:49 [notice] 44#44: gracefully shutting down
+2025/08/21 14:20:49 [notice] 38#38: gracefully shutting down
+2025/08/21 14:20:49 [notice] 45#45: gracefully shutting down
+2025/08/21 14:20:49 [notice] 30#30: exiting
+2025/08/21 14:20:49 [notice] 32#32: exiting
+2025/08/21 14:20:49 [notice] 34#34: exiting
+2025/08/21 14:20:49 [notice] 35#35: exiting
+2025/08/21 14:20:49 [notice] 36#36: exiting
+2025/08/21 14:20:49 [notice] 39#39: exiting
+2025/08/21 14:20:49 [notice] 33#33: exiting
+2025/08/21 14:20:49 [notice] 40#40: exiting
+2025/08/21 14:20:49 [notice] 42#42: exiting
+2025/08/21 14:20:49 [notice] 43#43: exiting
+2025/08/21 14:20:49 [notice] 37#37: exiting
+2025/08/21 14:20:49 [notice] 31#31: exiting
+2025/08/21 14:20:49 [notice] 41#41: exiting
+2025/08/21 14:20:49 [notice] 44#44: exiting
+2025/08/21 14:20:49 [notice] 38#38: exiting
+2025/08/21 14:20:49 [notice] 45#45: exiting
+2025/08/21 14:20:49 [notice] 30#30: exit
+2025/08/21 14:20:49 [notice] 32#32: exit
+2025/08/21 14:20:49 [notice] 34#34: exit
+2025/08/21 14:20:49 [notice] 35#35: exit
+2025/08/21 14:20:49 [notice] 36#36: exit
+2025/08/21 14:20:49 [notice] 39#39: exit
+2025/08/21 14:20:49 [notice] 33#33: exit
+2025/08/21 14:20:49 [notice] 40#40: exit
+2025/08/21 14:20:49 [notice] 42#42: exit
+2025/08/21 14:20:49 [notice] 43#43: exit
+2025/08/21 14:20:49 [notice] 37#37: exit
+2025/08/21 14:20:49 [notice] 31#31: exit
+2025/08/21 14:20:49 [notice] 41#41: exit
+2025/08/21 14:20:49 [notice] 44#44: exit
+2025/08/21 14:20:49 [notice] 38#38: exit
+2025/08/21 14:20:49 [notice] 45#45: exit
+2025/08/21 14:20:49 [notice] 1#1: signal 17 (SIGCHLD) received from 34
+2025/08/21 14:20:49 [notice] 1#1: worker process 31 exited with code 0
+2025/08/21 14:20:49 [notice] 1#1: worker process 34 exited with code 0
+2025/08/21 14:20:49 [notice] 1#1: worker process 36 exited with code 0
+2025/08/21 14:20:49 [notice] 1#1: worker process 37 exited with code 0
+2025/08/21 14:20:49 [notice] 1#1: worker process 39 exited with code 0
+2025/08/21 14:20:49 [notice] 1#1: worker process 40 exited with code 0
+2025/08/21 14:20:49 [notice] 1#1: worker process 42 exited with code 0
+2025/08/21 14:20:49 [notice] 1#1: worker process 44 exited with code 0
+2025/08/21 14:20:49 [notice] 1#1: worker process 45 exited with code 0
+2025/08/21 14:20:49 [notice] 1#1: signal 29 (SIGIO) received
+2025/08/21 14:20:49 [notice] 1#1: signal 17 (SIGCHLD) received from 31
+2025/08/21 14:20:49 [notice] 1#1: signal 17 (SIGCHLD) received from 43
+2025/08/21 14:20:49 [notice] 1#1: worker process 43 exited with code 0
+2025/08/21 14:20:49 [notice] 1#1: signal 29 (SIGIO) received
+2025/08/21 14:20:49 [notice] 1#1: signal 17 (SIGCHLD) received from 32
+2025/08/21 14:20:49 [notice] 1#1: worker process 30 exited with code 0
+2025/08/21 14:20:49 [notice] 1#1: worker process 32 exited with code 0
+2025/08/21 14:20:49 [notice] 1#1: worker process 33 exited with code 0
+2025/08/21 14:20:49 [notice] 1#1: worker process 41 exited with code 0
+2025/08/21 14:20:49 [notice] 1#1: signal 29 (SIGIO) received
+2025/08/21 14:20:49 [notice] 1#1: signal 17 (SIGCHLD) received from 35
+2025/08/21 14:20:49 [notice] 1#1: worker process 35 exited with code 0
+2025/08/21 14:20:49 [notice] 1#1: worker process 38 exited with code 0
+2025/08/21 14:20:49 [notice] 1#1: exit
+2025/08/21 14:23:32 [notice] 1#1: using the "epoll" event method
+2025/08/21 14:23:32 [notice] 1#1: nginx/1.29.1
+2025/08/21 14:23:32 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/08/21 14:23:32 [notice] 1#1: OS: Linux 5.15.167.4-microsoft-standard-WSL2
+2025/08/21 14:23:32 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/08/21 14:23:32 [notice] 1#1: start worker processes
+2025/08/21 14:23:32 [notice] 1#1: start worker process 29
+2025/08/21 14:23:32 [notice] 1#1: start worker process 30
+2025/08/21 14:23:32 [notice] 1#1: start worker process 31
+2025/08/21 14:23:32 [notice] 1#1: start worker process 32
+2025/08/21 14:23:32 [notice] 1#1: start worker process 33
+2025/08/21 14:23:32 [notice] 1#1: start worker process 34
+2025/08/21 14:23:32 [notice] 1#1: start worker process 35
+2025/08/21 14:23:32 [notice] 1#1: start worker process 36
+2025/08/21 14:23:32 [notice] 1#1: start worker process 37
+2025/08/21 14:23:32 [notice] 1#1: start worker process 38
+2025/08/21 14:23:32 [notice] 1#1: start worker process 39
+2025/08/21 14:23:32 [notice] 1#1: start worker process 40
+2025/08/21 14:23:32 [notice] 1#1: start worker process 41
+2025/08/21 14:23:32 [notice] 1#1: start worker process 42
+2025/08/21 14:23:32 [notice] 1#1: start worker process 43
+2025/08/21 14:23:32 [notice] 1#1: start worker process 44
+2025/08/21 14:34:51 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/08/21 14:34:51 [notice] 29#29: gracefully shutting down
+2025/08/21 14:34:51 [notice] 30#30: gracefully shutting down
+2025/08/21 14:34:51 [notice] 31#31: gracefully shutting down
+2025/08/21 14:34:51 [notice] 34#34: gracefully shutting down
+2025/08/21 14:34:51 [notice] 33#33: gracefully shutting down
+2025/08/21 14:34:51 [notice] 38#38: gracefully shutting down
+2025/08/21 14:34:51 [notice] 32#32: gracefully shutting down
+2025/08/21 14:34:51 [notice] 40#40: gracefully shutting down
+2025/08/21 14:34:51 [notice] 41#41: gracefully shutting down
+2025/08/21 14:34:51 [notice] 37#37: gracefully shutting down
+2025/08/21 14:34:51 [notice] 39#39: gracefully shutting down
+2025/08/21 14:34:51 [notice] 42#42: gracefully shutting down
+2025/08/21 14:34:51 [notice] 35#35: gracefully shutting down
+2025/08/21 14:34:51 [notice] 43#43: gracefully shutting down
+2025/08/21 14:34:51 [notice] 36#36: gracefully shutting down
+2025/08/21 14:34:51 [notice] 44#44: gracefully shutting down
+2025/08/21 14:34:51 [notice] 29#29: exiting
+2025/08/21 14:34:51 [notice] 30#30: exiting
+2025/08/21 14:34:51 [notice] 31#31: exiting
+2025/08/21 14:34:51 [notice] 34#34: exiting
+2025/08/21 14:34:51 [notice] 33#33: exiting
+2025/08/21 14:34:51 [notice] 38#38: exiting
+2025/08/21 14:34:51 [notice] 32#32: exiting
+2025/08/21 14:34:51 [notice] 40#40: exiting
+2025/08/21 14:34:51 [notice] 41#41: exiting
+2025/08/21 14:34:51 [notice] 37#37: exiting
+2025/08/21 14:34:51 [notice] 39#39: exiting
+2025/08/21 14:34:51 [notice] 35#35: exiting
+2025/08/21 14:34:51 [notice] 42#42: exiting
+2025/08/21 14:34:51 [notice] 43#43: exiting
+2025/08/21 14:34:51 [notice] 36#36: exiting
+2025/08/21 14:34:51 [notice] 44#44: exiting
+2025/08/21 14:34:51 [notice] 29#29: exit
+2025/08/21 14:34:51 [notice] 30#30: exit
+2025/08/21 14:34:51 [notice] 31#31: exit
+2025/08/21 14:34:51 [notice] 34#34: exit
+2025/08/21 14:34:51 [notice] 33#33: exit
+2025/08/21 14:34:51 [notice] 38#38: exit
+2025/08/21 14:34:51 [notice] 32#32: exit
+2025/08/21 14:34:51 [notice] 40#40: exit
+2025/08/21 14:34:51 [notice] 41#41: exit
+2025/08/21 14:34:51 [notice] 37#37: exit
+2025/08/21 14:34:51 [notice] 39#39: exit
+2025/08/21 14:34:51 [notice] 35#35: exit
+2025/08/21 14:34:51 [notice] 42#42: exit
+2025/08/21 14:34:51 [notice] 43#43: exit
+2025/08/21 14:34:51 [notice] 36#36: exit
+2025/08/21 14:34:51 [notice] 44#44: exit
+2025/08/21 14:34:51 [notice] 1#1: signal 17 (SIGCHLD) received from 40
+2025/08/21 14:34:51 [notice] 1#1: worker process 33 exited with code 0
+2025/08/21 14:34:51 [notice] 1#1: worker process 38 exited with code 0
+2025/08/21 14:34:51 [notice] 1#1: worker process 39 exited with code 0
+2025/08/21 14:34:51 [notice] 1#1: worker process 40 exited with code 0
+2025/08/21 14:34:51 [notice] 1#1: signal 29 (SIGIO) received
+2025/08/21 14:34:51 [notice] 1#1: signal 17 (SIGCHLD) received from 39
+2025/08/21 14:34:51 [notice] 1#1: signal 17 (SIGCHLD) received from 43
+2025/08/21 14:34:51 [notice] 1#1: worker process 31 exited with code 0
+2025/08/21 14:34:51 [notice] 1#1: worker process 36 exited with code 0
+2025/08/21 14:34:51 [notice] 1#1: worker process 43 exited with code 0
+2025/08/21 14:34:51 [notice] 1#1: signal 29 (SIGIO) received
+2025/08/21 14:34:51 [notice] 1#1: signal 17 (SIGCHLD) received from 31
+2025/08/21 14:34:51 [notice] 1#1: signal 17 (SIGCHLD) received from 34
+2025/08/21 14:34:51 [notice] 1#1: worker process 29 exited with code 0
+2025/08/21 14:34:51 [notice] 1#1: worker process 32 exited with code 0
+2025/08/21 14:34:51 [notice] 1#1: worker process 34 exited with code 0
+2025/08/21 14:34:51 [notice] 1#1: worker process 35 exited with code 0
+2025/08/21 14:34:51 [notice] 1#1: worker process 37 exited with code 0
+2025/08/21 14:34:51 [notice] 1#1: worker process 41 exited with code 0
+2025/08/21 14:34:51 [notice] 1#1: worker process 44 exited with code 0
+2025/08/21 14:34:51 [notice] 1#1: signal 29 (SIGIO) received
+2025/08/21 14:34:51 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2025/08/21 14:34:51 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2025/08/21 14:34:51 [notice] 1#1: worker process 30 exited with code 0
+2025/08/21 14:34:51 [notice] 1#1: signal 29 (SIGIO) received
+2025/08/21 14:34:51 [notice] 1#1: signal 17 (SIGCHLD) received from 42
+2025/08/21 14:34:51 [notice] 1#1: worker process 42 exited with code 0
+2025/08/21 14:34:51 [notice] 1#1: exit
