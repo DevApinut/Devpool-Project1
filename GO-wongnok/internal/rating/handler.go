@@ -8,14 +8,15 @@ import (
 	"wongnok/internal/model/dto"
 
 	"github.com/gin-gonic/gin"
-	"github.com/go-playground/validator"
+	"github.com/go-playground/validator/v10"
 	"gorm.io/gorm"
 )
 
-type IHnadler interface {
+type IHandler interface {
 	Get(ctx *gin.Context)
 	Create(ctx *gin.Context)
 }
+
 type Handler struct {
 	Service IService
 }
@@ -26,6 +27,17 @@ func NewHandler(db *gorm.DB) *Handler {
 	}
 }
 
+// Get godoc
+// @Summary Get ratings
+// @Description Get ratings for a food recipe by ID
+// @Tags ratings
+// @Accept json
+// @Produce json
+// @Param id path string false "Food Recipe ID"
+// @Success 200 {object} dto.FoodRecipesResponse
+// @Failure 400 {object} map[string]interface{}
+// @Failure 500 {object} map[string]interface{}
+// @Router /api/v1/food-recipes/{id}/ratings [get]
 func (handler Handler) Get(ctx *gin.Context) {
 	var id int
 
@@ -49,6 +61,20 @@ func (handler Handler) Get(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, ratings.ToResponse())
 }
 
+// Create godoc
+// @Summary Create a rating
+// @Description Create a new rating for a food recipe by ID
+// @Tags ratings
+// @Accept json
+// @Produce json
+// @Param id path string true "Food Recipe ID"
+// @Param request body dto.RatingRequest true "Rating Request"
+// @Success 201 {object} dto.RatingResponse
+// @Failure 400 {object} map[string]interface{}
+// @Failure 401 {object} map[string]interface{}
+// @Failure 500 {object} map[string]interface{}
+// @Security BearerAuth
+// @Router /api/v1/food-recipes/{id}/ratings [post]
 func (handler Handler) Create(ctx *gin.Context) {
 	var request dto.RatingRequest
 	var id int

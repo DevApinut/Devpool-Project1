@@ -10,8 +10,7 @@ type Rating struct {
 	gorm.Model
 	Score        float64
 	FoodRecipeID uint
-
-	UserID string
+	UserID       string
 }
 
 func (rating Rating) FromRequest(request dto.RatingRequest) Rating {
@@ -24,6 +23,7 @@ func (rating Rating) ToResponse() dto.RatingResponse {
 	return dto.RatingResponse{
 		Score:        rating.Score,
 		FoodRecipeID: rating.FoodRecipeID,
+		UserID:       rating.UserID,
 	}
 }
 

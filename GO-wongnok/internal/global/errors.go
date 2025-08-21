@@ -3,6 +3,5 @@ package global
 import "errors"
 
 var (
-	ErrForbidden = errors.New("forbidden")
-	ErrNotFound  = errors.New("not found")
+	ErrForbidden error = errors.New("forbidden")
 )

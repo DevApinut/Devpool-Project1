@@ -319,66 +319,6 @@ func (_c *MockIRepository_Count_Call) RunAndReturn(run func() (int64, error)) *M
 	return _c
 }
 
-// CountWithQuery provides a mock function for the type MockIRepository
-func (_mock *MockIRepository) CountWithQuery(foodRecipeQuery model.FoodRecipeQuery) (int64, error) {
-	ret := _mock.Called(foodRecipeQuery)
-
-	if len(ret) == 0 {
-		panic("no return value specified for CountWithQuery")
-	}
-
-	var r0 int64
-	var r1 error
-	if returnFunc, ok := ret.Get(0).(func(model.FoodRecipeQuery) (int64, error)); ok {
-		return returnFunc(foodRecipeQuery)
-	}
-	if returnFunc, ok := ret.Get(0).(func(model.FoodRecipeQuery) int64); ok {
-		r0 = returnFunc(foodRecipeQuery)
-	} else {
-		r0 = ret.Get(0).(int64)
-	}
-	if returnFunc, ok := ret.Get(1).(func(model.FoodRecipeQuery) error); ok {
-		r1 = returnFunc(foodRecipeQuery)
-	} else {
-		r1 = ret.Error(1)
-	}
-	return r0, r1
-}
-
-// MockIRepository_CountWithQuery_Call is a *mock.Call that shadows Run/Return methods with type explicit version for method 'CountWithQuery'
-type MockIRepository_CountWithQuery_Call struct {
-	*mock.Call
-}
-
-// CountWithQuery is a helper method to define mock.On call
-//   - foodRecipeQuery model.FoodRecipeQuery
-func (_e *MockIRepository_Expecter) CountWithQuery(foodRecipeQuery interface{}) *MockIRepository_CountWithQuery_Call {
-	return &MockIRepository_CountWithQuery_Call{Call: _e.mock.On("CountWithQuery", foodRecipeQuery)}
-}
-
-func (_c *MockIRepository_CountWithQuery_Call) Run(run func(foodRecipeQuery model.FoodRecipeQuery)) *MockIRepository_CountWithQuery_Call {
-	_c.Call.Run(func(args mock.Arguments) {
-		var arg0 model.FoodRecipeQuery
-		if args[0] != nil {
-			arg0 = args[0].(model.FoodRecipeQuery)
-		}
-		run(
-			arg0,
-		)
-	})
-	return _c
-}
-
-func (_c *MockIRepository_CountWithQuery_Call) Return(n int64, err error) *MockIRepository_CountWithQuery_Call {
-	_c.Call.Return(n, err)
-	return _c
-}
-
-func (_c *MockIRepository_CountWithQuery_Call) RunAndReturn(run func(foodRecipeQuery model.FoodRecipeQuery) (int64, error)) *MockIRepository_CountWithQuery_Call {
-	_c.Call.Return(run)
-	return _c
-}
-
 // Create provides a mock function for the type MockIRepository
 func (_mock *MockIRepository) Create(recipe *model.FoodRecipe) error {
 	ret := _mock.Called(recipe)
@@ -748,16 +688,16 @@ func (_c *MockIService_Create_Call) RunAndReturn(run func(request dto.FoodRecipe
 }
 
 // Delete provides a mock function for the type MockIService
-func (_mock *MockIService) Delete(id int) error {
-	ret := _mock.Called(id)
+func (_mock *MockIService) Delete(id int, claims model.Claims) error {
+	ret := _mock.Called(id, claims)
 
 	if len(ret) == 0 {
 		panic("no return value specified for Delete")
 	}
 
 	var r0 error
-	if returnFunc, ok := ret.Get(0).(func(int) error); ok {
-		r0 = returnFunc(id)
+	if returnFunc, ok := ret.Get(0).(func(int, model.Claims) error); ok {
+		r0 = returnFunc(id, claims)
 	} else {
 		r0 = ret.Error(0)
 	}
@@ -771,18 +711,24 @@ type MockIService_Delete_Call struct {
 
 // Delete is a helper method to define mock.On call
 //   - id int
-func (_e *MockIService_Expecter) Delete(id interface{}) *MockIService_Delete_Call {
-	return &MockIService_Delete_Call{Call: _e.mock.On("Delete", id)}
+//   - claims model.Claims
+func (_e *MockIService_Expecter) Delete(id interface{}, claims interface{}) *MockIService_Delete_Call {
+	return &MockIService_Delete_Call{Call: _e.mock.On("Delete", id, claims)}
 }
 
-func (_c *MockIService_Delete_Call) Run(run func(id int)) *MockIService_Delete_Call {
+func (_c *MockIService_Delete_Call) Run(run func(id int, claims model.Claims)) *MockIService_Delete_Call {
 	_c.Call.Run(func(args mock.Arguments) {
 		var arg0 int
 		if args[0] != nil {
 			arg0 = args[0].(int)
 		}
+		var arg1 model.Claims
+		if args[1] != nil {
+			arg1 = args[1].(model.Claims)
+		}
 		run(
 			arg0,
+			arg1,
 		)
 	})
 	return _c
@@ -793,7 +739,7 @@ func (_c *MockIService_Delete_Call) Return(err error) *MockIService_Delete_Call 
 	return _c
 }
 
-func (_c *MockIService_Delete_Call) RunAndReturn(run func(id int) error) *MockIService_Delete_Call {
+func (_c *MockIService_Delete_Call) RunAndReturn(run func(id int, claims model.Claims) error) *MockIService_Delete_Call {
 	_c.Call.Return(run)
 	return _c
 }
