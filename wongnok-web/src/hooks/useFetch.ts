@@ -7,7 +7,7 @@ export const useFetch = () => {
   useEffect(() => {
     ;(async () => {
       const recipesFetch = await fetchRecipes()
-      setRecipes(recipesFetch.data)
+      setRecipes(recipesFetch)
     })()
   }, [])
 

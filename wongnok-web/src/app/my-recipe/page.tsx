@@ -22,7 +22,7 @@ const MyRecipe = () => {
       {data && data.length > 0 ? (
         <div>
           {data.map((recipe) => (
-            <CardRecipe {...recipe} />
+            <CardRecipe key={recipe.id} {...recipe} />
           ))}
         </div>
       ) : (

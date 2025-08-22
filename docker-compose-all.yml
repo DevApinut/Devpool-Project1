@@ -43,22 +43,26 @@ services:
         condition: service_healthy
     restart: unless-stopped
 
-  go-wonok:
+  go-wongnok:
     build:
-      context: ./Go-backend
+      context: ./Go-wongnok
       dockerfile: Dockerfile
-    container_name: Go-wonok
+    container_name: go-wongnok
     ports:
       - "8080:8080"
     environment:
-      - DB_HOST=postgres
-      - DB_PORT=5432
-      - DB_USER=postgres
-      - DB_PASSWORD=pass2word
-      - DB_NAME=postgres
-      - KEYCLOAK_URL=http://keycloak:8080
+      - DATABASE_URL=postgres://postgres:pass2word@postgres:5432/wongnok
+      - GOOSE_DRIVER=postgres
+      - GOOSE_DBSTRING=postgres://postgres:pass2word@postgres:5432/wongnok
+      - GOOSE_MIGRATION_DIR=./migrations
+      - KEYCLOAK_CLIENT_ID=wongnok
+      - KEYCLOAK_CLIENT_SECRET=zDFCurmEkhGN1iIxA3NhmpVlft2qCncJ      
+      - KEYCLOAK_REDIRECT_URL=http://host.docker.internal/api/v1/callback
+      - KEYCLOAK_REALM=Devpool_project
+      - KEYCLOAK_URL=http://host.docker.internal
+
     volumes:
-      - ./go-backend:/app
+        - ./GO-wongnok:/app
     depends_on:
       postgres:
         condition: service_healthy
@@ -66,21 +70,24 @@ services:
         condition: service_started
     restart: unless-stopped
 
-  next-wongnok:
+  wongnok-web:
     build:
-      context: ./nextjs-frontend
+      context: ./wongnok-web
       dockerfile: Dockerfile
-    container_name: next-wongnok
+    container_name: wongnok-web
     ports:
       - "3000:3000"
     environment:
-      - NEXT_PUBLIC_API_URL=http://localhost:8080
-      - NEXT_PUBLIC_KEYCLOAK_URL=http://localhost:7000
+     - NEXT_PUBLIC_BASE_PATH=http://go-wongnok:8080
+     - KEYCLOCK_CLIENT_ID=wongnok
+     - KEYCLOCK_CLIENT_SECRET=zDFCurmEkhGN1iIxA3NhmpVlft2qCncJ
+     - KEYCLOCK_ISSUER=http://localhost/realms/Devpool_project
+     - NEXTAUTH_SECRET=dsafqr234af
     volumes:
-      - ./nextjs-frontend:/app
+      - ./wongnok-web:/app
       - /app/node_modules
     depends_on:
-      - go-wonok
+      - go-wongnok
     restart: unless-stopped
  
   nginx:
@@ -96,6 +103,6 @@ services:
       - ./nginx/ssl-certs:/etc/ssl/certs
     depends_on:
       - keycloak
-      - go-wonok
-      - next-wongnok
+      - go-wongnok
+      - wongnok-web
     restart: unless-stopped
