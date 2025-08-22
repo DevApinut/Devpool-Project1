@@ -59,10 +59,10 @@ services:
       - KEYCLOAK_CLIENT_SECRET=zDFCurmEkhGN1iIxA3NhmpVlft2qCncJ      
       - KEYCLOAK_REDIRECT_URL=http://host.docker.internal/api/v1/callback
       - KEYCLOAK_REALM=Devpool_project
-      - KEYCLOAK_URL=http://host.docker.internal
+      - KEYCLOAK_URL=http://host.docker.internal:7000
 
-    volumes:
-        - ./GO-wongnok:/app
+    # volumes:
+    #     - ./GO-wongnok:/app
     depends_on:
       postgres:
         condition: service_healthy
@@ -78,11 +78,14 @@ services:
     ports:
       - "3000:3000"
     environment:
-     - NEXT_PUBLIC_BASE_PATH=http://go-wongnok:8080
+     - NEXT_PUBLIC_BASE_PATH=http://host.docker.internal:8080
      - KEYCLOCK_CLIENT_ID=wongnok
      - KEYCLOCK_CLIENT_SECRET=zDFCurmEkhGN1iIxA3NhmpVlft2qCncJ
-     - KEYCLOCK_ISSUER=http://localhost/realms/Devpool_project
+     - KEYCLOCK_ISSUER=http://host.docker.internal/realms/Devpool_project
      - NEXTAUTH_SECRET=dsafqr234af
+     
+
+
     volumes:
       - ./wongnok-web:/app
       - /app/node_modules
