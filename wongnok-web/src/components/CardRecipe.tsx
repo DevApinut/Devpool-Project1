@@ -28,11 +28,11 @@ const CardRecipe = ({
       <CardFooter>
         <div className='flex w-full item-center'>
           <div className='flex p-1 grow'>
-            <img src='/icons/av_timer.svg' alt='av timer' />
+            <img src='/icons/level.svg' alt='av timer' />
             <p>{difficulty.name}</p>
           </div>
           <div className='flex p-1 grow'>
-            <img src='/icons/level.svg' alt='level' />
+            <img src='/icons/av_timer.svg' alt='level' />
             <p>{cookingDuration.name}</p>
           </div>
         </div>

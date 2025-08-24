@@ -3,6 +3,7 @@ import { Prompt } from 'next/font/google'
 import './globals.css'
 
 import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
 import Provider from '@/lib/provider'
 
 export const metadata: Metadata = {
@@ -23,10 +24,11 @@ export default function RootLayout({
   return (
     <html lang='en' className={prompt.className}>
       <body className='mx-30'>
-        <main>
+        <main className='flex flex-col min-h-screen'>
           <Provider>
             <Navbar />
-            {children}
+            <div className='flex-1'>{children}</div>
+            <Footer />
           </Provider>
         </main>
         <footer></footer>

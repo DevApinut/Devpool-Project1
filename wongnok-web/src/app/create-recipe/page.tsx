@@ -72,7 +72,7 @@ const CreateRecipe = () => {
 
   return (
     <div>
-      <h1 className='text-4xl font-bold py-8'>สร้างสูตรอาหารของฉัน</h1>
+      <h1 className='text-4xl font-bold pb-8'>สร้างสูตรอาหารของฉัน</h1>
       <Form {...form}>
         <form
           className='flex flex-col gap-y-4'
