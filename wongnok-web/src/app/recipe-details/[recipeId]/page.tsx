@@ -6,17 +6,17 @@ import { useQuery } from '@tanstack/react-query'
 import Image from 'next/image'
 
 type RecipeDetailsIdProps = {
-  params: Promise<{
+  params: {
     recipeId: string
-  }>
+  }
 }
 
-const RecipeDetailsId = () => {
-  // const { recipeId } = await params
+const RecipeDetailsId = ({ params }: RecipeDetailsIdProps) => {
+  const { recipeId } = params
 
   const { data, isLoading, isError } = useQuery({
     queryKey: ['recipeDetail'],
-    queryFn: fetchRecipeDetails
+    queryFn: () => fetchRecipeDetails(Number(recipeId))
   })
 
   if (isLoading) return <div>Loading...</div>

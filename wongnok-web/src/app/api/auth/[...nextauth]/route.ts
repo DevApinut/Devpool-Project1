@@ -11,25 +11,21 @@ const handler = NextAuth({
     }),
   ],
   callbacks: {
-    async redirect({ url, baseUrl }) {
-      // Force redirect ไปที่ localhost (nginx) แทน localhost:3000
-      if (url.startsWith('/')) return `${process.env.NEXTAUTH_URL}${url}`
-      if (url.startsWith(process.env.NEXTAUTH_URL || '')) return url
-      return process.env.NEXTAUTH_URL || baseUrl
-    },
     async jwt({token, account}) {
       if (account) {
+        console.log('account : ', account)
         token.accessToken = account.access_token
+        token.userId = account.providerAccountId
       }
       return token
     },
     async session({ session, token }) {
       session.accessToken = token.accessToken
+      session.userId = token.userId
       return session
     }
   },
   secret: process.env.NEXTAUTH_SECRET
-  // test
 })
 
 export { handler as GET, handler as POST }

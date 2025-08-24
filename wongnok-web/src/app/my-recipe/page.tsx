@@ -4,25 +4,28 @@ import { Button } from '@/components/ui/button'
 import { fetchRecipesByUser } from '@/services/recipe.service'
 import { useQuery } from '@tanstack/react-query'
 import { useSession } from 'next-auth/react'
+import Link from 'next/link'
 
 const MyRecipe = () => {
   const { data: session } = useSession()
 
   const { data } = useQuery({
     queryKey: ['recipesByUser'],
-    queryFn: () => fetchRecipesByUser(session?.accessToken),
+    queryFn: () => fetchRecipesByUser(session?.userId, session?.accessToken),
   })
 
   return (
     <div>
       <div className='flex justify-between items-center py-8'>
         <h1 className='font-bold text-4xl'>สูตรอาหารของฉัน</h1>
-        <Button className='bg-primary-500'>​+ สร้างสูตรอาหาร</Button>
+        <Link href={'/create-recipe'}>
+          <Button className='bg-primary-500'>​+ สร้างสูตรอาหาร</Button>
+        </Link>
       </div>
       {data && data.length > 0 ? (
-        <div>
-          {data.map((recipe) => (
-            <CardRecipe key={recipe.id} {...recipe} />
+        <div className='flex flex-wrap gap-8'>
+          {data.map((recipe, i) => (
+            <CardRecipe {...recipe} key={i} />
           ))}
         </div>
       ) : (

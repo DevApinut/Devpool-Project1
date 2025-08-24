@@ -568,7 +568,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/axios/lib/axios.js [app-client] (ecmascript)");
 ;
 const api = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].create({
-    baseURL: ("TURBOPACK compile-time value", "http://host.docker.internal:8080")
+    baseURL: ("TURBOPACK compile-time value", "http://localhost:8080")
 }) // api.interceptors.request.use((config) => {
  //     config.headers.Authorization = `Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJZTnhTb2hGZlRsOWVPSjN6TklHRzJYMEVzUXcwc1VTY0UtX3ROSTBCdFFzIn0.eyJleHAiOjE3NTU2MTc0ODMsImlhdCI6MTc1NTYxMzg4MywiYXV0aF90aW1lIjoxNzU1NjEzNjg5LCJqdGkiOiJiYzA3M2U3ZS0yODIzLTRiODktOWUzZS05NTZiYzM4M2M5ZGQiLCJpc3MiOiJodHRwczovL3Nzby1kZXYub2RkLndvcmtzL3JlYWxtcy9wZWEtZGV2cG9vbC0yMDI1IiwiYXVkIjoiYWNjb3VudCIsInN1YiI6IjVkMmY2ZTgwLWViMTYtNGJhMy04ODc3LTlkMDZmZDY4MTYwZCIsInR5cCI6IkJlYXJlciIsImF6cCI6Indvbmdub2siLCJzZXNzaW9uX3N0YXRlIjoiNjVjNTllNDEtZGE2Yy00NGYzLWI5ZjQtMWViMDA1NzExODZkIiwiYWNyIjoiMCIsImFsbG93ZWQtb3JpZ2lucyI6WyJodHRwOi8vbG9jYWxob3N0OjgwMDAiLCJodHRwOi8vbG9jYWxob3N0OjMwMDAiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImRlZmF1bHQtcm9sZXMtcGVhLWRldnBvb2wtMjAyNSIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBlbWFpbCBwcm9maWxlIiwic2lkIjoiNjVjNTllNDEtZGE2Yy00NGYzLWI5ZjQtMWViMDA1NzExODZkIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJuYW1lIjoiTmF0dGhhd3V0IFNyaW5hbW9sIiwicHJlZmVycmVkX3VzZXJuYW1lIjoibmF0dGhhd3V0IiwiZ2l2ZW5fbmFtZSI6Ik5hdHRoYXd1dCIsImZhbWlseV9uYW1lIjoiU3JpbmFtb2wiLCJlbWFpbCI6Im5hdEBnbWFpbC5jbSJ9.BVqjG67aI4W9-rGsimX0L0nU69MDQxOzoblH0jJKGmqosAyA7ua7bNY2-q0HsjWlvtvRWsLlT8_MPfCjFvRVBjo38oWKl6T5YjFLfooEH8n1NgApbps0XeoBKOoXRMlRHyaI3X-76QWaGzlsGnbc_9lnvuA4mM6lQutA7mIiipLTsFDrDZRPY6NKx3VNkQowySbAtPGt86TNoygOzhLDT90N9AFLZGHLFMAuuwu9BHfKMLj87cxSUd9UY_DDGHi_jHUzT__lAwhdt2WfYlLvVNbjNjsq5qxUa8anvvbPnOk5AYl8O8s17kMTCHTyLG0_38y7WCUREcjA0GN10-HAwQ`
  //     return config
@@ -594,8 +594,8 @@ const fetchRecipes = async ()=>{
     const recipesFetch = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$axios$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["api"].get('/api/v1/food-recipes?page=1&limit=10');
     return recipesFetch.data.results;
 };
-const fetchRecipeDetails = async ()=>{
-    const recipeDetails = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$axios$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["api"].get('/recipe-details');
+const fetchRecipeDetails = async (id)=>{
+    const recipeDetails = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$axios$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["api"].get("/api/v1/food-recipes/".concat(id));
     return recipeDetails;
 };
 const fetchRecipesByUser = async function() {

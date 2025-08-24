@@ -97,7 +97,14 @@ func main() {
 	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 
 	// Middleware
-	router.Use(cors.Default())
+	corsConf := cors.DefaultConfig()
+	corsConf.AllowAllOrigins = true
+	corsConf.AllowMethods = []string{"GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"}
+	corsConf.AllowHeaders = []string{"Authorization", "Content-Type", "Accept", "Origin", "User-Agent", "DNT", "Cache-Control", "X-Mx-ReqToken", "X-Requested-With", "ngrok-skip-browser-warning"}
+	corsConf.AllowCredentials = true
+
+	router.Use(cors.New(corsConf))
+	// router.Use(cors.Default())
 
 	// Register route
 	group := router.Group("/api/v1")
