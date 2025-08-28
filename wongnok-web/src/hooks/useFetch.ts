@@ -5,9 +5,13 @@ export const useFetch = () => {
   const [recipes, setRecipes] = useState<Recipe[]>([])
 
   useEffect(() => {
-    ;(async () => {
-      const recipesFetch = await fetchRecipes()
-      setRecipes(recipesFetch.data)
+    ; (async () => {
+      const recipesFetch = await fetchRecipes({
+        page: 1,
+        limit: 5,
+        search: ""
+      })
+      setRecipes(recipesFetch.results)
     })()
   }, [])
 

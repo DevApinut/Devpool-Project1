@@ -155,9 +155,9 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$auth
 const handler = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$auth$2f$index$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"])({
     providers: [
         (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$auth$2f$providers$2f$keycloak$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"])({
-            clientId: process.env.KEYCLOCK_CLIENT_ID ?? '',
-            clientSecret: process.env.KEYCLOCK_CLIENT_SECRET ?? '',
-            issuer: process.env.KEYCLOCK_ISSUER,
+            clientId: process.env.KEYCLOAK_CLIENT_ID ?? '',
+            clientSecret: process.env.KEYCLOAK_CLIENT_SECRET ?? '',
+            issuer: process.env.KEYCLOAK_ISSUER,
             authorization: {
                 params: {
                     prompt: 'login'
@@ -166,6 +166,10 @@ const handler = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules
         })
     ],
     callbacks: {
+        async redirect ({ url, baseUrl }) {
+            return "http://localhost";
+        },
+        // for keep jwt token
         async jwt ({ token, account }) {
             if (account) {
                 console.log('account : ', account);
@@ -174,6 +178,7 @@ const handler = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules
             }
             return token;
         },
+        // get session data from jwt token
         async session ({ session, token }) {
             session.accessToken = token.accessToken;
             session.userId = token.userId;

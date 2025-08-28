@@ -1,17 +1,21 @@
 import NextAuth from 'next-auth'
-import KeyclockProvider from 'next-auth/providers/keycloak'
+import KeycloakProvider from 'next-auth/providers/keycloak'
 
 const handler = NextAuth({
   providers: [
-    KeyclockProvider({
-      clientId: process.env.KEYCLOCK_CLIENT_ID ?? '',
-      clientSecret: process.env.KEYCLOCK_CLIENT_SECRET ?? '',
-      issuer: process.env.KEYCLOCK_ISSUER,
+    KeycloakProvider({
+      clientId: process.env.KEYCLOAK_CLIENT_ID ?? '',
+      clientSecret: process.env.KEYCLOAK_CLIENT_SECRET ?? '',
+      issuer: process.env.KEYCLOAK_ISSUER,
       authorization: { params: { prompt: 'login' } },
     }),
   ],
   callbacks: {
-    async jwt({token, account}) {
+    async redirect({ url, baseUrl }) {
+      return "http://localhost";
+    },
+    // for keep jwt token
+    async jwt({ token, account }) {
       if (account) {
         console.log('account : ', account)
         token.accessToken = account.access_token
@@ -19,6 +23,8 @@ const handler = NextAuth({
       }
       return token
     },
+
+    // get session data from jwt token
     async session({ session, token }) {
       session.accessToken = token.accessToken
       session.userId = token.userId

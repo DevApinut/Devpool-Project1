@@ -5,14 +5,14 @@ import { fetchRecipeDetails } from '@/services/recipe.service'
 import { useQuery } from '@tanstack/react-query'
 import Image from 'next/image'
 
-type RecipeDetailsIdProps = {
-  params: {
-    recipeId: string
-  }
-}
+// type RecipeDetailsIdProps = {
+//   params: {
+//     recipeId: string
+//   }
+// }
 
-const RecipeDetailsId = ({ params }: RecipeDetailsIdProps) => {
-  const { recipeId } = params
+export default function RecipeDetailsId({ params }: { params: { recipeId: string } }) {
+  const { recipeId } =  params
 
   const { data, isLoading, isError } = useQuery({
     queryKey: ['recipeDetail'],
@@ -60,4 +60,4 @@ const RecipeDetailsId = ({ params }: RecipeDetailsIdProps) => {
   )
 }
 
-export default RecipeDetailsId
+
