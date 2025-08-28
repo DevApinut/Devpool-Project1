@@ -11,8 +11,10 @@ const handler = NextAuth({
     }),
   ],
   callbacks: {
+    
     async redirect({ url, baseUrl }) {
-      return "http://localhost";
+      console.log('Redirecting to:', url)
+      return "http://localhost/";
     },
     // for keep jwt token
     async jwt({ token, account }) {
