@@ -165,12 +165,38 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$auth
 ;
 ;
 const api = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].create({
-    baseURL: ("TURBOPACK compile-time value", "http://localhost")
+    baseURL: ("TURBOPACK compile-time value", "http://localhost:8080")
 });
 api.interceptors.request.use(async (config)=>{
     const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$auth$2f$react$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getSession"])();
     config.headers.Authorization = `Bearer ${session?.accessToken || ''}`;
     return config;
+});
+api.interceptors.response.use((response)=>response, async (error)=>{
+    // ถ้า token หมดอายุ
+    if (error.response?.status === 401) {
+        const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$auth$2f$react$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getSession"])();
+        // ถ้ามี refreshToken ให้เรียก endpoint refresh
+        if (session?.refreshToken) {
+            try {
+                const res = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].post(`${("TURBOPACK compile-time value", "http://localhost:8080")}/auth/refresh`, {
+                    refresh_token: session.refreshToken
+                });
+                // สมมติว่า response มี accessToken ใหม่
+                session.accessToken = res.data.accessToken;
+                // retry request เดิม
+                error.config.headers.Authorization = `Bearer ${session.accessToken}`;
+                return api.request(error.config);
+            } catch (refreshError) {
+                // refresh ไม่สำเร็จ ให้ redirect ไป login
+                (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$auth$2f$react$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["signIn"])();
+            }
+        } else {
+            // ไม่มี refreshToken ให้ login ใหม่
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$auth$2f$react$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["signIn"])();
+        }
+    }
+    return Promise.reject(error);
 });
 }),
 "[project]/src/services/recipe.service.ts [app-ssr] (ecmascript)": ((__turbopack_context__) => {

@@ -51,4 +51,7 @@ INSERT INTO "public"."ratings" ("id", "score", "food_recipe_id", "user_id", "cre
 (29, 1, 5, 'ba9872c8-49fa-42d8-8664-d9a44babe021', '2025-08-16 12:28:00', '2025-08-16 12:28:00', NULL),
 (30, 5, 6, 'ba9872c8-49fa-42d8-8664-3456571fdsfs', '2025-08-16 12:29:00', '2025-08-16 12:29:00', NULL);
 
+SELECT setval('food_recipes_id_seq', (SELECT max(id) FROM food_recipes));
+SELECT setval('users_id_seq', (SELECT max(id) FROM users));
+SELECT setval('ratings_id_seq', (SELECT max(id) FROM ratings));
 -- +goose StatementEnd

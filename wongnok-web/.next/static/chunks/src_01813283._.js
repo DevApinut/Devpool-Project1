@@ -390,12 +390,39 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$auth
 ;
 ;
 const api = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].create({
-    baseURL: ("TURBOPACK compile-time value", "http://localhost")
+    baseURL: ("TURBOPACK compile-time value", "http://localhost:8080")
 });
 api.interceptors.request.use(async (config)=>{
     const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$auth$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["getSession"])();
     config.headers.Authorization = "Bearer ".concat((session === null || session === void 0 ? void 0 : session.accessToken) || '');
     return config;
+});
+api.interceptors.response.use((response)=>response, async (error)=>{
+    var _error_response;
+    // ถ้า token หมดอายุ
+    if (((_error_response = error.response) === null || _error_response === void 0 ? void 0 : _error_response.status) === 401) {
+        const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$auth$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["getSession"])();
+        // ถ้ามี refreshToken ให้เรียก endpoint refresh
+        if (session === null || session === void 0 ? void 0 : session.refreshToken) {
+            try {
+                const res = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].post("".concat(("TURBOPACK compile-time value", "http://localhost:8080"), "/auth/refresh"), {
+                    refresh_token: session.refreshToken
+                });
+                // สมมติว่า response มี accessToken ใหม่
+                session.accessToken = res.data.accessToken;
+                // retry request เดิม
+                error.config.headers.Authorization = "Bearer ".concat(session.accessToken);
+                return api.request(error.config);
+            } catch (refreshError) {
+                // refresh ไม่สำเร็จ ให้ redirect ไป login
+                (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$auth$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["signIn"])();
+            }
+        } else {
+            // ไม่มี refreshToken ให้ login ใหม่
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$auth$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["signIn"])();
+        }
+    }
+    return Promise.reject(error);
 });
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(module, globalThis.$RefreshHelpers$);

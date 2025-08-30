@@ -17,12 +17,15 @@ const Navbar = () => {
 
   return (
     <div className='flex justify-between'>
-      <Image
-        src='/wongnok-with-name-logo.png'
-        width={182}
-        height={49}
-        alt='wongnok-logo'
-      />
+      <Link href={`/`}>
+        <Image
+          src='/wongnok-with-name-logo.png'
+          width={182}
+          height={49}
+          alt='wongnok-logo'
+        />
+      </Link>
+
       {session ? (
         <div
           className='flex flex-col relative cursor-pointer'
@@ -31,31 +34,53 @@ const Navbar = () => {
           <div className='flex h-[40px] items-center justify-center'>
             <div className='text-primary-500'>{session.user?.name}</div>
             <div className='w-[24px] h-[24px] ms-1 flex justify-center items-center'>
-              <span className="relative w-full h-full flex items-center justify-center">
+              <span className='relative w-full h-full flex items-center justify-center'>
                 <Image
-                  src="/icons/down.svg"
+                  src='/icons/down.svg'
                   width={11}
                   height={7}
-                  alt="down menu logout"
-                  className={`absolute transition-all duration-300 ease-in-out ${hidden ? 'opacity-0 translate-y-2' : 'opacity-100 translate-y-0'}`}
+                  alt='down menu logout'
+                  className={`absolute transition-all duration-300 ease-in-out ${
+                    hidden
+                      ? 'opacity-0 translate-y-2'
+                      : 'opacity-100 translate-y-0'
+                  }`}
                 />
                 <Image
-                  src="/icons/up.svg"
+                  src='/icons/up.svg'
                   width={11}
                   height={7}
-                  alt="up menu logout"
-                  className={`absolute transition-all duration-300 ease-in-out ${hidden ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2'}`}
+                  alt='up menu logout'
+                  className={`absolute transition-all duration-300 ease-in-out ${
+                    hidden
+                      ? 'opacity-100 translate-y-0'
+                      : 'opacity-0 -translate-y-2'
+                  }`}
                 />
               </span>
             </div>
           </div>
           <div
-            className={`w-[195px] h-[96px] border rounded-lg absolute mt-[64px] transition-all duration-300 ease-in-out
-              ${hidden ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-4 pointer-events-none'}`}
+            className={`bg-white w-[195px] h-auto border rounded-lg absolute mt-[64px] transition-all duration-300 ease-in-out
+              ${
+                hidden
+                  ? 'opacity-100 translate-y-0 pointer-events-auto'
+                  : 'opacity-0 -translate-y-4 pointer-events-none'
+              }`}
           >
-            <Link href={`/create-recipe`}>
+            <Link href={`/my-favorite`}>
+              <div className='w-[195px] h-[48px] flex items-center hover:bg-pinklittle rounded-lg'>
+                <span className='text-end w-full px-4'>รายการโปรด</span>
+              </div>
+            </Link>
+            <Link href={`/my-recipe`}>
               <div className='w-[195px] h-[48px] flex items-center hover:bg-pinklittle rounded-lg'>
                 <span className='text-end w-full px-4'>สูตรอาหารของฉัน</span>
+              </div>
+            </Link>
+            <Link href={`/my-profile`}>
+              <div className='w-[195px] h-[48px] flex items-center hover:bg-pinklittle rounded-lg'>
+                <span className='text-end w-full px-4'>ข้อมูลส่วนตัว</span>
               </div>
             </Link>
             <div
@@ -72,12 +97,12 @@ const Navbar = () => {
           variant='ghost'
           onClick={() => signIn('keycloak')}
         >
-          <Image            
+          <Image
             color='#E030F6'
             src='/icons/person.svg'
             alt='icon person'
             width={16}
-            height={16}            
+            height={16}
           />
           เข้าระบบ
         </Button>

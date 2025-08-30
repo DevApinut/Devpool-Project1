@@ -18,7 +18,10 @@ const CardRecipe = ({
       </div>
       <div>
         <CardContent>
-          <h1 className='font-bold'>{name}</h1>
+          <div className="flex justify-between"> 
+            <h1 className='font-bold'>{name}</h1>
+            <Image src='icons/notfav.svg' width={20} height={20} alt='not fav'/>
+          </div>         
           <p className='text-secondary line-clamp-3'>{description}</p>
         </CardContent>
       </div>
@@ -28,11 +31,11 @@ const CardRecipe = ({
       <CardFooter>
         <div className='flex w-full item-center'>
           <div className='flex p-1 grow'>
-            <img src='/icons/level.svg' alt='av timer' />
+            <Image src='/icons/level.svg' alt='av timer' width={14} height={14}/>
             <p>{difficulty.name}</p>
           </div>
           <div className='flex p-1 grow'>
-            <img src='/icons/av_timer.svg' alt='level' />
+            <Image src='/icons/av_timer.svg' alt='level' width={14} height={14}/>
             <p>{cookingDuration.name}</p>
           </div>
         </div>
@@ -40,6 +43,7 @@ const CardRecipe = ({
           <Avatar>
             <AvatarImage src='https://github.com/shadcn.png' />
             <AvatarFallback>{user.firstName}</AvatarFallback>
+            <div>test</div>
           </Avatar>
         </div>
       </CardFooter>
