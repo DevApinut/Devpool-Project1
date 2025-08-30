@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 const Myfavorite = () => {
   return (
-    <div className='flex-1 flex flex-col'>
+    <div className='flex flex-col'>
       <div className='flex justify-between items-center py-8 '>
         <h1 className='font-bold text-4xl'>สูตรอาหารสุดโปรด</h1>
       </div>

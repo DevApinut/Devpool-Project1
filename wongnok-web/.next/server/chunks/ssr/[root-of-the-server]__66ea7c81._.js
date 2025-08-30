@@ -851,6 +851,7 @@ api.interceptors.response.use((response)=>response, async (error)=>{
 
 __turbopack_context__.s({
     "createRecipe": ()=>createRecipe,
+    "deleteMyRecipe": ()=>deleteMyRecipe,
     "fetchRecipeDetails": ()=>fetchRecipeDetails,
     "fetchRecipes": ()=>fetchRecipes,
     "fetchRecipesByUser": ()=>fetchRecipesByUser
@@ -863,6 +864,10 @@ const fetchRecipes = async (data)=>{
 };
 const fetchRecipeDetails = async (id)=>{
     const recipeDetails = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$axios$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["api"].get(`/api/v1/food-recipes/${id}`);
+    return recipeDetails;
+};
+const deleteMyRecipe = async (id)=>{
+    const recipeDetails = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$axios$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["api"].delete(`/api/v1/food-recipes/${id}`);
     return recipeDetails;
 };
 const createRecipe = async (data)=>{

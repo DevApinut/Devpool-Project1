@@ -60,6 +60,10 @@ export const fetchRecipeDetails = async (id:number) => {
   const recipeDetails = await api.get<RecipeDetails>(`/api/v1/food-recipes/${id}`)
   return recipeDetails
 }
+export const deleteMyRecipe = async (id:number) => {
+  const recipeDetails = await api.delete<RecipeDetails>(`/api/v1/food-recipes/${id}`)
+  return recipeDetails
+}
 
 export const createRecipe = async (data: RecipeForm) => {
   const recipeDetails = await api.post<RecipeForm>('/api/v1/food-recipes', {

@@ -1,12 +1,9 @@
 {
-  "/[...slug]/page": "app/[...slug]/page.js",
   "/_not-found/page": "app/_not-found/page.js",
   "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js",
   "/create-recipe/page": "app/create-recipe/page.js",
-  "/edit-myprofile/page": "app/edit-myprofile/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
   "/my-favorite/page": "app/my-favorite/page.js",
-  "/my-profile/page": "app/my-profile/page.js",
   "/my-recipe/page": "app/my-recipe/page.js",
   "/page": "app/page.js",
   "/recipe-details/[recipeId]/page": "app/recipe-details/[recipeId]/page.js"
