@@ -13,6 +13,7 @@ import (
 
 type IHandler interface {
 	Get(ctx *gin.Context)
+	GetByUser(ctx *gin.Context)
 	Create(ctx *gin.Context)
 }
 
@@ -55,6 +56,37 @@ func (handler Handler) Get(ctx *gin.Context) {
 	}
 
 	ctx.JSON(http.StatusOK, favorite.ToResponse())
+}
+
+// Get godoc
+// @Summary GetByuser favorites
+// @Description Get all favorites
+// @Tags favorite
+// @Accept json
+// @Produce json
+// @Success 200 {object} dto.FavoriteResponse
+// @Failure 400 {object} map[string]interface{}
+// @Failure 500 {object} map[string]interface{}
+// @Security BearerAuth
+// @Router /api/v1/food-recipes/favorites [get]
+func (handler Handler) GetByUser(ctx *gin.Context) {
+
+	claims, err := helper.DecodeClaims(ctx)
+	if err != nil {
+		ctx.JSON(http.StatusUnauthorized, gin.H{"message": err.Error()})
+		return
+	}
+	foodRecipes, err := handler.Service.GetByUser(claims)
+	if err != nil {
+		if errors.Is(err, gorm.ErrRecordNotFound) {
+			ctx.JSON(http.StatusInternalServerError, gin.H{"message": "favorite not found"})
+			return
+		}
+		ctx.JSON(http.StatusInternalServerError, gin.H{"message": err.Error()})
+		return
+	}
+
+	ctx.JSON(http.StatusOK, foodRecipes.ToResponse(0))
 }
 
 // Create godoc

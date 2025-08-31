@@ -119,3 +119,9 @@ export const createRating = async (data: Rating) => {
   return recipeRating
 
 }
+
+export const getFavorite = async () => {
+  const recipeFavorite= await api.get<{ results: Recipe[] }>(`/api/v1/food-recipes/favorites`,)
+  return recipeFavorite
+
+}

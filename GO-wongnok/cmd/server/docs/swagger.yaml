@@ -436,6 +436,32 @@ paths:
       tags:
       - ratings
   /api/v1/food-recipes/favorites:
+    get:
+      consumes:
+      - application/json
+      description: Get all favorites
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.FavoriteResponse'
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties: true
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties: true
+            type: object
+      security:
+      - BearerAuth: []
+      summary: GetByuser favorites
+      tags:
+      - favorite
     post:
       consumes:
       - application/json

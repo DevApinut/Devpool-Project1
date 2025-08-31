@@ -4,11 +4,13 @@ import (
 	"wongnok/internal/model"
 
 	"gorm.io/gorm"
+	"gorm.io/gorm/clause"
 )
 
 type IRepository interface {
 	Get(userID string) (model.Favorites, error)
-	Create(rating *model.Favorite) error
+	GetByUser(userID string) (model.FoodRecipes, error)
+	Create(favorite *model.Favorite) error
 }
 
 type Repository struct {
@@ -29,6 +31,19 @@ func (repo Repository) Get(userID string) (model.Favorites, error) {
 	}
 
 	return favorites, nil
+}
+func (repo Repository) GetByUser(userID string) (model.FoodRecipes, error) {
+	var recipes []model.FoodRecipe
+	if err := repo.DB.
+		Model(&model.FoodRecipe{}).
+		Joins("JOIN favorites fav ON food_recipes.id = fav.food_recipe_id").
+		Where("fav.user_id = ?", userID).
+		Preload(clause.Associations).
+		Find(&recipes).Error; err != nil {
+		return nil, err
+	}
+	return recipes, nil
+
 }
 
 func (repo Repository) Create(favorite *model.Favorite) error {
