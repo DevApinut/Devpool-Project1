@@ -511,7 +511,8 @@ __turbopack_context__.s({
     "deleteMyRecipe": ()=>deleteMyRecipe,
     "fetchRecipeDetails": ()=>fetchRecipeDetails,
     "fetchRecipes": ()=>fetchRecipes,
-    "fetchRecipesByUser": ()=>fetchRecipesByUser
+    "fetchRecipesByUser": ()=>fetchRecipesByUser,
+    "updateMyRecipe": ()=>updateMyRecipe
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$axios$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/axios.ts [app-ssr] (ecmascript)");
 ;
@@ -525,6 +526,18 @@ const fetchRecipeDetails = async (id)=>{
 };
 const deleteMyRecipe = async (id)=>{
     const recipeDetails = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$axios$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["api"].delete(`/api/v1/food-recipes/${id}`);
+    return recipeDetails;
+};
+const updateMyRecipe = async (data)=>{
+    const recipeDetails = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$axios$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["api"].put(`/api/v1/food-recipes/${data.id}`, {
+        ame: data.name,
+        description: data.description,
+        ingredient: data.ingredient,
+        instruction: data.instruction,
+        imageURL: data.imageURL ?? '',
+        difficultyID: Number(data.difficulty),
+        cookingDurationID: Number(data.duration)
+    });
     return recipeDetails;
 };
 const createRecipe = async (data)=>{
@@ -628,8 +641,8 @@ const MyRecipe = ()=>{
                     data && data.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                         href: '/create-recipe',
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
-                            className: "bg-primary-500",
-                            children: "​+ สร้างสูตรอาหาร"
+                            className: "bg-primary-500 cursor-pointer",
+                            children: "+ สร้างสูตรอาหาร"
                         }, void 0, false, {
                             fileName: "[project]/src/app/my-recipe/page.tsx",
                             lineNumber: 35,
@@ -692,7 +705,7 @@ const MyRecipe = ()=>{
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                         href: '/create-recipe',
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
-                            className: "bg-primary-500",
+                            className: "bg-primary-500 cursor-pointer",
                             children: "+ สร้างสูตรอาหาร"
                         }, void 0, false, {
                             fileName: "[project]/src/app/my-recipe/page.tsx",

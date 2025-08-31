@@ -221,7 +221,7 @@ const CreateRecipe = () => {
               </FormItem>
             )}
           />
-          <Button className='bg-primary-500' type='submit'>
+          <Button className='bg-primary-500 cursor-pointer' type='submit'>
             สร้างสูตรอาหาร
           </Button>
         </form>

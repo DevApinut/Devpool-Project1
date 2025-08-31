@@ -438,7 +438,8 @@ __turbopack_context__.s({
     "deleteMyRecipe": ()=>deleteMyRecipe,
     "fetchRecipeDetails": ()=>fetchRecipeDetails,
     "fetchRecipes": ()=>fetchRecipes,
-    "fetchRecipesByUser": ()=>fetchRecipesByUser
+    "fetchRecipesByUser": ()=>fetchRecipesByUser,
+    "updateMyRecipe": ()=>updateMyRecipe
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$axios$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/axios.ts [app-client] (ecmascript)");
 ;
@@ -452,6 +453,19 @@ const fetchRecipeDetails = async (id)=>{
 };
 const deleteMyRecipe = async (id)=>{
     const recipeDetails = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$axios$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["api"].delete("/api/v1/food-recipes/".concat(id));
+    return recipeDetails;
+};
+const updateMyRecipe = async (data)=>{
+    var _data_imageURL;
+    const recipeDetails = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$axios$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["api"].put("/api/v1/food-recipes/".concat(data.id), {
+        ame: data.name,
+        description: data.description,
+        ingredient: data.ingredient,
+        instruction: data.instruction,
+        imageURL: (_data_imageURL = data.imageURL) !== null && _data_imageURL !== void 0 ? _data_imageURL : '',
+        difficultyID: Number(data.difficulty),
+        cookingDurationID: Number(data.duration)
+    });
     return recipeDetails;
 };
 const createRecipe = async (data)=>{
@@ -1036,7 +1050,7 @@ const CreateRecipe = ()=>{
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
-                            className: "bg-primary-500",
+                            className: "bg-primary-500 cursor-pointer",
                             type: "submit",
                             children: "สร้างสูตรอาหาร"
                         }, void 0, false, {

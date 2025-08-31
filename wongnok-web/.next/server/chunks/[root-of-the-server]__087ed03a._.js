@@ -181,7 +181,7 @@ const handler = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules
         },
         // get session data from jwt token
         async session ({ session, token }) {
-            console.log('token -------->', token);
+            // console.log('token -------->',token)
             session.accessToken = token.accessToken;
             session.userId = token.userId;
             return session;

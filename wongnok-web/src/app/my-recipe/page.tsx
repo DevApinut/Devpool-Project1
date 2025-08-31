@@ -32,7 +32,7 @@ const MyRecipe = () => {
         <h1 className='font-bold text-4xl'>สูตรอาหารของฉัน</h1>
         {data && data.length > 0 && (
           <Link href={'/create-recipe'}>
-            <Button className='bg-primary-500'>​+ สร้างสูตรอาหาร</Button>
+            <Button className='bg-primary-500 cursor-pointer'>+ สร้างสูตรอาหาร</Button>
           </Link>
         )}
       </div>
@@ -56,7 +56,7 @@ const MyRecipe = () => {
           />
           <div className='text-lg my-6'>ยังไม่มีสูตรอาหารของตัวเอง</div>
           <Link href={'/create-recipe'}>
-            <Button className='bg-primary-500'>+ สร้างสูตรอาหาร</Button>
+            <Button className='bg-primary-500 cursor-pointer'>+ สร้างสูตรอาหาร</Button>
           </Link>
         </div>
       )}

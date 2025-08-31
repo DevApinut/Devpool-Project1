@@ -2,50 +2,22 @@
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
-import { deleteMyRecipe, fetchRecipeDetails } from '@/services/recipe.service'
-import { useMutation, useQuery } from '@tanstack/react-query'
 import { useSession } from 'next-auth/react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
 import React, { useState } from 'react'
-import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-  AlertDialogTrigger,
-} from '@/components/ui/alert-dialog'
-import { Alert, AlertTitle, AlertDescription } from '@/components/ui/alert'
-import { Terminal } from 'lucide-react'
+import DeleteRecipe from '@/components/DeleteRecipe'
+import { fetchRecipeDetails } from '@/services/recipe.service'
+import { useQuery } from '@tanstack/react-query'
 
 type RecipeDetailsIdProps = {
   params: Promise<{ recipeId: string }>
 }
 
 export default function RecipeDetailsId({ params }: RecipeDetailsIdProps) {
-  const [alertVisible, setAlertVisible] = useState(false);
+  const [closePopup, setClosePopup] = useState<boolean>(false)
   const { recipeId } = React.use(params)
   const { data: session, status } = useSession()
-  const router = useRouter()
-
-  const { mutateAsync: deleteMyrecipe } = useMutation({
-    mutationFn: deleteMyRecipe,
-    onError: () => {
-      console.log('error fetching')
-    },
-    onSuccess: () => {
-      setAlertVisible(true); // แสดง Alert พร้อม animation
-      setTimeout(() => {
-        setAlertVisible(false);
-        router.replace('/');
-      }, 1800); // 1.8 วินาทีแล้ว redirect
-    },
-  });
 
   const { data, isLoading, isError } = useQuery({
     queryKey: ['recipeDetail', recipeId],
@@ -56,25 +28,11 @@ export default function RecipeDetailsId({ params }: RecipeDetailsIdProps) {
 
   if (isError) return <div>Error</div>
 
-  const delteMyRecipeAlert = () => {
-    deleteMyrecipe(Number(recipeId))
-  }
-
   return (
     <div className='flex flex-col gap-y-5'>
-      <div
-        className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 w-fit transition-all duration-500 ease-in-out
-          ${alertVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8 pointer-events-none'}`}
-        aria-live="assertive"
-      >
-        <Alert variant="destructive">
-          <Terminal />
-          <AlertTitle>ลบสำเร็จ!</AlertTitle>
-          <AlertDescription>
-            สูตรอาหารถูกลบเรียบร้อยแล้ว
-          </AlertDescription>
-        </Alert>
-      </div>
+      {closePopup && (
+        <DeleteRecipe recipeId={Number(recipeId)} closePopup={setClosePopup} />
+      )}
       <div className='flex flex-col gap-y-5'>
         {session?.userId &&
           data?.data?.user?.id &&
@@ -82,7 +40,7 @@ export default function RecipeDetailsId({ params }: RecipeDetailsIdProps) {
             <div className='flex justify-between items-center'>
               <h1 className='font-bold text-4xl'>{data?.data.name}</h1>
               <div className='flex justify-center '>
-                <Link href={'/create-recipe'}>
+                <Link href={`/edit-recipe/${recipeId}`}>
                   <Button
                     className='border text-primary-500 mx-2 cursor-pointer bg-white'
                     variant='secondary'
@@ -99,40 +57,15 @@ export default function RecipeDetailsId({ params }: RecipeDetailsIdProps) {
 
                 <Button
                   className='border bg-Accent-Error-500 mx-2 cursor-pointer text-white'
-                  variant='secondary'
+                  variant='secondary' onClick={() => setClosePopup(true)}
                 >
-                  <AlertDialog>
-                    <AlertDialogTrigger>
-                      <div className='flex cursor-pointer'>
-                        <Image
-                          src='/icons/trash.svg'
-                          width={12}
-                          height={12}
-                          alt='edit logo'
-                        />
-                        <div className='ms-2'>ลบสูตรอาหาร</div>
-                      </div>
-                    </AlertDialogTrigger>
-                    <AlertDialogContent>
-                      <AlertDialogHeader>
-                        <AlertDialogTitle>ยืนยันการลบข้อมูล</AlertDialogTitle>
-                        <AlertDialogDescription>
-                          คุณต้องการลบข้อมูลถาวรใช่หรือไม่
-                        </AlertDialogDescription>
-                      </AlertDialogHeader>
-                      <AlertDialogFooter>
-                        <AlertDialogCancel className='cursor-pointer'>
-                          ยกเลิก
-                        </AlertDialogCancel>
-                        <AlertDialogAction
-                          className='cursor-pointer'
-                          onClick={delteMyRecipeAlert}
-                        >
-                          ใช่
-                        </AlertDialogAction>
-                      </AlertDialogFooter>
-                    </AlertDialogContent>
-                  </AlertDialog>
+                  <Image
+                    src='/icons/trash.svg'
+                    width={12}
+                    height={12}
+                    alt='edit logo'
+                  />
+                  <div className='ms-2'>ลบสูตรอาหาร</div>
                 </Button>
               </div>
             </div>

@@ -1,4 +1,5 @@
 import { RecipeForm } from '@/app/create-recipe/page'
+import { RecipeFormUpdate } from '@/app/edit-recipe/[recipeId]/page'
 import { api } from '@/lib/axios'
 
 type User = {
@@ -52,7 +53,6 @@ export const fetchRecipes = async (data: fetchRecipeRequest) => {
   const recipesFetch = await api.get<{ results: Recipe[]; total: number }>(
     `/api/v1/food-recipes?page=${data.page}&limit=${data.limit}&search=${data.search}`
   )
-
   return recipesFetch.data
 }
 
@@ -62,6 +62,18 @@ export const fetchRecipeDetails = async (id:number) => {
 }
 export const deleteMyRecipe = async (id:number) => {
   const recipeDetails = await api.delete<RecipeDetails>(`/api/v1/food-recipes/${id}`)
+  return recipeDetails
+}
+export const updateMyRecipe = async (data:RecipeFormUpdate) => {
+  const recipeDetails = await api.put<RecipeFormUpdate>(`/api/v1/food-recipes/${data.id}`,{
+    name: data.name,
+    description: data.description,
+    ingredient: data.ingredient,
+    instruction: data.instruction,
+    imageURL: data.imageURL ?? '',
+    difficultyID: Number(data.difficulty),
+    cookingDurationID: Number(data.duration),
+  })
   return recipeDetails
 }
 

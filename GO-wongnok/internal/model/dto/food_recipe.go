@@ -8,7 +8,7 @@ type FoodRecipeRequest struct {
 	Ingredient        string  `validate:"required"`
 	Instruction       string  `validate:"required"`
 	ImageURL          *string `validate:"omitempty,url"`
-	CookingDurationID uint    `validate:"required,oneof=1 2 3"`
+	CookingDurationID uint    `validate:"required,oneof=1 2 3 4"`
 	DifficultyID      uint    `validate:"required,oneof=1 2 3"`
 }
 

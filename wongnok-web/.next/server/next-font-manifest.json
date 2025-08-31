@@ -1,5 +1,9 @@
 {
   "app": {
+    "[project]/src/app/[...slug]/page": [
+      "static/media/208e0ff3887cc6c6-s.p.dba9a014.woff2",
+      "static/media/8ac68611c06f7d05-s.p.98ba49e3.woff2"
+    ],
     "[project]/src/app/_not-found/page": [
       "static/media/208e0ff3887cc6c6-s.p.dba9a014.woff2",
       "static/media/8ac68611c06f7d05-s.p.98ba49e3.woff2"
@@ -8,7 +12,7 @@
       "static/media/208e0ff3887cc6c6-s.p.dba9a014.woff2",
       "static/media/8ac68611c06f7d05-s.p.98ba49e3.woff2"
     ],
-    "[project]/src/app/my-favorite/page": [
+    "[project]/src/app/edit-recipe/[recipeId]/page": [
       "static/media/208e0ff3887cc6c6-s.p.dba9a014.woff2",
       "static/media/8ac68611c06f7d05-s.p.98ba49e3.woff2"
     ],

@@ -10678,3 +10678,8 @@
 2025/08/30 17:29:42 [notice] 29#29: exit
 2025/08/30 17:29:42 [notice] 34#34: exit
 2025/08/30 17:29:42 [notice] 36#36: exit
+2025/08/31 00:50:09 [notice] 1#1: using the "epoll" event method
+2025/08/31 00:50:09 [notice] 1#1: nginx/1.29.1
+2025/08/31 00:50:09 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/08/31 00:50:09 [notice] 1#1: OS: Linux 5.15.167.4-microsoft-standard-WSL2
+2025/08/31 00:50:09 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576

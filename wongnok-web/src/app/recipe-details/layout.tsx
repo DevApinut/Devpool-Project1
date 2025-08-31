@@ -9,7 +9,7 @@ const RecipeDetailsLayout = ({ children }: { children: React.ReactNode }) => {
     <div>
       <Button
         variant='outline'
-        className='text-primary-500 my-8 border-primary-500'
+        className='text-primary-500 my-8 border-primary-500 cursor-pointer'
         onClick={() => router.back()}
       >
         กลับ
