@@ -124,7 +124,7 @@ func main() {
 	group.POST("/food-recipes/:id/ratings", middleware.Authorize(verifierSkipClientIDCheck), ratingHandler.Create)
 
 	// Favorite
-	group.GET("/food-recipes/favorites", favoriteHandler.Get)
+	group.GET("/food-recipes/:id/favorites", favoriteHandler.Get)
 	group.POST("/food-recipes/favorites", middleware.Authorize(verifierSkipClientIDCheck), favoriteHandler.Create)
 
 	// Auth

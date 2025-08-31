@@ -13,7 +13,7 @@ import (
 type IUserService user.IService
 
 type IService interface {
-	Get(recipeID int) (model.Favorites, error)
+	Get(userID string) (model.Favorites, error)
 
 	Create(request dto.FavoriteRequest, claims model.Claims) (model.Favorite, error)
 }
@@ -30,8 +30,8 @@ func NewService(db *gorm.DB) IService {
 	}
 }
 
-func (service Service) Get(recipeID int) (model.Favorites, error) {
-	favorites, err := service.Repository.Get(recipeID)
+func (service Service) Get(userID string) (model.Favorites, error) {
+	favorites, err := service.Repository.Get(userID)
 	if err != nil {
 		return nil, err
 	}

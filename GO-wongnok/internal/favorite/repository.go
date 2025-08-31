@@ -7,7 +7,7 @@ import (
 )
 
 type IRepository interface {
-	Get(recipeID int) (model.Favorites, error)
+	Get(userID string) (model.Favorites, error)
 	Create(rating *model.Favorite) error
 }
 
@@ -21,14 +21,14 @@ func NewRepository(db *gorm.DB) IRepository {
 	}
 }
 
-func (repo Repository) Get(recipeID int) (model.Favorites, error) {
-	var favoraites model.Favorites
+func (repo Repository) Get(userID string) (model.Favorites, error) {
+	var favorites model.Favorites
 
-	if err := repo.DB.Where("food_recipe_id = ?", recipeID).Find(&favoraites).Error; err != nil {
+	if err := repo.DB.Where("user_id = ?", userID).Find(&favorites).Error; err != nil {
 		return nil, err
 	}
 
-	return favoraites, nil
+	return favorites, nil
 }
 
 func (repo Repository) Create(favorite *model.Favorite) error {

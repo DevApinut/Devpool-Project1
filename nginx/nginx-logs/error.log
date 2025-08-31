@@ -10774,3 +10774,24 @@
 2025/08/31 07:54:29 [notice] 1#1: start worker process 34
 2025/08/31 07:54:29 [notice] 1#1: start worker process 35
 2025/08/31 07:54:29 [notice] 1#1: start worker process 36
+2025/08/31 14:54:08 [notice] 1#1: using the "epoll" event method
+2025/08/31 14:54:08 [notice] 1#1: nginx/1.29.1
+2025/08/31 14:54:08 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/08/31 14:54:08 [notice] 1#1: OS: Linux 5.15.167.4-microsoft-standard-WSL2
+2025/08/31 14:54:08 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/08/31 14:54:08 [notice] 1#1: start worker processes
+2025/08/31 14:54:08 [notice] 1#1: start worker process 29
+2025/08/31 14:54:08 [notice] 1#1: start worker process 30
+2025/08/31 14:54:08 [notice] 1#1: start worker process 31
+2025/08/31 14:54:08 [notice] 1#1: start worker process 32
+2025/08/31 14:54:08 [notice] 1#1: start worker process 33
+2025/08/31 14:54:08 [notice] 1#1: start worker process 34
+2025/08/31 14:54:08 [notice] 1#1: start worker process 35
+2025/08/31 14:54:08 [notice] 1#1: start worker process 36
+2025/08/31 14:54:21 [error] 29#29: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /realms/Devpool_project/.well-known/openid-configuration HTTP/1.1", upstream: "http://172.18.0.3:8080/realms/Devpool_project/.well-known/openid-configuration", host: "localhost"
+2025/08/31 14:54:36 [error] 30#30: *3 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /realms/Devpool_project/.well-known/openid-configuration HTTP/1.1", upstream: "http://172.18.0.3:8080/realms/Devpool_project/.well-known/openid-configuration", host: "localhost"
+2025/08/31 15:01:28 [notice] 1#1: using the "epoll" event method
+2025/08/31 15:01:28 [notice] 1#1: nginx/1.29.1
+2025/08/31 15:01:28 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/08/31 15:01:28 [notice] 1#1: OS: Linux 5.15.167.4-microsoft-standard-WSL2
+2025/08/31 15:01:28 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576

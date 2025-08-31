@@ -3,7 +3,6 @@ package favorite
 import (
 	"errors"
 	"net/http"
-	"strconv"
 	"wongnok/internal/helper"
 	"wongnok/internal/model/dto"
 
@@ -31,20 +30,19 @@ func NewHandler(db *gorm.DB) *Handler {
 // @Summary Get favorites
 // @Description Get all favorites
 // @Tags favorite
+// @Param id path string true "id"
 // @Accept json
 // @Produce json
 // @Success 200 {object} dto.FavoriteResponse
 // @Failure 400 {object} map[string]interface{}
 // @Failure 500 {object} map[string]interface{}
-// @Router /api/v1/food-recipes/favorites [get]
+// @Router /api/v1/food-recipes/{id}/favorites [get]
 func (handler Handler) Get(ctx *gin.Context) {
-	var id int
+	var id string
 
 	pathParam := ctx.Param("id")
 	if pathParam != "" {
-		if parsed, err := strconv.Atoi(pathParam); err == nil && parsed > 0 {
-			id = parsed
-		}
+		id = pathParam
 	}
 	favorite, err := handler.Service.Get(id)
 	if err != nil {
