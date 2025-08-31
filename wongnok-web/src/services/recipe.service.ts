@@ -28,6 +28,11 @@ export type Recipe = {
   user: User
 }
 
+export type Rating ={
+  foodRecipeID : number
+  score : number 
+}
+
 type RecipeDetails = {
   id: number
   name: string
@@ -104,4 +109,13 @@ export const fetchRecipesByUser = async (
     }
   )
   return recipes.data.results
+}
+
+
+export const createRating = async (data: Rating) => {
+  const recipeRating = await api.post<Rating>(`/api/v1/food-recipes/${data.foodRecipeID}/ratings`, {
+    score: data.score
+  })
+  return recipeRating
+
 }

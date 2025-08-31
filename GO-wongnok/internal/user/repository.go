@@ -34,10 +34,7 @@ func (repo Repository) GetByID(id string) (model.User, error) {
 }
 
 func (repo Repository) Upsert(user *model.User) error {
-	return repo.DB.Clauses(clause.OnConflict{
-		Columns:   []clause.Column{{Name: "id"}},
-		DoUpdates: clause.AssignmentColumns([]string{"first_name", "last_name", "updated_at"}),
-	}).Create(user).Error
+	return repo.DB.Save(user).Error
 }
 
 func (repo Repository) GetRecipes(userID string) (model.FoodRecipes, error) {

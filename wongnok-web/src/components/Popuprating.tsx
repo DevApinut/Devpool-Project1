@@ -2,18 +2,25 @@ import Image from 'next/image'
 import { Button } from './ui/button'
 import { useRouter } from 'next/navigation'
 import { useMutation } from '@tanstack/react-query'
-import { deleteMyRecipe } from '@/services/recipe.service'
+import { createRating } from '@/services/recipe.service'
 import Star from '@/components/Rating'
 import React, { useEffect, useState } from 'react'
 
 type propsRecieve = {
   recipeId: number
   closePopup: (value: boolean) => void
+  
 }
 
-const PopupRating = ({ recipeId, closePopup }: propsRecieve) => {
+
+
+const PopupRating = ({ recipeId, closePopup  }: propsRecieve) => {
+  const [selected, setSelected] = useState(0)
   const [showModal, setShowModal] = useState(false)
   const [exiting, setExiting] = useState(false)
+  
+
+ 
   useEffect(() => {
     const timer = setTimeout(() => setShowModal(true), 400)
     return () => clearTimeout(timer)
@@ -24,8 +31,8 @@ const PopupRating = ({ recipeId, closePopup }: propsRecieve) => {
     setTimeout(() => closePopup(false), 400)
   }
   const router = useRouter()
-  const { mutateAsync: deleteMyrecipe } = useMutation({
-    mutationFn: deleteMyRecipe,
+  const { mutateAsync: giveRating } = useMutation({
+    mutationFn: createRating,
     onError: () => {
       console.log('error fetching')
     },
@@ -34,8 +41,12 @@ const PopupRating = ({ recipeId, closePopup }: propsRecieve) => {
     },
   })
 
-  const delteMyRecipeAlert = () => {
-    deleteMyrecipe(Number(recipeId))
+  const handlerRating = (rating: number) => {
+    
+    giveRating({
+      foodRecipeID: recipeId,
+      score: rating,      
+    })
   }
 
   return (
@@ -62,21 +73,24 @@ const PopupRating = ({ recipeId, closePopup }: propsRecieve) => {
         <div className='flex flex-col jusitfy-center items-center mx-6'>
           <div className='text-2xl my-4'>ให้คะแนนสูตรอาหารนี้</div>
           <div className='flex flex-col justify-center items-center '>
-            <div>
-              {Array.from({ length: 5 }, (_, i) => {
-                let fillPercent = 0
-                if (i < Math.floor(5)) {
-                  fillPercent = 100
-                } else if (i === Math.floor(5)) {
-                  fillPercent = Math.floor((5 % 1) * 100)
-                }
-                return <Star key={i} fillPercent={fillPercent} />
-              })}
+            <div className='flex gap-1'>
+              {Array.from({ length: 5 }, (_, i) => (
+                <span
+                  key={i}
+                  onClick={() => setSelected(i + 1)}
+                  className='cursor-pointer'
+                >
+                  <Star fillPercent={i < selected ? 100 : 0} />
+                </span>
+              ))}
             </div>
             <Button
               className='mx-2 w-[152px] h-[40px] bg-secondary-500 text-white text-base cursor-pointer'
               variant='outline'
-              onClick={handleClose}
+              onClick={() => {
+                handlerRating(selected)
+              }}
+              disabled={selected === 0}
             >
               ยืนยัน
             </Button>

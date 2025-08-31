@@ -96,7 +96,6 @@ func (handler Handler) Create(ctx *gin.Context) {
 		ctx.JSON(http.StatusUnauthorized, gin.H{"message": err.Error()})
 		return
 	}
-
 	rating, err := handler.Service.Create(request, id, claims)
 
 	if err != nil {

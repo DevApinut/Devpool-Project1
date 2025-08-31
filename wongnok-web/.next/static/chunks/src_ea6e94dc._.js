@@ -861,6 +861,7 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
 var { k: __turbopack_refresh__, m: module } = __turbopack_context__;
 {
 __turbopack_context__.s({
+    "createRating": ()=>createRating,
     "createRecipe": ()=>createRecipe,
     "deleteMyRecipe": ()=>deleteMyRecipe,
     "fetchRecipeDetails": ()=>fetchRecipeDetails,
@@ -917,6 +918,12 @@ const fetchRecipesByUser = async function(userId) {
         }
     });
     return recipes.data.results;
+};
+const createRating = async (data)=>{
+    const recipeRating = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$axios$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["api"].post("/api/v1/food-recipes/".concat(data.foodRecipeID, "/ratings"), {
+        score: data.score
+    });
+    return recipeRating;
 };
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(module, globalThis.$RefreshHelpers$);
