@@ -5,6 +5,7 @@
   "/create-recipe/page": "app/create-recipe/page.js",
   "/edit-recipe/[recipeId]/page": "app/edit-recipe/[recipeId]/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/my-favorite/page": "app/my-favorite/page.js",
   "/my-recipe/page": "app/my-recipe/page.js",
   "/page": "app/page.js",
   "/recipe-details/[recipeId]/page": "app/recipe-details/[recipeId]/page.js"

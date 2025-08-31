@@ -25,7 +25,7 @@ type FoodRecipe struct {
 
 func (recipe FoodRecipe) FromRequest(request dto.FoodRecipeRequest, claims Claims) FoodRecipe {
 	return FoodRecipe{
-		Model:             gorm.Model{},
+		Model:             recipe.Model,
 		Name:              request.Name,
 		Description:       request.Description,
 		Ingredient:        request.Ingredient,

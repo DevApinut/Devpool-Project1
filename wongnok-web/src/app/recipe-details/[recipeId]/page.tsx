@@ -6,9 +6,11 @@ import { useSession } from 'next-auth/react'
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
+import Star from '@/components/Rating'
 import DeleteRecipe from '@/components/DeleteRecipe'
 import { fetchRecipeDetails } from '@/services/recipe.service'
 import { useQuery } from '@tanstack/react-query'
+import PopupRating from '@/components/Popuprating'
 
 type RecipeDetailsIdProps = {
   params: Promise<{ recipeId: string }>
@@ -27,12 +29,20 @@ export default function RecipeDetailsId({ params }: RecipeDetailsIdProps) {
   if (isLoading || status === 'loading') return <div>Loading...</div>
 
   if (isError) return <div>Error</div>
+  console.log(data)
+
+  // Add rating state and max stars
+  // Show average rating from data (read-only)
+  const maxStars = 5
+  const rawAvgRating = data?.data?.averageRating ?? 0
+  const avgRating = Math.min(rawAvgRating, maxStars)
 
   return (
     <div className='flex flex-col gap-y-5'>
       {closePopup && (
         <DeleteRecipe recipeId={Number(recipeId)} closePopup={setClosePopup} />
       )}
+      <PopupRating recipeId={Number(recipeId)} closePopup={setClosePopup}/>
       <div className='flex flex-col gap-y-5'>
         {session?.userId &&
           data?.data?.user?.id &&
@@ -57,7 +67,8 @@ export default function RecipeDetailsId({ params }: RecipeDetailsIdProps) {
 
                 <Button
                   className='border bg-Accent-Error-500 mx-2 cursor-pointer text-white'
-                  variant='secondary' onClick={() => setClosePopup(true)}
+                  variant='secondary'
+                  onClick={() => setClosePopup(true)}
                 >
                   <Image
                     src='/icons/trash.svg'
@@ -81,7 +92,7 @@ export default function RecipeDetailsId({ params }: RecipeDetailsIdProps) {
           </Avatar>
         </div>
       </div>
-      <div className='flex gap-x-8'>
+      <div className='flex gap-x-8 '>
         <div className='flex flex-col gap-6'>
           <div className='relative w-[584px] h-[334px]'>
             <Image
@@ -90,13 +101,52 @@ export default function RecipeDetailsId({ params }: RecipeDetailsIdProps) {
               fill
             />
           </div>
-          <div className='rounded-sm px-2 bg-secondary-100 text-secondary-900'>
-            <p>{data?.data.cookingDuration.name} นาที</p>
+          <div className='rounded-sm px-2 bg-secondary-100 text-secondary-900 flex'>
+            <Image
+              src='/icons/av_timer.svg'
+              alt='level'
+              width={18}
+              height={18}
+            />
+            <p className='mx-3'>{data?.data.cookingDuration.name} นาที</p>
           </div>
         </div>
         <div>
           <h1 className='text-3xl font-bold'>วัตถุดิบ</h1>
-          <p>เนื้อสันใน 300 กรับ</p>
+          <p>
+            {(data?.data.ingredient || '').split(',').map((item, idx) => (
+              <li key={idx}>{item.trim()}</li>
+            ))}
+          </p>
+        </div>
+      </div>
+      <div className='flex flex-col mt-2 mb-3'>
+        <h1 className='text-3xl font-bold'>วิธีการทำ</h1>
+        <p>
+          {(data?.data.instruction || '').split(',').map((item, idx) => (
+            <li className='my-1' key={idx}>
+              {item.trim()}
+            </li>
+          ))}
+        </p>
+        <div className='mt-12'>
+          <div className='text-lg font-bold'>คะแนนสูตรอาหารนี้</div>
+          <div className='flex items-center gap-2'>
+            <div className='flex items-center'>
+              {Array.from({ length: maxStars }, (_, i) => {
+                let fillPercent = 0;
+                if (i < Math.floor(avgRating)) {
+                  fillPercent = 100;
+                } else if (i === Math.floor(avgRating)) {
+                  fillPercent = Math.floor((avgRating % 1) * 100);
+                }
+                return <Star key={i} fillPercent={fillPercent} />;
+              })}
+            </div>
+            <div className='text-base text-secondary-700'>
+              <div>({rawAvgRating ? Math.min(rawAvgRating, maxStars).toFixed(1) : 'ยังไม่มีคะแนน'})</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

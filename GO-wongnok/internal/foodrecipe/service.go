@@ -1,6 +1,7 @@
 package foodrecipe
 
 import (
+	"fmt"
 	"wongnok/internal/global"
 	"wongnok/internal/model"
 	"wongnok/internal/model/dto"
@@ -72,6 +73,7 @@ func (service Service) GetByID(id int) (model.FoodRecipe, error) {
 }
 
 func (service Service) Update(request dto.FoodRecipeRequest, id int, claims model.Claims) (model.FoodRecipe, error) {
+	fmt.Printf("requestxxxxxx: %+v\n", request)
 	validate := validator.New()
 	if err := validate.Struct(request); err != nil {
 		return model.FoodRecipe{}, errors.Wrap(err, "request invalid")
@@ -87,8 +89,11 @@ func (service Service) Update(request dto.FoodRecipeRequest, id int, claims mode
 		// กรณี user ที่ login ไม่ตรงกับ user ที่สร้าง recipe
 		return model.FoodRecipe{}, global.ErrForbidden
 	}
+	fmt.Printf("TTsfdgfsdg: %+v\n", recipe)
 
 	recipe = recipe.FromRequest(request, claims)
+
+	fmt.Printf("TTsfdgfsdg222: %+v\n", recipe)
 
 	if err := service.Repository.Update(&recipe); err != nil {
 		return model.FoodRecipe{}, errors.Wrap(err, "update recipe")

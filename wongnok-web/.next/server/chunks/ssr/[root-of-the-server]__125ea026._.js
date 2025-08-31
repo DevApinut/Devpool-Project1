@@ -454,7 +454,7 @@ const deleteMyRecipe = async (id)=>{
 };
 const updateMyRecipe = async (data)=>{
     const recipeDetails = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$axios$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["api"].put(`/api/v1/food-recipes/${data.id}`, {
-        ame: data.name,
+        name: data.name,
         description: data.description,
         ingredient: data.ingredient,
         instruction: data.instruction,

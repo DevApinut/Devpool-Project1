@@ -69,7 +69,8 @@ func (repo Repository) GetByID(id int) (model.FoodRecipe, error) {
 
 func (repo Repository) Update(recipe *model.FoodRecipe) error {
 	// update
-	if err := repo.DB.Model(&recipe).Updates(recipe).Error; err != nil {
+	println("tes222", recipe)
+	if err := repo.DB.Model(&recipe).Where("id = ?", recipe.ID).Updates(recipe).Error; err != nil {
 		return err
 	}
 

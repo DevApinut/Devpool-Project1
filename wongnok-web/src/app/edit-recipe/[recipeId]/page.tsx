@@ -267,7 +267,7 @@ const EditRecipe = ({ params }: RecipeDetailsIdProps) => {
             )}
           />
           <Button className='bg-primary-500 cursor-pointer' type='submit'>
-            สร้างสูตรอาหาร
+            อัพเดทสูตรอาหาร
           </Button>
         </form>
       </Form>

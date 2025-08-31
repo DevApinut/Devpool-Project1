@@ -1,6 +1,7 @@
 package foodrecipe
 
 import (
+	"fmt"
 	"net/http"
 	"strconv"
 	"wongnok/internal/global"
@@ -176,6 +177,9 @@ func (handler Handler) Update(ctx *gin.Context) {
 			id = parsed
 		}
 	}
+
+	fmt.Printf("handlerxxxxx: %+v\n", request)
+	fmt.Printf("iddddd: %+v\n", request)
 
 	recipe, err := handler.Service.Update(request, id, claims)
 	if err != nil {
