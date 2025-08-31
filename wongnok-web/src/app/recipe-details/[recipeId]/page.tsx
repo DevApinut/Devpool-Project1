@@ -18,6 +18,7 @@ type RecipeDetailsIdProps = {
 
 export default function RecipeDetailsId({ params }: RecipeDetailsIdProps) {
   const [closePopup, setClosePopup] = useState<boolean>(false)
+  const [closePopupRating, setClosePopupRating] = useState<boolean>(false)
   const { recipeId } = React.use(params)
   const { data: session, status } = useSession()
 
@@ -42,7 +43,13 @@ export default function RecipeDetailsId({ params }: RecipeDetailsIdProps) {
       {closePopup && (
         <DeleteRecipe recipeId={Number(recipeId)} closePopup={setClosePopup} />
       )}
-      <PopupRating recipeId={Number(recipeId)} closePopup={setClosePopup}/>
+      {closePopupRating && (
+        <PopupRating
+          recipeId={Number(recipeId)}
+          closePopup={setClosePopupRating}
+        />
+      )}
+
       <div className='flex flex-col gap-y-5'>
         {session?.userId &&
           data?.data?.user?.id &&
@@ -52,7 +59,7 @@ export default function RecipeDetailsId({ params }: RecipeDetailsIdProps) {
               <div className='flex justify-center '>
                 <Link href={`/edit-recipe/${recipeId}`}>
                   <Button
-                    className='border text-primary-500 mx-2 cursor-pointer bg-white'
+                    className='text-primary-500 mx-2 cursor-pointer bg-white'
                     variant='secondary'
                   >
                     <Image
@@ -66,7 +73,7 @@ export default function RecipeDetailsId({ params }: RecipeDetailsIdProps) {
                 </Link>
 
                 <Button
-                  className='border bg-Accent-Error-500 mx-2 cursor-pointer text-white'
+                  className='bg-Accent-Error-500 mx-2 cursor-pointer text-white'
                   variant='secondary'
                   onClick={() => setClosePopup(true)}
                 >
@@ -129,23 +136,48 @@ export default function RecipeDetailsId({ params }: RecipeDetailsIdProps) {
             </li>
           ))}
         </p>
-        <div className='mt-12'>
-          <div className='text-lg font-bold'>คะแนนสูตรอาหารนี้</div>
-          <div className='flex items-center gap-2'>
-            <div className='flex items-center'>
-              {Array.from({ length: maxStars }, (_, i) => {
-                let fillPercent = 0;
-                if (i < Math.floor(avgRating)) {
-                  fillPercent = 100;
-                } else if (i === Math.floor(avgRating)) {
-                  fillPercent = Math.floor((avgRating % 1) * 100);
-                }
-                return <Star key={i} fillPercent={fillPercent} />;
-              })}
+        <div className='mt-12 flex'>
+          <div>
+            <div className='text-lg font-bold'>คะแนนสูตรอาหารนี้</div>
+            <div className='flex items-center gap-2'>
+              <div className='flex items-center'>
+                {Array.from({ length: maxStars }, (_, i) => {
+                  let fillPercent = 0
+                  if (i < Math.floor(avgRating)) {
+                    fillPercent = 100
+                  } else if (i === Math.floor(avgRating)) {
+                    fillPercent = Math.floor((avgRating % 1) * 100)
+                  }
+                  return <Star key={i} fillPercent={fillPercent} />
+                })}
+              </div>
+              <div className='text-base text-secondary-700'>
+                <div>
+                  (
+                  {rawAvgRating
+                    ? Math.min(rawAvgRating, maxStars).toFixed(1)
+                    : 'ยังไม่มีคะแนน'}
+                  )
+                </div>
+              </div>
             </div>
-            <div className='text-base text-secondary-700'>
-              <div>({rawAvgRating ? Math.min(rawAvgRating, maxStars).toFixed(1) : 'ยังไม่มีคะแนน'})</div>
-            </div>
+          </div>
+
+          <div
+            className='flex jusfify-center items-center mx-8'
+            onClick={() => {
+              setClosePopupRating(true)
+            }}
+          >
+            <Button variant='outline' className='text-2xl p-2 cursor-pointer'>
+              <Image
+                src='/icons/ratingforgive.svg'
+                alt='ratingforgive logo'
+                width={24}
+                height={24}
+              />
+              ให้คะแนน
+            </Button>
           </div>
         </div>
       </div>
