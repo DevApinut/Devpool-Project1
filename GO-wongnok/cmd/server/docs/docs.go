@@ -139,6 +139,101 @@ const docTemplate = `{
                 }
             }
         },
+        "/api/v1/food-recipes/favorites": {
+            "get": {
+                "description": "Get all favorites",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "favorite"
+                ],
+                "summary": "Get favorites",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/dto.FavoriteResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    }
+                }
+            },
+            "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Create a new favorite for a food recipe by userID",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "favorite"
+                ],
+                "summary": "Create a favorite",
+                "parameters": [
+                    {
+                        "description": "Favorite Request",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/dto.FavoriteRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/dto.FavoriteResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    }
+                }
+            }
+        },
         "/api/v1/food-recipes/{id}": {
             "get": {
                 "description": "Get a single food recipe by ID",
@@ -506,6 +601,28 @@ const docTemplate = `{
                 }
             }
         },
+        "dto.FavoriteRequest": {
+            "type": "object",
+            "required": [
+                "foodRecipeID"
+            ],
+            "properties": {
+                "foodRecipeID": {
+                    "type": "integer"
+                }
+            }
+        },
+        "dto.FavoriteResponse": {
+            "type": "object",
+            "properties": {
+                "foodRecipeID": {
+                    "type": "integer"
+                },
+                "userID": {
+                    "type": "string"
+                }
+            }
+        },
         "dto.FoodRecipeRequest": {
             "type": "object",
             "required": [
@@ -522,7 +639,8 @@ const docTemplate = `{
                     "enum": [
                         1,
                         2,
-                        3
+                        3,
+                        4
                     ]
                 },
                 "description": {
@@ -659,7 +777,7 @@ const docTemplate = `{
 var SwaggerInfo = &swag.Spec{
 	Version:          "1.0",
 	Host:             "localhost:8080",
-	BasePath:         "",
+	BasePath:         "/",
 	Schemes:          []string{},
 	Title:            "Wongnok API",
 	Description:      "This is an wongnok server.",

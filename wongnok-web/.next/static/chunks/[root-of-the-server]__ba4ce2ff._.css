@@ -724,6 +724,10 @@
     margin-block: calc(var(--spacing) * 1);
   }
 
+  .my-3 {
+    margin-block: calc(var(--spacing) * 3);
+  }
+
   .my-4 {
     margin-block: calc(var(--spacing) * 4);
   }
@@ -1324,7 +1328,7 @@
   }
 
   .bg-secondary {
-    background-color: var(--secondary);
+    background-color: #adadad;
   }
 
   .bg-secondary-100 {
@@ -1545,7 +1549,7 @@
   }
 
   .text-secondary {
-    color: var(--secondary);
+    color: #adadad;
   }
 
   .text-secondary-900 {
@@ -1780,13 +1784,9 @@
 
   @media (hover: hover) {
     .hover\:bg-secondary\/80:hover {
-      background-color: var(--secondary);
-    }
-
-    @supports (color: color-mix(in lab, red, red)) {
-      .hover\:bg-secondary\/80:hover {
-        background-color: color-mix(in oklab, var(--secondary) 80%, transparent);
-      }
+      background-color: rgba(173, 173, 173, .8);
+      background-color: color(display-p3 .678431 .678431 .678431 / .8);
+      background-color: lab(70.7249% 0 -.0000119209 / .8);
     }
   }
 
@@ -2118,13 +2118,9 @@
 
   @media (hover: hover) {
     a.\[a\&\]\:hover\:bg-secondary\/90:hover {
-      background-color: var(--secondary);
-    }
-
-    @supports (color: color-mix(in lab, red, red)) {
-      a.\[a\&\]\:hover\:bg-secondary\/90:hover {
-        background-color: color-mix(in oklab, var(--secondary) 90%, transparent);
-      }
+      background-color: rgba(173, 173, 173, .9);
+      background-color: color(display-p3 .678431 .678431 .678431 / .9);
+      background-color: lab(70.7249% 0 -.0000119209 / .9);
     }
   }
 

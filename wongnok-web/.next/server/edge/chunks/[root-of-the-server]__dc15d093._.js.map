@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 21, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/src/middleware.ts"],"sourcesContent":["import { NextResponse } from 'next/server'\r\nimport type { NextRequest } from 'next/server'\r\n\r\nexport function middleware(req: NextRequest) {\r\n    const token = req.cookies.get('next-auth.session-token') || req.cookies.get('__Secure-next-auth.session-token')\r\n    if (!token) {\r\n        // Redirect to NextAuth sign-in (which will redirect to Keycloak)\r\n        return NextResponse.redirect('/api/auth/signin?callbackUrl=' + encodeURIComponent(req.nextUrl.href))\r\n    }\r\n    return NextResponse.next()\r\n}\r\n\r\nexport const config = {\r\n    matcher: ['/my-recipe'],\r\n}"],"names":[],"mappings":";;;;AAAA;AAAA;;AAGO,SAAS,WAAW,GAAgB;IACvC,MAAM,QAAQ,IAAI,OAAO,CAAC,GAAG,CAAC,8BAA8B,IAAI,OAAO,CAAC,GAAG,CAAC;IAC5E,IAAI,CAAC,OAAO;QACR,iEAAiE;QACjE,OAAO,6LAAA,CAAA,eAAY,CAAC,QAAQ,CAAC,kCAAkC,mBAAmB,IAAI,OAAO,CAAC,IAAI;IACtG;IACA,OAAO,6LAAA,CAAA,eAAY,CAAC,IAAI;AAC5B;AAEO,MAAM,SAAS;IAClB,SAAS;QAAC;KAAa;AAC3B"}}]
+}

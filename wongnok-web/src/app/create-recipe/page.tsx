@@ -1,5 +1,6 @@
 'use client'
 
+import PopupFailCreateUpdate from '@/components/PopupFailCreateUpdate'
 import { Button } from '@/components/ui/button'
 import {
   Form,
@@ -17,6 +18,7 @@ import { createRecipe } from '@/services/recipe.service'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useMutation } from '@tanstack/react-query'
 import { useRouter } from 'next/navigation'
+import { useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import z from 'zod'
 
@@ -44,11 +46,13 @@ type RecipeSchemaType = z.infer<typeof RecipeSchema>
 
 const CreateRecipe = () => {
   const router = useRouter()
+  const [Popup , setPopup] = useState(false)
 
   const { mutateAsync: postCreateRecipe } = useMutation({
     mutationFn: createRecipe,
     onError: () => {
-      console.log('error fetching')
+      setPopup(true)
+      
     },
     onSuccess: () => {
       router.replace('/')
@@ -72,6 +76,7 @@ const CreateRecipe = () => {
 
   return (
     <div>
+      {Popup && <PopupFailCreateUpdate closePopup={setPopup}/>}
       <h1 className='text-4xl font-bold pb-8'>สร้างสูตรอาหารของฉัน</h1>
       <Form {...form}>
         <form

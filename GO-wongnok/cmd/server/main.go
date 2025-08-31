@@ -5,6 +5,7 @@ import (
 	"log"
 	"wongnok/internal/auth"
 	"wongnok/internal/config"
+	"wongnok/internal/favorite"
 	"wongnok/internal/foodrecipe"
 	"wongnok/internal/middleware"
 	"wongnok/internal/rating"
@@ -31,6 +32,7 @@ import (
 // @version 1.0
 // @description This is an wongnok server.
 // @host localhost:8080
+// @BasePath /
 // @securityDefinitions.apikey BearerAuth
 // @in header
 // @name Authorization
@@ -69,6 +71,7 @@ func main() {
 	// Handler
 	foodRecipeHandler := foodrecipe.NewHandler(db)
 	ratingHandler := rating.NewHandler(db)
+	favoriteHandler := favorite.NewHandler(db)
 	authHandler := auth.NewHandler(
 		db,
 		conf.Keycloak,
@@ -119,6 +122,10 @@ func main() {
 	// Rating
 	group.GET("/food-recipes/:id/ratings", ratingHandler.Get)
 	group.POST("/food-recipes/:id/ratings", middleware.Authorize(verifierSkipClientIDCheck), ratingHandler.Create)
+
+	// Favorite
+	group.GET("/food-recipes/favorites", favoriteHandler.Get)
+	group.POST("/food-recipes/favorites", middleware.Authorize(verifierSkipClientIDCheck), favoriteHandler.Create)
 
 	// Auth
 	group.GET("/login", authHandler.Login)

@@ -30,7 +30,7 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-muted: var(--muted);
   --color-secondary-foreground: var(--secondary-foreground);
-  --color-secondary: var(--secondary);
+  --color-secondary: #ADADAD;
   --color-primary-foreground: var(--primary-foreground);
   --color-primary: var(--primary);
   --color-primary-500: var(--primary-500);

@@ -166,10 +166,6 @@ const handler = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules
         })
     ],
     callbacks: {
-        // async redirect({ url, baseUrl }) {
-        //   console.log('Redirecting to:', url)
-        //   return "http://localhost/";
-        // },
         // for keep jwt token
         async jwt ({ token, account }) {
             if (account) {
