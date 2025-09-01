@@ -5,6 +5,7 @@ type RatingRequest struct {
 }
 
 type RatingResponse struct {
+	ID           uint    `json:"id"`
 	Score        float64 `json:"score"`
 	FoodRecipeID uint    `json:"foodRecipeID"`
 	UserID       string  `json:"userID"`

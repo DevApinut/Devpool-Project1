@@ -56,10 +56,12 @@ func (recipe FoodRecipe) ToResponse() dto.FoodRecipeResponse {
 			Name: recipe.Difficulty.Name,
 		},
 		Favorite: dto.FavoriteResponse{
+			ID:           recipe.Favorite.ID,
 			FoodRecipeID: recipe.Favorite.FoodRecipeID,
 			UserID:       recipe.Favorite.UserID,
 		},
 		Rating: dto.RatingResponse{
+			ID:           recipe.Rating.ID,
 			Score:        recipe.Rating.Score,
 			FoodRecipeID: recipe.Rating.FoodRecipeID,
 			UserID:       recipe.Rating.UserID,

@@ -5,6 +5,7 @@ type FavoriteRequest struct {
 }
 
 type FavoriteResponse struct {
+	ID           uint   `json:"id"`
 	FoodRecipeID uint   `json:"foodRecipeID"`
 	UserID       string `json:"userID"`
 }

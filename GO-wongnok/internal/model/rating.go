@@ -21,6 +21,7 @@ func (rating Rating) FromRequest(request dto.RatingRequest) Rating {
 
 func (rating Rating) ToResponse() dto.RatingResponse {
 	return dto.RatingResponse{
+		ID:           rating.ID,
 		Score:        rating.Score,
 		FoodRecipeID: rating.FoodRecipeID,
 		UserID:       rating.UserID,

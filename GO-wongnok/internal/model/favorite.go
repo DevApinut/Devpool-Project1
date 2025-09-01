@@ -19,6 +19,7 @@ func (favorite Favorite) FromRequest(request dto.FavoriteRequest) Favorite {
 }
 func (favorite Favorite) ToResponse() dto.FavoriteResponse {
 	return dto.FavoriteResponse{
+		ID:           favorite.ID,
 		FoodRecipeID: favorite.FoodRecipeID,
 		UserID:       favorite.UserID,
 	}
