@@ -1,6 +1,7 @@
 package foodrecipe
 
 import (
+	"fmt"
 	"wongnok/internal/model"
 
 	"gorm.io/gorm"
@@ -63,6 +64,7 @@ func (repo Repository) Count() (int64, error) {
 
 func (repo Repository) GetByID(id int, claimsID string) (model.FoodRecipe, error) {
 	var recipe model.FoodRecipe
+	fmt.Println("FGDD", claimsID)
 	if err := repo.DB.Preload("Favorite", "user_id = ?", claimsID).Preload("Rating", "user_id = ?", claimsID).Preload("CookingDuration").Preload("Difficulty").Preload("Difficulty").Preload("User").First(&recipe, id).Error; err != nil {
 		return model.FoodRecipe{}, err
 	}

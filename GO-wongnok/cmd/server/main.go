@@ -130,7 +130,8 @@ func main() {
 	// get all fav by user
 	group.GET("/food-recipes/:id/favorites", favoriteHandler.Get)
 	group.GET("/food-recipes/favorites", middleware.Authorize(verifierSkipClientIDCheck), favoriteHandler.GetByUser)
-	group.POST("/food-recipes/favorites", middleware.Authorize(verifierSkipClientIDCheck), favoriteHandler.Create)
+	group.POST("/food-recipes/:id/favorites", middleware.Authorize(verifierSkipClientIDCheck), favoriteHandler.Create)
+	group.DELETE("/food-recipes/:id/favorites", middleware.Authorize(verifierSkipClientIDCheck), favoriteHandler.Delete)
 
 	// Auth
 	group.GET("/login", authHandler.Login)

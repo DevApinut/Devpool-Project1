@@ -3,9 +3,10 @@ package favorite
 import (
 	"errors"
 	"net/http"
+	"strconv"
+	"wongnok/internal/global"
 	"wongnok/internal/helper"
 	"wongnok/internal/model"
-	"wongnok/internal/model/dto"
 
 	"github.com/gin-gonic/gin"
 	"github.com/go-playground/validator/v10"
@@ -16,6 +17,8 @@ type IHandler interface {
 	Get(ctx *gin.Context)
 	GetByUser(ctx *gin.Context)
 	Create(ctx *gin.Context)
+	Delete(ctx *gin.Context)
+	Update(ctx *gin.Context)
 }
 
 type Handler struct {
@@ -110,11 +113,12 @@ func (handler Handler) GetByUser(ctx *gin.Context) {
 // @Security BearerAuth
 // @Router /api/v1/food-recipes/favorites [post]
 func (handler Handler) Create(ctx *gin.Context) {
-	var request dto.FavoriteRequest
-
-	if err := ctx.BindJSON(&request); err != nil {
-		ctx.JSON(http.StatusBadRequest, gin.H{"message": err.Error()})
-		return
+	var id int
+	pathParam := ctx.Param("id")
+	if pathParam != "" {
+		if parsed, err := strconv.Atoi(pathParam); err == nil && parsed > 0 {
+			id = parsed
+		}
 	}
 
 	claims, err := helper.DecodeClaims(ctx)
@@ -122,7 +126,7 @@ func (handler Handler) Create(ctx *gin.Context) {
 		ctx.JSON(http.StatusUnauthorized, gin.H{"message": err.Error()})
 		return
 	}
-	favorite, err := handler.Service.Create(request, claims)
+	favorite, err := handler.Service.Create(id, claims)
 
 	if err != nil {
 		statusCode := http.StatusInternalServerError
@@ -135,4 +139,34 @@ func (handler Handler) Create(ctx *gin.Context) {
 	}
 
 	ctx.JSON(http.StatusCreated, favorite.ToResponse())
+}
+
+func (handler Handler) Delete(ctx *gin.Context) {
+	claims, err := helper.DecodeClaims(ctx)
+	if err != nil {
+		ctx.JSON(http.StatusUnauthorized, gin.H{"message": err.Error()})
+		return
+	}
+
+	var id int
+
+	pathParam := ctx.Param("id")
+	if pathParam != "" {
+		if parsed, err := strconv.Atoi(pathParam); err == nil && parsed > 0 {
+			id = parsed
+		}
+	}
+
+	if err := handler.Service.Delete(id, claims); err != nil {
+		statusCode := http.StatusInternalServerError
+
+		if errors.Is(err, global.ErrForbidden) {
+			statusCode = http.StatusForbidden
+		}
+
+		ctx.JSON(statusCode, gin.H{"message": err.Error()})
+		return
+	}
+
+	ctx.JSON(http.StatusOK, gin.H{"message": "Recipe deleted successfully"})
 }

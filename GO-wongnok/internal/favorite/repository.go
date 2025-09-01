@@ -11,6 +11,10 @@ type IRepository interface {
 	Get(userID string) (model.Favorites, error)
 	GetByUser(foodRecipeQuery model.FoodRecipeQuery, userID string) (model.FoodRecipes, error)
 	Create(favorite *model.Favorite) error
+	Delete(id int) error
+	GetByID(id int, claimsID string) (model.Favorite, error)
+	GetDeleteByID(id int, claimsID string) (model.Favorite, error)
+	Update(id int) error
 }
 
 type Repository struct {
@@ -59,4 +63,43 @@ func (repo Repository) Create(favorite *model.Favorite) error {
 	}
 
 	return nil
+}
+
+func (repo Repository) GetByID(id int, claimsID string) (model.Favorite, error) {
+
+	var favorite model.Favorite
+	if err := repo.DB.Where("food_recipe_id = ? AND user_id = ?", id, claimsID).First(&favorite).Error; err != nil {
+		return model.Favorite{}, err
+	}
+	return favorite, nil
+}
+
+func (repo Repository) GetDeleteByID(id int, claimsID string) (model.Favorite, error) {
+
+	var favorite model.Favorite
+	if err := repo.DB.Unscoped().Where("food_recipe_id = ? AND user_id = ?", id, claimsID).First(&favorite).Error; err != nil {
+		return model.Favorite{}, err
+	}
+	return favorite, nil
+
+}
+
+func (repo Repository) Delete(id int) error {
+	return repo.DB.Delete(&model.Favorite{}, id).Error
+}
+
+func (repo Repository) Update(id int) error {
+
+	var favorite model.Favorite
+	// ดึงข้อมูลเดิมมาก่อน (optional)
+	if err := repo.DB.Unscoped().First(&favorite, id).Error; err != nil {
+		return err
+	}
+
+	// อัปเดต deleted_at ให้เป็น nil
+	if err := repo.DB.Unscoped().Model(&favorite).Where("id = ?", id).Update("deleted_at", nil).Error; err != nil {
+		return err
+	}
+
+	return repo.DB.First(&favorite, favorite.ID).Error
 }

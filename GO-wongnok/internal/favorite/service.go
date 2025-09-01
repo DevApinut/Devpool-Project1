@@ -1,11 +1,10 @@
 package favorite
 
 import (
+	"wongnok/internal/global"
 	"wongnok/internal/model"
-	"wongnok/internal/model/dto"
 	"wongnok/internal/user"
 
-	"github.com/go-playground/validator/v10"
 	"github.com/pkg/errors"
 	"gorm.io/gorm"
 )
@@ -15,7 +14,8 @@ type IUserService user.IService
 type IService interface {
 	Get(userID string) (model.Favorites, error)
 	GetByUser(foodRecipeQuery model.FoodRecipeQuery, claims model.Claims) (model.FoodRecipes, error)
-	Create(request dto.FavoriteRequest, claims model.Claims) (model.Favorite, error)
+	Create(id int, claims model.Claims) (model.Favorite, error)
+	Delete(id int, claims model.Claims) error
 }
 
 type Service struct {
@@ -49,25 +49,46 @@ func (service Service) Get(userID string) (model.Favorites, error) {
 	return favorites, nil
 }
 
-func (service Service) Create(request dto.FavoriteRequest, claims model.Claims) (model.Favorite, error) {
-	validate := validator.New()
-	if err := validate.Struct(request); err != nil {
-		return model.Favorite{}, errors.Wrap(err, "request invalid")
-	}
+func (service Service) Create(id int, claims model.Claims) (model.Favorite, error) {
 
 	userID, err := service.UserService.GetByID(claims)
 	if err != nil {
 		return model.Favorite{}, errors.Wrap(err, "create Favorite")
 	}
 
-	var favorite model.Favorite
-	favorite = favorite.FromRequest(request)
-	favorite.FoodRecipeID = uint(request.FoodRecipeID)
-	favorite.UserID = userID.ID
+	favoriteFromGet, err := service.Repository.GetDeleteByID(id, claims.ID)
+	if err != nil {
+		var favorite model.Favorite
+		favorite.FoodRecipeID = uint(id)
+		favorite.UserID = userID.ID
 
-	if err := service.Repository.Create(&favorite); err != nil {
-		return model.Favorite{}, errors.Wrap(err, "create favorite")
+		if err := service.Repository.Create(&favorite); err != nil {
+			return model.Favorite{}, errors.Wrap(err, "create favorite")
+		}
+
+		return favorite, nil
 	}
 
-	return favorite, nil
+	if err := service.Repository.Update(int(favoriteFromGet.ID)); err != nil {
+		return model.Favorite{}, errors.Wrap(err, "update Favorite")
+	}
+
+	return favoriteFromGet, err
+
+}
+
+func (service Service) Delete(id int, claims model.Claims) error {
+	favorite, err := service.Repository.GetByID(id, claims.ID)
+	if err != nil {
+		// กรณีไม่พบ id ที่ต้องการ update
+		return errors.Wrap(err, "find recipe")
+
+	}
+
+	if favorite.UserID != claims.ID {
+		// กรณี user ที่ login ไม่ตรงกับ user ที่สร้าง recipe
+		return global.ErrForbidden
+	}
+
+	return service.Repository.Delete(int(favorite.ID))
 }
