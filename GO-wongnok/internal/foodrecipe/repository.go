@@ -40,6 +40,7 @@ func (repo Repository) Get(query model.FoodRecipeQuery, claimsID string) (model.
 	db = db.Preload("CookingDuration")
 	db = db.Preload("Difficulty")
 	db = db.Preload("User")
+	db = db.Preload("Ratings")
 
 	if query.Search != "" {
 		db = db.Where("name LIKE ?", "%"+query.Search+"%").Or("description LIKE ?", "%"+query.Search+"%")
@@ -65,7 +66,7 @@ func (repo Repository) Count() (int64, error) {
 func (repo Repository) GetByID(id int, claimsID string) (model.FoodRecipe, error) {
 	var recipe model.FoodRecipe
 	fmt.Println("FGDD", claimsID)
-	if err := repo.DB.Preload("Favorite", "user_id = ?", claimsID).Preload("Rating", "user_id = ?", claimsID).Preload("CookingDuration").Preload("Difficulty").Preload("Difficulty").Preload("User").First(&recipe, id).Error; err != nil {
+	if err := repo.DB.Preload("Favorite", "user_id = ?", claimsID).Preload("Rating", "user_id = ?", claimsID).Preload("CookingDuration").Preload("Difficulty").Preload("Difficulty").Preload("User").Preload("Ratings").First(&recipe, id).Error; err != nil {
 		return model.FoodRecipe{}, err
 	}
 

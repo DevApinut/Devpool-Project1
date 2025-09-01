@@ -14,16 +14,11 @@ definitions:
       name:
         type: string
     type: object
-  dto.FavoriteRequest:
-    properties:
-      foodRecipeID:
-        type: integer
-    required:
-    - foodRecipeID
-    type: object
   dto.FavoriteResponse:
     properties:
       foodRecipeID:
+        type: integer
+      id:
         type: integer
       userID:
         type: string
@@ -113,6 +108,8 @@ definitions:
   dto.RatingResponse:
     properties:
       foodRecipeID:
+        type: integer
+      id:
         type: integer
       score:
         type: number
@@ -367,7 +364,46 @@ paths:
           schema:
             additionalProperties: true
             type: object
+      security:
+      - BearerAuth: []
       summary: Get favorites
+      tags:
+      - favorite
+    post:
+      consumes:
+      - application/json
+      description: Create a new favorite for a food recipe by userID
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/dto.FavoriteResponse'
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties: true
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            additionalProperties: true
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties: true
+            type: object
+      security:
+      - BearerAuth: []
+      summary: Create a favorite
       tags:
       - favorite
   /api/v1/food-recipes/{id}/ratings:
@@ -448,6 +484,21 @@ paths:
       consumes:
       - application/json
       description: Get all favorites
+      parameters:
+      - description: Page number
+        in: query
+        name: page
+        required: true
+        type: integer
+      - description: Items per page
+        in: query
+        name: limit
+        required: true
+        type: integer
+      - description: Search term
+        in: query
+        name: search
+        type: string
       produces:
       - application/json
       responses:
@@ -468,44 +519,6 @@ paths:
       security:
       - BearerAuth: []
       summary: GetByuser favorites
-      tags:
-      - favorite
-    post:
-      consumes:
-      - application/json
-      description: Create a new favorite for a food recipe by userID
-      parameters:
-      - description: Favorite Request
-        in: body
-        name: request
-        required: true
-        schema:
-          $ref: '#/definitions/dto.FavoriteRequest'
-      produces:
-      - application/json
-      responses:
-        "201":
-          description: Created
-          schema:
-            $ref: '#/definitions/dto.FavoriteResponse'
-        "400":
-          description: Bad Request
-          schema:
-            additionalProperties: true
-            type: object
-        "401":
-          description: Unauthorized
-          schema:
-            additionalProperties: true
-            type: object
-        "500":
-          description: Internal Server Error
-          schema:
-            additionalProperties: true
-            type: object
-      security:
-      - BearerAuth: []
-      summary: Create a favorite
       tags:
       - favorite
   /api/v1/users/{id}/food-recipes:

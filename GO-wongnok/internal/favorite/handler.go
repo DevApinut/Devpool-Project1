@@ -41,6 +41,7 @@ func NewHandler(db *gorm.DB) *Handler {
 // @Success 200 {object} dto.FavoriteResponse
 // @Failure 400 {object} map[string]interface{}
 // @Failure 500 {object} map[string]interface{}
+// @Security BearerAuth
 // @Router /api/v1/food-recipes/{id}/favorites [get]
 func (handler Handler) Get(ctx *gin.Context) {
 	var id string
@@ -68,6 +69,9 @@ func (handler Handler) Get(ctx *gin.Context) {
 // @Tags favorite
 // @Accept json
 // @Produce json
+// @Param page query int true "Page number" (default 1)
+// @Param limit query int true "Items per page" (default 10)
+// @Param search query string false "Search term"
 // @Success 200 {object} dto.FavoriteResponse
 // @Failure 400 {object} map[string]interface{}
 // @Failure 500 {object} map[string]interface{}
@@ -105,13 +109,13 @@ func (handler Handler) GetByUser(ctx *gin.Context) {
 // @Tags favorite
 // @Accept json
 // @Produce json
-// @Param request body dto.FavoriteRequest true "Favorite Request"
+// @Param id path string true "id"
 // @Success 201 {object} dto.FavoriteResponse
 // @Failure 400 {object} map[string]interface{}
 // @Failure 401 {object} map[string]interface{}
 // @Failure 500 {object} map[string]interface{}
 // @Security BearerAuth
-// @Router /api/v1/food-recipes/favorites [post]
+// @Router /api/v1/food-recipes/{id}/favorites [post]
 func (handler Handler) Create(ctx *gin.Context) {
 	var id int
 	pathParam := ctx.Param("id")
@@ -141,6 +145,19 @@ func (handler Handler) Create(ctx *gin.Context) {
 	ctx.JSON(http.StatusCreated, favorite.ToResponse())
 }
 
+// Delete godoc
+// @Summary Create a favorite
+// @Description Create a new favorite for a food recipe by userID
+// @Tags favorite
+// @Accept json
+// @Produce json
+// @Param id path string true "id"
+// @Success 201 {object} dto.FavoriteResponse
+// @Failure 400 {object} map[string]interface{}
+// @Failure 401 {object} map[string]interface{}
+// @Failure 500 {object} map[string]interface{}
+// @Security BearerAuth
+// @Router /api/v1/food-recipes/{id}/favorites [post]
 func (handler Handler) Delete(ctx *gin.Context) {
 	claims, err := helper.DecodeClaims(ctx)
 	if err != nil {
