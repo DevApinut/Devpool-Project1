@@ -1,7 +1,12 @@
 package global
 
-import "errors"
+import (
+	"errors"
+	"wongnok/internal/config"
+)
 
 var (
 	ErrForbidden error = errors.New("forbidden")
 )
+
+var Verifier config.IOIDCTokenVerifier

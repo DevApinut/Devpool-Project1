@@ -7,6 +7,7 @@ import (
 	"wongnok/internal/config"
 	"wongnok/internal/favorite"
 	"wongnok/internal/foodrecipe"
+	"wongnok/internal/global"
 	"wongnok/internal/middleware"
 	"wongnok/internal/rating"
 	"wongnok/internal/user"
@@ -67,6 +68,8 @@ func main() {
 		log.Fatal("Error when make provider:", err)
 	}
 	verifierSkipClientIDCheck := provider.Verifier(&oidc.Config{SkipClientIDCheck: true})
+	// กำหนดค่า global.Verifier
+	global.Verifier = provider.Verifier(&oidc.Config{SkipClientIDCheck: true})
 
 	// Handler
 	foodRecipeHandler := foodrecipe.NewHandler(db)
@@ -124,6 +127,7 @@ func main() {
 	group.POST("/food-recipes/:id/ratings", middleware.Authorize(verifierSkipClientIDCheck), ratingHandler.Create)
 
 	// Favorite
+	// get all fav by user
 	group.GET("/food-recipes/:id/favorites", favoriteHandler.Get)
 	group.GET("/food-recipes/favorites", middleware.Authorize(verifierSkipClientIDCheck), favoriteHandler.GetByUser)
 	group.POST("/food-recipes/favorites", middleware.Authorize(verifierSkipClientIDCheck), favoriteHandler.Create)

@@ -90,20 +90,26 @@ func (handler Handler) Create(ctx *gin.Context) {
 // @Success 200 {object} dto.FoodRecipesResponse
 // @Failure 400 {object} map[string]interface{}
 // @Failure 500 {object} map[string]interface{}
+// @Security BearerAuth
 // @Router /api/v1/food-recipes [get]
 func (handler Handler) Get(ctx *gin.Context) {
+	claims, err := helper.DecodeClaimsFromHeader(ctx, global.Verifier)
+	if err != nil {
+		claims.ID = ""
+	}
+
 	var foodRecipeQuery model.FoodRecipeQuery
 	if err := ctx.ShouldBindQuery(&foodRecipeQuery); err != nil {
 		ctx.JSON(http.StatusBadRequest, gin.H{"message": err.Error()})
 		return
 	}
-	recipes, total, err := handler.Service.Get(foodRecipeQuery)
+	recipes, total, err := handler.Service.Get(foodRecipeQuery, claims)
 	if err != nil {
 		ctx.JSON(http.StatusInternalServerError, gin.H{"message": err.Error()})
 		return
 	}
-
 	ctx.JSON(http.StatusOK, recipes.ToResponse(total))
+
 }
 
 // GetByID godoc
@@ -116,10 +122,15 @@ func (handler Handler) Get(ctx *gin.Context) {
 // @Success 200 {object} dto.FoodRecipeResponse
 // @Failure 400 {object} map[string]interface{}
 // @Failure 500 {object} map[string]interface{}
+// @Security BearerAuth
 // @Router /api/v1/food-recipes/{id} [get]
 func (handler Handler) GetByID(ctx *gin.Context) {
-	var id int
+	claims, err := helper.DecodeClaimsFromHeader(ctx, global.Verifier)
+	if err != nil {
+		claims.ID = ""
+	}
 
+	var id int
 	pathParam := ctx.Param("id")
 	if pathParam != "" {
 		if parsed, err := strconv.Atoi(pathParam); err == nil && parsed > 0 {
@@ -127,7 +138,7 @@ func (handler Handler) GetByID(ctx *gin.Context) {
 		}
 	}
 
-	recipe, err := handler.Service.GetByID(id)
+	recipe, err := handler.Service.GetByID(id, claims)
 	if err != nil {
 		if errors.Is(err, gorm.ErrRecordNotFound) {
 			ctx.JSON(http.StatusInternalServerError, gin.H{"message": "Recipe not found"})

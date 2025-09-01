@@ -17,6 +17,11 @@ const docTemplate = `{
     "paths": {
         "/api/v1/food-recipes": {
             "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Get a list of food recipes with pagination",
                 "consumes": [
                     "application/json"
@@ -241,6 +246,11 @@ const docTemplate = `{
         },
         "/api/v1/food-recipes/{id}": {
             "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Get a single food recipe by ID",
                 "consumes": [
                     "application/json"
@@ -737,6 +747,9 @@ const docTemplate = `{
                 "difficulty": {
                     "$ref": "#/definitions/dto.DifficultyResponse"
                 },
+                "favorite": {
+                    "$ref": "#/definitions/dto.FavoriteResponse"
+                },
                 "id": {
                     "type": "integer"
                 },
@@ -751,6 +764,9 @@ const docTemplate = `{
                 },
                 "name": {
                     "type": "string"
+                },
+                "rating": {
+                    "$ref": "#/definitions/dto.RatingResponse"
                 },
                 "updatedAt": {
                     "type": "string"

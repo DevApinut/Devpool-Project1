@@ -14,7 +14,7 @@ type IUserService user.IService
 
 type IService interface {
 	Get(userID string) (model.Favorites, error)
-	GetByUser(claims model.Claims) (model.FoodRecipes, error)
+	GetByUser(foodRecipeQuery model.FoodRecipeQuery, claims model.Claims) (model.FoodRecipes, error)
 	Create(request dto.FavoriteRequest, claims model.Claims) (model.Favorite, error)
 }
 
@@ -30,15 +30,16 @@ func NewService(db *gorm.DB) IService {
 	}
 }
 
-func (service Service) GetByUser(claims model.Claims) (model.FoodRecipes, error) {
+func (service Service) GetByUser(foodRecipeQuery model.FoodRecipeQuery, claims model.Claims) (model.FoodRecipes, error) {
 
-	recipes, err := service.Repository.GetByUser(claims.ID)
+	recipes, err := service.Repository.GetByUser(foodRecipeQuery, claims.ID)
 	if err != nil {
 		return nil, err
 	}
 	recipes = recipes.CalculateAverageRatings()
 	return recipes, nil
 }
+
 func (service Service) Get(userID string) (model.Favorites, error) {
 	favorites, err := service.Repository.Get(userID)
 	if err != nil {

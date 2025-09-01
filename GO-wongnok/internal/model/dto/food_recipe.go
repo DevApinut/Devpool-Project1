@@ -21,6 +21,8 @@ type FoodRecipeResponse struct {
 	ImageURL        *string                 `json:"imageUrl,omitempty"`
 	CookingDuration CookingDurationResponse `json:"cookingDuration"`
 	Difficulty      DifficultyResponse      `json:"difficulty"`
+	Favorite        FavoriteResponse        `json:"favorite"`
+	Rating          RatingResponse          `json:"rating"`
 	CreatedAt       time.Time               `json:"createdAt"`
 	UpdatedAt       time.Time               `json:"updatedAt"`
 	AverageRating   float64                 `json:"averageRating"`

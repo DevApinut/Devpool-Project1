@@ -9,9 +9,9 @@ import (
 
 type IRepository interface {
 	Create(recipe *model.FoodRecipe) error
-	Get(foodRecipeQuery model.FoodRecipeQuery) (model.FoodRecipes, error)
+	Get(foodRecipeQuery model.FoodRecipeQuery, claimsID string) (model.FoodRecipes, error)
 	Count() (int64, error)
-	GetByID(id int) (model.FoodRecipe, error)
+	GetByID(id int, claimsID string) (model.FoodRecipe, error)
 	Update(recipe *model.FoodRecipe) error
 	Delete(id int) error
 }
@@ -30,11 +30,15 @@ func (repo Repository) Create(recipe *model.FoodRecipe) error {
 	return repo.DB.Preload(clause.Associations).Create(recipe).First(&recipe).Error
 }
 
-func (repo Repository) Get(query model.FoodRecipeQuery) (model.FoodRecipes, error) {
+func (repo Repository) Get(query model.FoodRecipeQuery, claimsID string) (model.FoodRecipes, error) {
 	var recipes = make(model.FoodRecipes, 0)
 
 	offset := (query.Page - 1) * query.Limit
-	db := repo.DB.Preload(clause.Associations)
+	db := repo.DB.Preload("Favorite", "user_id = ?", claimsID)
+	db = db.Preload("Rating", "user_id = ?", claimsID)
+	db = db.Preload("CookingDuration")
+	db = db.Preload("Difficulty")
+	db = db.Preload("User")
 
 	if query.Search != "" {
 		db = db.Where("name LIKE ?", "%"+query.Search+"%").Or("description LIKE ?", "%"+query.Search+"%")
@@ -57,10 +61,9 @@ func (repo Repository) Count() (int64, error) {
 	return count, nil
 }
 
-func (repo Repository) GetByID(id int) (model.FoodRecipe, error) {
+func (repo Repository) GetByID(id int, claimsID string) (model.FoodRecipe, error) {
 	var recipe model.FoodRecipe
-
-	if err := repo.DB.Preload(clause.Associations).First(&recipe, id).Error; err != nil {
+	if err := repo.DB.Preload("Favorite", "user_id = ?", claimsID).Preload("Rating", "user_id = ?", claimsID).Preload("CookingDuration").Preload("Difficulty").Preload("Difficulty").Preload("User").First(&recipe, id).Error; err != nil {
 		return model.FoodRecipe{}, err
 	}
 
@@ -69,7 +72,6 @@ func (repo Repository) GetByID(id int) (model.FoodRecipe, error) {
 
 func (repo Repository) Update(recipe *model.FoodRecipe) error {
 	// update
-	println("tes222", recipe)
 	if err := repo.DB.Model(&recipe).Where("id = ?", recipe.ID).Updates(recipe).Error; err != nil {
 		return err
 	}

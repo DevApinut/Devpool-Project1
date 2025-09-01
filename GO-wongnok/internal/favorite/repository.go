@@ -9,7 +9,7 @@ import (
 
 type IRepository interface {
 	Get(userID string) (model.Favorites, error)
-	GetByUser(userID string) (model.FoodRecipes, error)
+	GetByUser(foodRecipeQuery model.FoodRecipeQuery, userID string) (model.FoodRecipes, error)
 	Create(favorite *model.Favorite) error
 }
 
@@ -32,14 +32,21 @@ func (repo Repository) Get(userID string) (model.Favorites, error) {
 
 	return favorites, nil
 }
-func (repo Repository) GetByUser(userID string) (model.FoodRecipes, error) {
-	var recipes []model.FoodRecipe
-	if err := repo.DB.
+func (repo Repository) GetByUser(query model.FoodRecipeQuery, userID string) (model.FoodRecipes, error) {
+	var recipes = make(model.FoodRecipes, 0)
+	offset := (query.Page - 1) * query.Limit
+	db := repo.DB.
 		Model(&model.FoodRecipe{}).
 		Joins("JOIN favorites fav ON food_recipes.id = fav.food_recipe_id").
 		Where("fav.user_id = ?", userID).
 		Preload(clause.Associations).
-		Find(&recipes).Error; err != nil {
+		Find(&recipes)
+
+	if query.Search != "" {
+		db = db.Where("name LIKE ?", "%"+query.Search+"%").Or("description LIKE ?", "%"+query.Search+"%")
+	}
+
+	if err := db.Order("name asc").Limit(query.Limit).Offset(offset).Find(&recipes).Error; err != nil {
 		return nil, err
 	}
 	return recipes, nil

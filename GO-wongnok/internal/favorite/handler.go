@@ -4,6 +4,7 @@ import (
 	"errors"
 	"net/http"
 	"wongnok/internal/helper"
+	"wongnok/internal/model"
 	"wongnok/internal/model/dto"
 
 	"github.com/gin-gonic/gin"
@@ -76,7 +77,13 @@ func (handler Handler) GetByUser(ctx *gin.Context) {
 		ctx.JSON(http.StatusUnauthorized, gin.H{"message": err.Error()})
 		return
 	}
-	foodRecipes, err := handler.Service.GetByUser(claims)
+
+	var foodRecipeQuery model.FoodRecipeQuery
+	if err := ctx.ShouldBindQuery(&foodRecipeQuery); err != nil {
+		ctx.JSON(http.StatusBadRequest, gin.H{"message": err.Error()})
+		return
+	}
+	foodRecipes, err := handler.Service.GetByUser(foodRecipeQuery, claims)
 	if err != nil {
 		if errors.Is(err, gorm.ErrRecordNotFound) {
 			ctx.JSON(http.StatusInternalServerError, gin.H{"message": "favorite not found"})
