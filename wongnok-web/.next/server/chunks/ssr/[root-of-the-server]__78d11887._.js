@@ -307,8 +307,8 @@ const createRating = async (data)=>{
     });
     return recipeRating;
 };
-const getFavorite = async ()=>{
-    const recipeFavorite = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$axios$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["api"].get(`/api/v1/food-recipes/favorites`);
+const getFavorite = async ({})=>{
+    const recipeFavorite = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$axios$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["api"].get(`/api/v1/food-recipes/favorites?limit=5&page=1`);
     return recipeFavorite;
 };
 }),

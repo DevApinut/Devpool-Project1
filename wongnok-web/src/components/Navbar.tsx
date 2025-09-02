@@ -68,7 +68,7 @@ const Navbar = () => {
                   : 'opacity-0 -translate-y-4 pointer-events-none'
               }`}
           >
-            <Link href={`/my-favorite`}>
+            <Link href={`/my-favorite?limit=5&page=1`}>
               <div className='w-[195px] h-[48px] flex items-center hover:bg-pinklittle rounded-lg'>
                 <span className='text-end w-full px-4'>รายการโปรด</span>
               </div>

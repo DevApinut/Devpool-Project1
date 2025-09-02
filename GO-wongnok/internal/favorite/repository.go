@@ -15,6 +15,8 @@ type IRepository interface {
 	GetByID(id int, claimsID string) (model.Favorite, error)
 	GetDeleteByID(id int, claimsID string) (model.Favorite, error)
 	Update(id int) error
+
+	Count(UserID string, search string) (int64, error)
 }
 
 type Repository struct {
@@ -102,4 +104,16 @@ func (repo Repository) Update(id int) error {
 	}
 
 	return repo.DB.First(&favorite, favorite.ID).Error
+}
+
+func (repo Repository) Count(UserID string, search string) (int64, error) {
+	var count int64
+	var recipes model.FoodRecipes
+	db := repo.DB.Model(&model.FoodRecipe{}).Joins("JOIN favorites fav ON food_recipes.id = fav.food_recipe_id").Where("fav.user_id = ?", UserID).Preload(clause.Associations).Find(&recipes)
+	if search != "" {
+		db = db.Where("name LIKE ?", "%"+search+"%").Or("description LIKE ?", "%"+search+"%")
+	}
+	db = db.Count(&count)
+
+	return count, nil
 }

@@ -13,7 +13,7 @@ type IUserService user.IService
 
 type IService interface {
 	Get(userID string) (model.Favorites, error)
-	GetByUser(foodRecipeQuery model.FoodRecipeQuery, claims model.Claims) (model.FoodRecipes, error)
+	GetByUser(foodRecipeQuery model.FoodRecipeQuery, claims model.Claims) (model.FoodRecipes, int64, error)
 	Create(id int, claims model.Claims) (model.Favorite, error)
 	Delete(id int, claims model.Claims) error
 }
@@ -30,14 +30,17 @@ func NewService(db *gorm.DB) IService {
 	}
 }
 
-func (service Service) GetByUser(foodRecipeQuery model.FoodRecipeQuery, claims model.Claims) (model.FoodRecipes, error) {
-
+func (service Service) GetByUser(foodRecipeQuery model.FoodRecipeQuery, claims model.Claims) (model.FoodRecipes, int64, error) {
+	total, err := service.Repository.Count(claims.ID, foodRecipeQuery.Search)
+	if err != nil {
+		return nil, 0, err
+	}
 	recipes, err := service.Repository.GetByUser(foodRecipeQuery, claims.ID)
 	if err != nil {
-		return nil, err
+		return nil, 0, err
 	}
 	recipes = recipes.CalculateAverageRatings()
-	return recipes, nil
+	return recipes, total, nil
 }
 
 func (service Service) Get(userID string) (model.Favorites, error) {

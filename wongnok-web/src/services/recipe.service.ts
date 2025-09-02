@@ -120,8 +120,8 @@ export const createRating = async (data: Rating) => {
 
 }
 
-export const getFavorite = async () => {
-  const recipeFavorite= await api.get<{ results: Recipe[] }>(`/api/v1/food-recipes/favorites`,)
+export const getFavorite = async (data: fetchRecipeRequest) => {
+  const recipeFavorite= await api.get<{ results: Recipe[];total: number }>(`/api/v1/food-recipes/favorites?page=${data.page}&limit=${data.limit}&search=${data.search}`,)
   return recipeFavorite
 
 }

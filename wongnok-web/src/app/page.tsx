@@ -59,6 +59,16 @@ export default function Home() {
       console.log('error fetching')
     },
     onSuccess: (data) => {
+       if (
+        Number(searchParams.get('page')) >
+        Math.ceil(data.total / Number(searchParams.get('limit')))
+      ) {
+        params.set('search', searchParams.get('search') ?? '')
+        params.set('page', '1')
+        router.replace(`${pathname}?${params.toString()}`)
+        setCurrentPage(1)
+        
+      }
       setRecipesData(data)
     },
   })

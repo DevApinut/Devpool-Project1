@@ -45,7 +45,7 @@ func (service Service) Create(request dto.FoodRecipeRequest, claims model.Claims
 }
 
 func (service Service) Get(foodRecipeQuery model.FoodRecipeQuery, claims model.Claims) (model.FoodRecipes, int64, error) {
-	total, err := service.Repository.Count()
+	total, err := service.Repository.Count(foodRecipeQuery)
 	if err != nil {
 		return nil, 0, err
 	}

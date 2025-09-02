@@ -90,7 +90,7 @@ func (handler Handler) GetByUser(ctx *gin.Context) {
 		ctx.JSON(http.StatusBadRequest, gin.H{"message": err.Error()})
 		return
 	}
-	foodRecipes, err := handler.Service.GetByUser(foodRecipeQuery, claims)
+	foodRecipes, total, err := handler.Service.GetByUser(foodRecipeQuery, claims)
 	if err != nil {
 		if errors.Is(err, gorm.ErrRecordNotFound) {
 			ctx.JSON(http.StatusInternalServerError, gin.H{"message": "favorite not found"})
@@ -100,7 +100,7 @@ func (handler Handler) GetByUser(ctx *gin.Context) {
 		return
 	}
 
-	ctx.JSON(http.StatusOK, foodRecipes.ToResponse(0))
+	ctx.JSON(http.StatusOK, foodRecipes.ToResponse(total))
 }
 
 // Create godoc

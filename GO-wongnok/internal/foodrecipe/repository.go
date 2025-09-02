@@ -11,7 +11,7 @@ import (
 type IRepository interface {
 	Create(recipe *model.FoodRecipe) error
 	Get(foodRecipeQuery model.FoodRecipeQuery, claimsID string) (model.FoodRecipes, error)
-	Count() (int64, error)
+	Count(query model.FoodRecipeQuery) (int64, error)
 	GetByID(id int, claimsID string) (model.FoodRecipe, error)
 	Update(recipe *model.FoodRecipe) error
 	Delete(id int) error
@@ -53,10 +53,16 @@ func (repo Repository) Get(query model.FoodRecipeQuery, claimsID string) (model.
 	return recipes, nil
 }
 
-func (repo Repository) Count() (int64, error) {
+func (repo Repository) Count(query model.FoodRecipeQuery) (int64, error) {
 	var count int64
 
-	if err := repo.DB.Model(&model.FoodRecipes{}).Count(&count).Error; err != nil {
+	db := repo.DB.Model(&model.FoodRecipes{})
+
+	if query.Search != "" {
+		db = db.Where("name LIKE ?", "%"+query.Search+"%").Or("description LIKE ?", "%"+query.Search+"%")
+	}
+
+	if err := db.Count(&count).Error; err != nil {
 		return 0, err
 	}
 
