@@ -1,10 +1,12 @@
 -- +goose Up
 -- +goose StatementBegin
-INSERT INTO "public"."users" ("id", "first_name", "last_name", "created_at", "updated_at", "deleted_at") VALUES
-('392de118-0c0c-40e4-a628-9b77b1354c42', 'naravit', 'bunthap', '2025-08-16 11:30:00', '2025-08-16 11:30:00', NULL),
-('ba9872c8-49fa-42d8-8664-3456571fdsfs', 'Apinut', 'Kaewmunee', '2025-08-17 11:30:00', '2025-08-17 11:30:00', NULL),
-('ba9872c8-49fa-42d8-8664-adfdberwt23w', 'john', 'smith', '2025-08-17 11:30:00', '2025-08-17 11:30:00', NULL),
-('ba9872c8-49fa-42d8-8664-vbvbnjtrytry', 'jet', 'Tondy', '2025-08-17 11:30:00', '2025-08-17 11:30:00', NULL);
+INSERT INTO "public"."users" ("id", "first_name", "last_name", "nick_name", "image_url", "created_at", "updated_at", "deleted_at") VALUES
+('392de118-0c0c-40e4-a628-9b77b1354445', 'naravit', 'bunthap', 'naravit bunthap', 'https://avatar.iran.liara.run/public/boy', '2025-08-16 11:30:00', '2025-08-16 11:30:00', NULL),
+('392de118-0c0c-40e4-a628-9b77b1354c42', 'Apinut', 'Kaewmunee', 'Apinut Kaewmunee', 'https://avatar.iran.liara.run/public/boy', '2025-08-17 11:30:00', '2025-08-17 11:30:00', NULL),
+('ba9872c8-49fa-42d8-8664-adfdberwt23w', 'john', 'smith', 'john smith', 'https://avatar.iran.liara.run/public/boy', '2025-08-17 11:30:00', '2025-08-17 11:30:00', NULL),
+('ba9872c8-49fa-42d8-8664-vbvbnjtrytry', 'jet', 'Tondy', 'jet Tondy', 'https://avatar.iran.liara.run/public/boy', '2025-08-17 11:30:00', '2025-08-17 11:30:00', NULL),
+('ba9872c8-49fa-42d8-8664-d9a44babe021', 'demo', 'user', 'demo user', 'https://avatar.iran.liara.run/public/boy', '2025-08-17 11:30:00', '2025-08-17 11:30:00', NULL);
+
 
 INSERT INTO "public"."food_recipes" ( "name", "description", "ingredient", "instruction", "image_url", "cooking_duration_id", "difficulty_id", "created_at", "updated_at", "deleted_at", "user_id") VALUES
 ('Spaghetti Carbonara', 'Classic Italian pasta dish with creamy sauce.', 'Spaghetti, Eggs, Parmesan, Pancetta, Black Pepper, Salt', 'Cook spaghetti. Fry pancetta. Mix eggs with cheese. Combine all ingredients.', 'https://foodish-api.com/images/pasta/pasta17.jpg', 2, 1, '2025-07-31 16:23:42.02594', '2025-07-31 16:23:42.02594', NULL, 'ba9872c8-49fa-42d8-8664-d9a44babe021'),
@@ -16,8 +18,8 @@ INSERT INTO "public"."food_recipes" ( "name", "description", "ingredient", "inst
 ('สปาเก็ตตี้เพสโต้โหระพา', 'สปาเก็ตตี้ผัดซอสเพสโต้โหระพา หอมสดชื่นจากใบโหระพาสดและน้ำมันมะกอก คลุกเคล้ากับพาร์เมซานชีสและเมล็ดสนคั่ว เพิ่มรสสัมผัสด้วยมะเขือเทศเชอร์รี่อบหวาน', 'สปาเก็ตตี้, ซอสเพสโต้, น้ำมันมะกอก, พาร์เมซานชีส, มะเขือเทศเชอร์รี่', 'ต้มเส้น คลุกกับซอสเพสโต้และผัก จัดเสิร์ฟร้อนๆ', 'https://foodish-api.com/images/pasta/pasta23.jpg', 3, 2, '2025-08-13 15:28:30.789895', '2025-08-13 15:28:30.789895', NULL, 'ba9872c8-49fa-42d8-8664-d9a44babe021'),
 ('สเต๊กริบอายซอสไวน์แดง', 'สเต๊กเนื้อริบอายย่างระดับมีเดียมแรร์ เนื้อนุ่มชุ่มฉ่ำ หอมกลิ่นย่างรมควัน เสิร์ฟพร้อมมันบดเนียนนุ่มและซอสไวน์แดงเข้มข้น', 'เนื้อริบอาย, มันฝรั่ง, เนย, ไวน์แดง, โรสแมรี', 'ย่างเนื้อให้ได้ระดับที่ต้องการ เสิร์ฟคู่มันบดและซอส', 'https://foodish-api.com/images/steak/steak17.jpg', 4, 3, '2025-08-13 15:28:40.279491', '2025-08-13 15:28:40.279491', NULL, 'ba9872c8-49fa-42d8-8664-d9a44babe021'),
 ('ผัดไทยกุ้งสด', 'ผัดไทยกุ้งสดสูตรดั้งเดิม เส้นเหนียวนุ่ม คลุกซอสเข้มข้นรสหวานเค็มเปรี้ยวลงตัว เคล้ากับถั่วงอกสดและกุ้งตัวโต โรยถั่วลิสงบดหอมมัน', 'เส้นจันท์, กุ้ง, ถั่วงอก, ไข่, น้ำมะขาม, น้ำปลา, น้ำตาลปี๊บ', 'ผัดเส้นกับซอส ใส่กุ้งและผัก เสิร์ฟร้อนๆ', 'https://foodish-api.com/images/padthai/padthai5.jpg', 2, 2, '2025-08-13 15:28:49.999596', '2025-08-13 15:28:49.999596', NULL, 'ba9872c8-49fa-42d8-8664-d9a44babe021'),
-( 'ซุปฟักทอง', 'ซุปฟักทองเนื้อเนียนนุ่ม รสหวานธรรมชาติจากฟักทองต้มบด เคี่ยวกับครีมสดและหอมใหญ่จนได้รสกลมกล่อม เหมาะเป็นเมนูเรียกน้ำย่อย', 'ฟักทอง, ครีมสด, หอมใหญ่, เนย, เกลือ, พริกไทย', 'ต้มฟักทองและหอมใหญ่ ปั่นจนเนียน เติมครีม', 'https://foodish-api.com/images/soup/soup8.jpg', 1, 1, '2025-08-13 15:28:59.366225', '2025-08-13 15:28:59.366225', NULL, 'ba9872c8-49fa-42d8-8664-d9a44babe021'),
-( 'ข้าวมันไก่', 'ข้าวมันไก่เนื้อนุ่ม หุงข้าวด้วยน้ำซุปไก่และมันไก่จนหอม เสิร์ฟพร้อมไก่ต้มสุกกำลังดี น้ำจิ้มเต้าเจี้ยวรสจัด และน้ำซุปใส', 'ข้าวหอมมะลิ, ไก่, เต้าเจี้ยว, ขิง, กระเทียม', 'ต้มไก่ หุงข้าวกับน้ำซุป เสิร์ฟพร้อมน้ำจิ้มและซุป', 'https://foodish-api.com/images/rice/rice6.jpg', 3, 2, '2025-08-13 15:29:06.258471', '2025-08-13 15:29:06.258471', NULL, 'ba9872c8-49fa-42d8-8664-d9a44babe021');
+('ซุปฟักทอง', 'ซุปฟักทองเนื้อเนียนนุ่ม รสหวานธรรมชาติจากฟักทองต้มบด เคี่ยวกับครีมสดและหอมใหญ่จนได้รสกลมกล่อม เหมาะเป็นเมนูเรียกน้ำย่อย', 'ฟักทอง, ครีมสด, หอมใหญ่, เนย, เกลือ, พริกไทย', 'ต้มฟักทองและหอมใหญ่ ปั่นจนเนียน เติมครีม', 'https://foodish-api.com/images/soup/soup8.jpg', 1, 1, '2025-08-13 15:28:59.366225', '2025-08-13 15:28:59.366225', NULL, 'ba9872c8-49fa-42d8-8664-d9a44babe021'),
+('ข้าวมันไก่', 'ข้าวมันไก่เนื้อนุ่ม หุงข้าวด้วยน้ำซุปไก่และมันไก่จนหอม เสิร์ฟพร้อมไก่ต้มสุกกำลังดี น้ำจิ้มเต้าเจี้ยวรสจัด และน้ำซุปใส', 'ข้าวหอมมะลิ, ไก่, เต้าเจี้ยว, ขิง, กระเทียม', 'ต้มไก่ หุงข้าวกับน้ำซุป เสิร์ฟพร้อมน้ำจิ้มและซุป', 'https://foodish-api.com/images/rice/rice6.jpg', 3, 2, '2025-08-13 15:29:06.258471', '2025-08-13 15:29:06.258471', NULL, 'ba9872c8-49fa-42d8-8664-d9a44babe021');
 
 INSERT INTO "public"."ratings" ("score", "food_recipe_id", "user_id", "created_at", "updated_at", "deleted_at") VALUES
 (5, 1, 'ba9872c8-49fa-42d8-8664-d9a44babe021', '2025-08-16 12:00:00', '2025-08-16 12:00:00', NULL),

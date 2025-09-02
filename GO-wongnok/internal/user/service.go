@@ -13,6 +13,8 @@ type IService interface {
 	UpsertWithClaims(claims model.Claims) (model.User, error)
 	GetByID(claims model.Claims) (model.User, error)
 	GetRecipes(userID string, claims model.Claims) (model.FoodRecipes, error)
+	Create(claims model.Claims) (model.User, error)
+	Update(user *model.User) (model.User, error)
 }
 
 type Service struct {
@@ -37,7 +39,11 @@ func (service Service) UpsertWithClaims(claims model.Claims) (model.User, error)
 	}
 
 	// Set claims information to user model
-	user = user.FromClaims(claims)
+	if user == (model.User{}) {
+		user = user.FromClaims(claims)
+	} else {
+		user = user.FromClaimsUpdate(claims)
+	}
 
 	if err := service.Repository.Upsert(&user); err != nil {
 		return model.User{}, errors.Wrap(err, "upsert user")
@@ -74,4 +80,36 @@ func (service Service) GetRecipes(userID string, claims model.Claims) (model.Foo
 	foodRecipes = foodRecipes.CalculateAverageRatings()
 
 	return foodRecipes, nil
+}
+
+func (service Service) Create(claims model.Claims) (model.User, error) {
+
+	user, err := service.Repository.GetByID(claims.ID)
+	if err != nil && !errors.Is(err, gorm.ErrRecordNotFound) {
+		return model.User{}, errors.Wrap(err, "find user")
+	}
+
+	if user == (model.User{}) {
+		users, err := service.Repository.Create(user.FromClaim(claims))
+		if err != nil {
+			return model.User{}, err
+		}
+		return users, nil
+	} else {
+		users, err := service.Repository.Update(user.FromClaimUpdate(claims))
+		if err != nil {
+			return model.User{}, err
+		}
+		return users, nil
+	}
+
+}
+func (service Service) Update(user *model.User) (model.User, error) {
+
+	users, err := service.Repository.Update(user)
+	if err != nil {
+		return model.User{}, err
+	}
+	return users, nil
+
 }

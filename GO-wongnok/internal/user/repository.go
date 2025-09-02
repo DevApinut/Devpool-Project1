@@ -10,6 +10,8 @@ import (
 type IRepository interface {
 	GetByID(id string) (model.User, error)
 	Upsert(user *model.User) error
+	Create(user *model.User) (model.User, error)
+	Update(user *model.User) (model.User, error)
 	GetRecipes(userID string) (model.FoodRecipes, error)
 }
 
@@ -45,4 +47,18 @@ func (repo Repository) GetRecipes(userID string) (model.FoodRecipes, error) {
 	}
 
 	return recipes, nil
+}
+
+func (repo Repository) Create(user *model.User) (model.User, error) {
+	if err := repo.DB.Create(user).Error; err != nil {
+		return model.User{}, err
+	}
+	return *user, nil
+}
+
+func (repo Repository) Update(user *model.User) (model.User, error) {
+	if err := repo.DB.Save(user).Error; err != nil {
+		return model.User{}, err
+	}
+	return *user, nil
 }

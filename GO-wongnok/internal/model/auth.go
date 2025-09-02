@@ -27,3 +27,13 @@ type Claims struct {
 	FirstName string `json:"given_name" validate:"required"`
 	LastName  string `json:"family_name" validate:"required"`
 }
+
+func (claims Claims) ChangeFormatClaims() *User {
+	return &User{
+		ID:        claims.ID,
+		FirstName: claims.FirstName,
+		LastName:  claims.LastName,
+		NickName:  claims.FirstName + " " + claims.LastName,
+		ImageUrl:  func(s string) *string { return &s }("https://avatar.iran.liara.run/public/boy"),
+	}
+}

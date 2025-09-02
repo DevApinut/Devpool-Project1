@@ -5,6 +5,8 @@ CREATE TABLE
         id VARCHAR(100) PRIMARY KEY,
         first_name VARCHAR(100) NOT NULL,
         last_name VARCHAR(100) NOT NULL,
+        nick_name VARCHAR(100) NOT NULL,
+        image_url VARCHAR(100) NOT NULL,
         created_at TIMESTAMP NOT NULL,
         updated_at TIMESTAMP NOT NULL,
         deleted_at TIMESTAMP

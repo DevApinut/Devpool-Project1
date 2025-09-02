@@ -221,7 +221,7 @@ export default function Home() {
       <Pagination>
         <PaginationContent>
           <PaginationItem>
-            <PaginationPrevious
+            <PaginationPrevious className='cursor-pointer'
               onClick={() => {
                 setCurrentPage((prev) => {
                   return prev <= 1 ? prev : prev - 1
@@ -236,7 +236,7 @@ export default function Home() {
             <PaginationEllipsis />
           </PaginationItem> */}
           <PaginationItem>
-            <PaginationNext
+            <PaginationNext className='cursor-pointer'
               onClick={() => {
                 setCurrentPage((prev) => {
                   return prev >= Math.ceil(recipesData.total / limitDataPerPage)
