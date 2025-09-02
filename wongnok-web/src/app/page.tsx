@@ -38,6 +38,17 @@ export type CardRecipeProps = {
     id: number
     name: string
   }
+  favorite:{
+    foodRecipeID ?: number
+    id? : number  
+    UserID? :string
+  }  
+  rating:{
+    foodRecipeID? : number
+    score?:number
+    id? : number  
+    UserID? :string
+  }  
   user: User
 }
 
@@ -58,7 +69,7 @@ export default function Home() {
     onError: () => {
       console.log('error fetching')
     },
-    onSuccess: (data) => {
+    onSuccess: (data) => {      
        if (
         Number(searchParams.get('page')) >
         Math.ceil(data.total / Number(searchParams.get('limit')))
@@ -72,6 +83,8 @@ export default function Home() {
       setRecipesData(data)
     },
   })
+
+  console.log(recipesData)
   const limitDataPerPage = 5
   const pathname = usePathname()
 

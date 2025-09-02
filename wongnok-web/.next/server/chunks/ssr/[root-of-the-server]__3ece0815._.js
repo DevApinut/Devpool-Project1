@@ -437,6 +437,7 @@ __turbopack_context__.s({
     "fetchRecipeDetails": ()=>fetchRecipeDetails,
     "fetchRecipes": ()=>fetchRecipes,
     "fetchRecipesByUser": ()=>fetchRecipesByUser,
+    "getFavorite": ()=>getFavorite,
     "updateMyRecipe": ()=>updateMyRecipe
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$axios$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/axios.ts [app-ssr] (ecmascript)");
@@ -491,6 +492,10 @@ const createRating = async (data)=>{
         score: data.score
     });
     return recipeRating;
+};
+const getFavorite = async (data)=>{
+    const recipeFavorite = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$axios$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["api"].get(`/api/v1/food-recipes/favorites?page=${data.page}&limit=${data.limit}&search=${data.search}`);
+    return recipeFavorite;
 };
 }),
 "[project]/src/app/edit-recipe/[recipeId]/page.tsx [app-ssr] (ecmascript)": ((__turbopack_context__) => {

@@ -18,11 +18,14 @@ type Difficulty = {
   name: string
 }
 
+
 export type Recipe = {
   id: string
   name: string
   imageUrl: string
   description: string
+  rating: Rating
+  favorite: Favorite
   cookingDuration: CookingDuration
   difficulty: Difficulty
   user: User
@@ -30,7 +33,15 @@ export type Recipe = {
 
 export type Rating ={
   foodRecipeID : number
-  score : number 
+  id? : number
+  score : number
+  UserID? :string
+}
+
+export type Favorite ={
+  foodRecipeID : number
+  id : number  
+  UserID :string
 }
 
 type RecipeDetails = {
@@ -42,6 +53,8 @@ type RecipeDetails = {
   imageUrl: string
   cookingDuration: CookingDuration
   difficulty: Difficulty
+  rating: Rating
+  favorite: Favorite
   createdAt: string
   updatedAt: string
   averageRating: number

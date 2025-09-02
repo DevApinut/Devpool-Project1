@@ -9,7 +9,8 @@ const CardRecipe = ({
   description,
   difficulty,
   cookingDuration,
-  user,
+  user,  
+  favorite,
 }: CardRecipeProps) => (
   <Card className='w-[276px] h-[390px]'>
     <div>
@@ -20,7 +21,8 @@ const CardRecipe = ({
         <CardContent>
           <div className="flex justify-between"> 
             <h1 className='font-bold'>{name}</h1>
-            <Image src='icons/notfav.svg' width={20} height={20} alt='not fav'/>
+            {favorite.id == 0 &&<Image src='icons/notfav.svg' width={20} height={20} alt='not fav'/>}
+            {favorite.id != 0 &&<Image src='icons/fav.svg' width={20} height={20} alt='not fav'/>}
           </div>         
           <p className='text-secondary line-clamp-3'>{description}</p>
         </CardContent>

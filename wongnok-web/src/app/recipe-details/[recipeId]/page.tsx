@@ -11,6 +11,7 @@ import DeleteRecipe from '@/components/DeleteRecipe'
 import { fetchRecipeDetails } from '@/services/recipe.service'
 import { useQuery } from '@tanstack/react-query'
 import PopupRating from '@/components/Popuprating'
+import PopupPermitRating from '@/components/PopupPermitRating'
 
 type RecipeDetailsIdProps = {
   params: Promise<{ recipeId: string }>
@@ -18,6 +19,7 @@ type RecipeDetailsIdProps = {
 
 export default function RecipeDetailsId({ params }: RecipeDetailsIdProps) {
   const [closePopup, setClosePopup] = useState<boolean>(false)
+  const [PermitRating, SetPermitRating] = useState<boolean>(false)
   const [closePopupRating, setClosePopupRating] = useState<boolean>(false)
   const { recipeId } = React.use(params)
   const { data: session, status } = useSession()
@@ -47,6 +49,12 @@ export default function RecipeDetailsId({ params }: RecipeDetailsIdProps) {
         <PopupRating
           recipeId={Number(recipeId)}
           closePopup={setClosePopupRating}
+        />
+      )}
+      {PermitRating && (
+        <PopupPermitRating
+          rating={Number(data?.data.rating.score)}
+          closePopup={SetPermitRating}
         />
       )}
 
@@ -166,7 +174,11 @@ export default function RecipeDetailsId({ params }: RecipeDetailsIdProps) {
           <div
             className='flex jusfify-center items-center mx-8'
             onClick={() => {
-              setClosePopupRating(true)
+              if (data?.data?.rating?.score == 0) {
+                setClosePopupRating(true)
+              } else {
+                SetPermitRating(true)
+              }
             }}
           >
             <Button variant='outline' className='text-2xl p-2 cursor-pointer'>

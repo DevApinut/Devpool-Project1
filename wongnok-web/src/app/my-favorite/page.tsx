@@ -70,7 +70,6 @@ const Myfavorite = () => {
         params.set('page', '1')
         router.replace(`${pathname}?${params.toString()}`)
         setCurrentPage(1)
-        
       }
       setRecipesData(data.data)
     },
@@ -89,7 +88,7 @@ const Myfavorite = () => {
   const [searchInput, setSearchInput] = useState<string>(
     searchParams.get('search') ?? ''
   )
-
+  console.log(recipesData)
   useEffect(() => {
     params.set('page', String(currentPage))
     router.replace(`${pathname}?${params.toString()}`)
