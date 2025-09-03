@@ -174,6 +174,7 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
 var { k: __turbopack_refresh__, m: module } = __turbopack_context__;
 {
 __turbopack_context__.s({
+    "UpdateUser": ()=>UpdateUser,
     "createRating": ()=>createRating,
     "createRecipe": ()=>createRecipe,
     "deleteMyRecipe": ()=>deleteMyRecipe,
@@ -248,6 +249,16 @@ const getUser = async ()=>{
     const User = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$axios$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["api"].get("/api/v1/users/");
     return User.data;
 };
+const UpdateUser = async (data)=>{
+    const User = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$axios$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["api"].put("/api/v1/users/", {
+        nickName: data.nickName,
+        imageUrl: data.imageUrl
+    });
+    return User.data;
+};
+_c = UpdateUser;
+var _c;
+__turbopack_context__.k.register(_c, "UpdateUser");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(module, globalThis.$RefreshHelpers$);
 }
@@ -630,15 +641,17 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/image.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/button.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$auth$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next-auth/react/index.js [app-client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
+;
 const PopupPermitRating = (param)=>{
-    let { rating, closePopup } = param;
+    let { userID, rating, closePopup } = param;
     _s();
-    const [selected, setSelected] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(0);
+    const { data: session } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$auth$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSession"])();
     const [showModal, setShowModal] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [exiting, setExiting] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
@@ -662,7 +675,7 @@ const PopupPermitRating = (param)=>{
                 className: "absolute inset-0 bg-Grayscale-50 opacity-75 pointer-events-none"
             }, void 0, false, {
                 fileName: "[project]/src/components/PopupPermitRating.tsx",
-                lineNumber: 33,
+                lineNumber: 29,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -678,12 +691,12 @@ const PopupPermitRating = (param)=>{
                             height: 14
                         }, void 0, false, {
                             fileName: "[project]/src/components/PopupPermitRating.tsx",
-                            lineNumber: 45,
+                            lineNumber: 41,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/src/components/PopupPermitRating.tsx",
-                        lineNumber: 41,
+                        lineNumber: 37,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -694,13 +707,13 @@ const PopupPermitRating = (param)=>{
                                 children: "ให้คะแนนสูตรอาหารนี้"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/PopupPermitRating.tsx",
-                                lineNumber: 53,
+                                lineNumber: 49,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "flex flex-col justify-center items-center ",
                                 children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    (session === null || session === void 0 ? void 0 : session.userId) && (session === null || session === void 0 ? void 0 : session.accessToken) && rating != 0 && userID != (session === null || session === void 0 ? void 0 : session.userId) && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "flex gap-1",
                                         children: [
                                             "คุณให้คะแนนสูตรนี้เเล้ว : ",
@@ -708,47 +721,71 @@ const PopupPermitRating = (param)=>{
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/PopupPermitRating.tsx",
-                                        lineNumber: 55,
-                                        columnNumber: 13
+                                        lineNumber: 53,
+                                        columnNumber: 15
+                                    }, ("TURBOPACK compile-time value", void 0)),
+                                    userID == (session === null || session === void 0 ? void 0 : session.userId) && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "flex gap-1",
+                                        children: "คุณไม่สามารถให้คะแนนสูตรตัวเองได้"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/PopupPermitRating.tsx",
+                                        lineNumber: 58,
+                                        columnNumber: 15
+                                    }, ("TURBOPACK compile-time value", void 0)),
+                                    !(session === null || session === void 0 ? void 0 : session.userId) && !(session === null || session === void 0 ? void 0 : session.accessToken) && rating == 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "flex gap-1",
+                                        children: "โปรดลงทะเบียนเพื่อให้คะเเนน"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/PopupPermitRating.tsx",
+                                        lineNumber: 63,
+                                        columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
                                         className: "mx-2 my-3 w-[152px] h-[40px] bg-secondary-500 text-white text-base cursor-pointer",
                                         variant: "outline",
                                         onClick: ()=>{
-                                            closePopup(false);
+                                            if ((session === null || session === void 0 ? void 0 : session.userId) && (session === null || session === void 0 ? void 0 : session.accessToken) && rating != 0 || userID == (session === null || session === void 0 ? void 0 : session.userId)) closePopup(false);
+                                            else {
+                                                closePopup(false);
+                                                (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$auth$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["signIn"])('keycloak');
+                                            }
                                         },
                                         children: "ปิด"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/PopupPermitRating.tsx",
-                                        lineNumber: 58,
+                                        lineNumber: 65,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/PopupPermitRating.tsx",
-                                lineNumber: 54,
+                                lineNumber: 50,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/PopupPermitRating.tsx",
-                        lineNumber: 52,
+                        lineNumber: 48,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/PopupPermitRating.tsx",
-                lineNumber: 34,
+                lineNumber: 30,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/PopupPermitRating.tsx",
-        lineNumber: 32,
+        lineNumber: 28,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
-_s(PopupPermitRating, "250TQZYGJIq0lfvRNLi4V3mojvs=");
+_s(PopupPermitRating, "YIjg/Bg8k/T+rty6l5sY2nlLtTE=", false, function() {
+    return [
+        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$auth$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSession"]
+    ];
+});
 _c = PopupPermitRating;
 const __TURBOPACK__default__export__ = PopupPermitRating;
 var _c;
@@ -825,7 +862,8 @@ function RecipeDetailsId(param) {
         lineNumber: 34,
         columnNumber: 23
     }, this);
-    console.log(data);
+    console.log(session === null || session === void 0 ? void 0 : session.userId);
+    console.log(data === null || data === void 0 ? void 0 : data.data.user.id);
     // Add rating state and max stars
     // Show average rating from data (read-only)
     const maxStars = 5;
@@ -840,7 +878,7 @@ function RecipeDetailsId(param) {
                 closePopup: setClosePopup
             }, void 0, false, {
                 fileName: "[project]/src/app/recipe-details/[recipeId]/page.tsx",
-                lineNumber: 46,
+                lineNumber: 48,
                 columnNumber: 9
             }, this),
             closePopupRating && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Popuprating$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -848,15 +886,16 @@ function RecipeDetailsId(param) {
                 closePopup: setClosePopupRating
             }, void 0, false, {
                 fileName: "[project]/src/app/recipe-details/[recipeId]/page.tsx",
-                lineNumber: 49,
+                lineNumber: 51,
                 columnNumber: 9
             }, this),
             PermitRating && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$PopupPermitRating$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                 rating: Number(data === null || data === void 0 ? void 0 : data.data.rating.score),
+                userID: data === null || data === void 0 ? void 0 : data.data.user.id,
                 closePopup: SetPermitRating
             }, void 0, false, {
                 fileName: "[project]/src/app/recipe-details/[recipeId]/page.tsx",
-                lineNumber: 55,
+                lineNumber: 57,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -870,7 +909,7 @@ function RecipeDetailsId(param) {
                                 children: data === null || data === void 0 ? void 0 : data.data.name
                             }, void 0, false, {
                                 fileName: "[project]/src/app/recipe-details/[recipeId]/page.tsx",
-                                lineNumber: 66,
+                                lineNumber: 69,
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -889,19 +928,19 @@ function RecipeDetailsId(param) {
                                                     alt: "edit logo"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/recipe-details/[recipeId]/page.tsx",
-                                                    lineNumber: 73,
+                                                    lineNumber: 76,
                                                     columnNumber: 21
                                                 }, this),
                                                 "แก้ไขสูตรอาหาร"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/recipe-details/[recipeId]/page.tsx",
-                                            lineNumber: 69,
+                                            lineNumber: 72,
                                             columnNumber: 19
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/recipe-details/[recipeId]/page.tsx",
-                                        lineNumber: 68,
+                                        lineNumber: 71,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -916,7 +955,7 @@ function RecipeDetailsId(param) {
                                                 alt: "edit logo"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/recipe-details/[recipeId]/page.tsx",
-                                                lineNumber: 88,
+                                                lineNumber: 91,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -924,25 +963,25 @@ function RecipeDetailsId(param) {
                                                 children: "ลบสูตรอาหาร"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/recipe-details/[recipeId]/page.tsx",
-                                                lineNumber: 94,
+                                                lineNumber: 97,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/recipe-details/[recipeId]/page.tsx",
-                                        lineNumber: 83,
+                                        lineNumber: 86,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/recipe-details/[recipeId]/page.tsx",
-                                lineNumber: 67,
+                                lineNumber: 70,
                                 columnNumber: 15
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/recipe-details/[recipeId]/page.tsx",
-                        lineNumber: 65,
+                        lineNumber: 68,
                         columnNumber: 13
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -951,7 +990,7 @@ function RecipeDetailsId(param) {
                                 children: data === null || data === void 0 ? void 0 : data.data.description
                             }, void 0, false, {
                                 fileName: "[project]/src/app/recipe-details/[recipeId]/page.tsx",
-                                lineNumber: 100,
+                                lineNumber: 103,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -959,47 +998,58 @@ function RecipeDetailsId(param) {
                                 children: data === null || data === void 0 ? void 0 : data.data.updatedAt
                             }, void 0, false, {
                                 fileName: "[project]/src/app/recipe-details/[recipeId]/page.tsx",
-                                lineNumber: 101,
+                                lineNumber: 104,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/recipe-details/[recipeId]/page.tsx",
-                        lineNumber: 99,
+                        lineNumber: 102,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Avatar"], {
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AvatarImage"], {
-                                    src: "https://github.com/shadcn.png"
-                                }, void 0, false, {
-                                    fileName: "[project]/src/app/recipe-details/[recipeId]/page.tsx",
-                                    lineNumber: 105,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AvatarFallback"], {
-                                    children: "Oatter"
-                                }, void 0, false, {
-                                    fileName: "[project]/src/app/recipe-details/[recipeId]/page.tsx",
-                                    lineNumber: 106,
-                                    columnNumber: 13
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/src/app/recipe-details/[recipeId]/page.tsx",
-                            lineNumber: 104,
-                            columnNumber: 11
-                        }, this)
-                    }, void 0, false, {
+                        className: "flex items-center",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Avatar"], {
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AvatarImage"], {
+                                        src: data === null || data === void 0 ? void 0 : data.data.user.imageUrl
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/app/recipe-details/[recipeId]/page.tsx",
+                                        lineNumber: 108,
+                                        columnNumber: 13
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AvatarFallback"], {
+                                        children: "Oatter"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/app/recipe-details/[recipeId]/page.tsx",
+                                        lineNumber: 109,
+                                        columnNumber: 13
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/src/app/recipe-details/[recipeId]/page.tsx",
+                                lineNumber: 107,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "mx-3",
+                                children: data === null || data === void 0 ? void 0 : data.data.user.nickName
+                            }, void 0, false, {
+                                fileName: "[project]/src/app/recipe-details/[recipeId]/page.tsx",
+                                lineNumber: 111,
+                                columnNumber: 11
+                            }, this)
+                        ]
+                    }, void 0, true, {
                         fileName: "[project]/src/app/recipe-details/[recipeId]/page.tsx",
-                        lineNumber: 103,
+                        lineNumber: 106,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/recipe-details/[recipeId]/page.tsx",
-                lineNumber: 61,
+                lineNumber: 64,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1016,12 +1066,12 @@ function RecipeDetailsId(param) {
                                     fill: true
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/recipe-details/[recipeId]/page.tsx",
-                                    lineNumber: 113,
+                                    lineNumber: 119,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/recipe-details/[recipeId]/page.tsx",
-                                lineNumber: 112,
+                                lineNumber: 118,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1034,7 +1084,7 @@ function RecipeDetailsId(param) {
                                         height: 18
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/recipe-details/[recipeId]/page.tsx",
-                                        lineNumber: 120,
+                                        lineNumber: 126,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1045,19 +1095,19 @@ function RecipeDetailsId(param) {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/recipe-details/[recipeId]/page.tsx",
-                                        lineNumber: 126,
+                                        lineNumber: 132,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/recipe-details/[recipeId]/page.tsx",
-                                lineNumber: 119,
+                                lineNumber: 125,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/recipe-details/[recipeId]/page.tsx",
-                        lineNumber: 111,
+                        lineNumber: 117,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1067,7 +1117,7 @@ function RecipeDetailsId(param) {
                                 children: "วัตถุดิบ"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/recipe-details/[recipeId]/page.tsx",
-                                lineNumber: 130,
+                                lineNumber: 136,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1075,24 +1125,24 @@ function RecipeDetailsId(param) {
                                         children: item.trim()
                                     }, idx, false, {
                                         fileName: "[project]/src/app/recipe-details/[recipeId]/page.tsx",
-                                        lineNumber: 133,
+                                        lineNumber: 139,
                                         columnNumber: 15
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/src/app/recipe-details/[recipeId]/page.tsx",
-                                lineNumber: 131,
+                                lineNumber: 137,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/recipe-details/[recipeId]/page.tsx",
-                        lineNumber: 129,
+                        lineNumber: 135,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/recipe-details/[recipeId]/page.tsx",
-                lineNumber: 110,
+                lineNumber: 116,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1103,7 +1153,7 @@ function RecipeDetailsId(param) {
                         children: "วิธีการทำ"
                     }, void 0, false, {
                         fileName: "[project]/src/app/recipe-details/[recipeId]/page.tsx",
-                        lineNumber: 139,
+                        lineNumber: 145,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1112,12 +1162,12 @@ function RecipeDetailsId(param) {
                                 children: item.trim()
                             }, idx, false, {
                                 fileName: "[project]/src/app/recipe-details/[recipeId]/page.tsx",
-                                lineNumber: 142,
+                                lineNumber: 148,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/src/app/recipe-details/[recipeId]/page.tsx",
-                        lineNumber: 140,
+                        lineNumber: 146,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1130,7 +1180,7 @@ function RecipeDetailsId(param) {
                                         children: "คะแนนสูตรอาหารนี้"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/recipe-details/[recipeId]/page.tsx",
-                                        lineNumber: 149,
+                                        lineNumber: 155,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1151,13 +1201,13 @@ function RecipeDetailsId(param) {
                                                         fillPercent: fillPercent
                                                     }, i, false, {
                                                         fileName: "[project]/src/app/recipe-details/[recipeId]/page.tsx",
-                                                        lineNumber: 159,
+                                                        lineNumber: 165,
                                                         columnNumber: 26
                                                     }, this);
                                                 })
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/recipe-details/[recipeId]/page.tsx",
-                                                lineNumber: 151,
+                                                lineNumber: 157,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1170,31 +1220,31 @@ function RecipeDetailsId(param) {
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/recipe-details/[recipeId]/page.tsx",
-                                                    lineNumber: 163,
+                                                    lineNumber: 169,
                                                     columnNumber: 17
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/recipe-details/[recipeId]/page.tsx",
-                                                lineNumber: 162,
+                                                lineNumber: 168,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/recipe-details/[recipeId]/page.tsx",
-                                        lineNumber: 150,
+                                        lineNumber: 156,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/recipe-details/[recipeId]/page.tsx",
-                                lineNumber: 148,
+                                lineNumber: 154,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "flex jusfify-center items-center mx-8",
                                 onClick: ()=>{
-                                    var _data_data_rating, _data_data;
-                                    if ((data === null || data === void 0 ? void 0 : (_data_data = data.data) === null || _data_data === void 0 ? void 0 : (_data_data_rating = _data_data.rating) === null || _data_data_rating === void 0 ? void 0 : _data_data_rating.score) == 0) {
+                                    var _data_data_rating, _data_data, _data_data1;
+                                    if ((data === null || data === void 0 ? void 0 : (_data_data = data.data) === null || _data_data === void 0 ? void 0 : (_data_data_rating = _data_data.rating) === null || _data_data_rating === void 0 ? void 0 : _data_data_rating.score) == 0 && (session === null || session === void 0 ? void 0 : session.userId) && (session === null || session === void 0 ? void 0 : session.accessToken) && (data === null || data === void 0 ? void 0 : (_data_data1 = data.data) === null || _data_data1 === void 0 ? void 0 : _data_data1.user.id) != (session === null || session === void 0 ? void 0 : session.userId)) {
                                         setClosePopupRating(true);
                                     } else {
                                         SetPermitRating(true);
@@ -1211,37 +1261,37 @@ function RecipeDetailsId(param) {
                                             height: 24
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/recipe-details/[recipeId]/page.tsx",
-                                            lineNumber: 185,
+                                            lineNumber: 191,
                                             columnNumber: 15
                                         }, this),
                                         "ให้คะแนน"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/recipe-details/[recipeId]/page.tsx",
-                                    lineNumber: 184,
+                                    lineNumber: 190,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/recipe-details/[recipeId]/page.tsx",
-                                lineNumber: 174,
+                                lineNumber: 180,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/recipe-details/[recipeId]/page.tsx",
-                        lineNumber: 147,
+                        lineNumber: 153,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/recipe-details/[recipeId]/page.tsx",
-                lineNumber: 138,
+                lineNumber: 144,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/recipe-details/[recipeId]/page.tsx",
-        lineNumber: 44,
+        lineNumber: 46,
         columnNumber: 5
     }, this);
 }

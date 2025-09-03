@@ -32,7 +32,9 @@ export default function RecipeDetailsId({ params }: RecipeDetailsIdProps) {
   if (isLoading || status === 'loading') return <div>Loading...</div>
 
   if (isError) return <div>Error</div>
-  console.log(data)
+  console.log(session?.userId)
+  console.log(data?.data.user.id)
+
 
   // Add rating state and max stars
   // Show average rating from data (read-only)
@@ -54,6 +56,7 @@ export default function RecipeDetailsId({ params }: RecipeDetailsIdProps) {
       {PermitRating && (
         <PopupPermitRating
           rating={Number(data?.data.rating.score)}
+          userID={data?.data.user.id}
           closePopup={SetPermitRating}
         />
       )}
@@ -100,11 +103,14 @@ export default function RecipeDetailsId({ params }: RecipeDetailsIdProps) {
           <p>{data?.data.description}</p>
           <p className='text-secondary text-xs'>{data?.data.updatedAt}</p>
         </div>
-        <div>
+        <div className='flex items-center'>
           <Avatar>
-            <AvatarImage src='https://github.com/shadcn.png' />
+            <AvatarImage src={data?.data.user.imageUrl} />
             <AvatarFallback>Oatter</AvatarFallback>
           </Avatar>
+          <div className='mx-3'>
+            {data?.data.user.nickName}
+          </div>
         </div>
       </div>
       <div className='flex gap-x-8 '>
@@ -174,7 +180,7 @@ export default function RecipeDetailsId({ params }: RecipeDetailsIdProps) {
           <div
             className='flex jusfify-center items-center mx-8'
             onClick={() => {
-              if (data?.data?.rating?.score == 0) {
+              if (data?.data?.rating?.score == 0 && session?.userId && session?.accessToken && data?.data?.user.id != session?.userId) {
                 setClosePopupRating(true)
               } else {
                 SetPermitRating(true)
