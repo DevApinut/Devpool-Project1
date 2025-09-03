@@ -41,15 +41,15 @@ export type CardRecipeProps = {
     name: string
   }
   favorite:{
-    foodRecipeID ?: number
-    id? : number  
-    UserID? :string
+    foodRecipeID : number
+    id : number  
+    UserID :string
   }  
   rating:{
-    foodRecipeID? : number
-    score?:number
-    id? : number  
-    UserID? :string
+    foodRecipeID : number
+    score:number
+    id : number  
+    UserID :string
   }  
   user: User
 }
@@ -214,7 +214,7 @@ export default function Home() {
             recipesData.results.map((recipe) => {
               return (
                 <Link key={recipe.id} href={`recipe-details/${recipe.id}`}>
-                  <CardRecipe key={recipe.id} {...recipe} />
+                  <CardRecipe key={recipe?.id} {...recipe} />
                 </Link>
               )
             })}

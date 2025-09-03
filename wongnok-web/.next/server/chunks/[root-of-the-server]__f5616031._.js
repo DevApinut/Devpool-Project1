@@ -217,7 +217,7 @@ const handler = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules
                 // เรียก API เพิ่ม user หลัง login สำเร็จ
                 try {
                     console.log('test');
-                    await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].post(`${("TURBOPACK compile-time value", "http://localhost:8080")}/api/v1/users/`, {}, {
+                    await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].post(`${("TURBOPACK compile-time value", "http://localhost")}/api/v1/users/`, {}, {
                         headers: {
                             Authorization: `Bearer ${account.access_token}`,
                             'Content-Type': 'application/json'

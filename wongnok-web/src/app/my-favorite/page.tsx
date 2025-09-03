@@ -160,7 +160,7 @@ const Myfavorite = () => {
         </div>
       </>
     )
-  if (isRecipeLoading || status === 'loading')
+  if (isRecipeLoading )
     return (
       <div>
         <div className='w-full flex justify-center items-center my-8'>

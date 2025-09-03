@@ -353,6 +353,8 @@ api.interceptors.response.use((response)=>response, async (error)=>{
 "use strict";
 
 __turbopack_context__.s({
+    "CreateFavorite": ()=>CreateFavorite,
+    "DeleteFavorite": ()=>DeleteFavorite,
     "UpdateUser": ()=>UpdateUser,
     "createRating": ()=>createRating,
     "createRecipe": ()=>createRecipe,
@@ -431,6 +433,14 @@ const UpdateUser = async (data)=>{
         imageUrl: data.imageUrl
     });
     return User.data;
+};
+const CreateFavorite = async (foodRecipeID)=>{
+    const favorite = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$axios$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["api"].post(`/api/v1/food-recipes/${foodRecipeID}/favorites`);
+    return favorite;
+};
+const DeleteFavorite = async (foodRecipeID)=>{
+    const favorite = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$axios$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["api"].delete(`/api/v1/food-recipes/${foodRecipeID}/favorites`);
+    return favorite;
 };
 }),
 "[project]/src/app/edit-myprofile/page.tsx [app-ssr] (ecmascript)": ((__turbopack_context__) => {

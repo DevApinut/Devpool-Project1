@@ -1,4 +1,4 @@
-import { RecipeForm, UserForm } from '@/app/create-recipe/page'
+import {  RecipeForm, UserForm } from '@/app/create-recipe/page'
 import { RecipeFormUpdate } from '@/app/edit-recipe/[recipeId]/page'
 import { api } from '@/lib/axios'
 
@@ -20,7 +20,6 @@ type Difficulty = {
   name: string
 }
 
-
 export type Recipe = {
   id: string
   name: string
@@ -33,17 +32,17 @@ export type Recipe = {
   user: User
 }
 
-export type Rating ={
-  foodRecipeID : number
-  id? : number
-  score : number
-  UserID? :string
+export type Rating = {
+  foodRecipeID: number
+  id: number
+  score: number
+  UserID: string
 }
 
-export type Favorite ={
-  foodRecipeID : number
-  id : number  
-  UserID :string
+export type Favorite = {
+  foodRecipeID: number
+  id: number
+  UserID: string
 }
 
 type RecipeDetails = {
@@ -76,24 +75,31 @@ export const fetchRecipes = async (data: fetchRecipeRequest) => {
   return recipesFetch.data
 }
 
-export const fetchRecipeDetails = async (id:number) => {
-  const recipeDetails = await api.get<RecipeDetails>(`/api/v1/food-recipes/${id}`)
+export const fetchRecipeDetails = async (id: number) => {
+  const recipeDetails = await api.get<RecipeDetails>(
+    `/api/v1/food-recipes/${id}`
+  )
   return recipeDetails
 }
-export const deleteMyRecipe = async (id:number) => {
-  const recipeDetails = await api.delete<RecipeDetails>(`/api/v1/food-recipes/${id}`)
+export const deleteMyRecipe = async (id: number) => {
+  const recipeDetails = await api.delete<RecipeDetails>(
+    `/api/v1/food-recipes/${id}`
+  )
   return recipeDetails
 }
-export const updateMyRecipe = async (data:RecipeFormUpdate) => {
-  const recipeDetails = await api.put<RecipeFormUpdate>(`/api/v1/food-recipes/${data.id}`,{
-    name: data.name,
-    description: data.description,
-    ingredient: data.ingredient,
-    instruction: data.instruction,
-    imageURL: data.imageURL ?? '',
-    difficultyID: Number(data.difficulty),
-    cookingDurationID: Number(data.duration),
-  })
+export const updateMyRecipe = async (data: RecipeFormUpdate) => {
+  const recipeDetails = await api.put<RecipeFormUpdate>(
+    `/api/v1/food-recipes/${data.id}`,
+    {
+      name: data.name,
+      description: data.description,
+      ingredient: data.ingredient,
+      instruction: data.instruction,
+      imageURL: data.imageURL ?? '',
+      difficultyID: Number(data.difficulty),
+      cookingDurationID: Number(data.duration),
+    }
+  )
   return recipeDetails
 }
 
@@ -126,28 +132,38 @@ export const fetchRecipesByUser = async (
   return recipes.data.results
 }
 
-
 export const createRating = async (data: Rating) => {
-  const recipeRating = await api.post<Rating>(`/api/v1/food-recipes/${data.foodRecipeID}/ratings`, {
-    score: data.score
-  })
+  const recipeRating = await api.post<Rating>(
+    `/api/v1/food-recipes/${data.foodRecipeID}/ratings`,
+    {
+      score: data.score,
+    }
+  )
   return recipeRating
-
 }
 
 export const getFavorite = async (data: fetchRecipeRequest) => {
-  const recipeFavorite= await api.get<{ results: Recipe[];total: number }>(`/api/v1/food-recipes/favorites?page=${data.page}&limit=${data.limit}&search=${data.search}`,)
+  const recipeFavorite = await api.get<{ results: Recipe[]; total: number }>(
+    `/api/v1/food-recipes/favorites?page=${data.page}&limit=${data.limit}&search=${data.search}`
+  )
   return recipeFavorite
-
 }
 export const getUser = async () => {
-  const User= await api.get<User>(`/api/v1/users/`,)
+  const User = await api.get<User>(`/api/v1/users/`)
   return User.data
 }
-export const UpdateUser = async (data : UserForm) => {
-  const User= await api.put<User>(`/api/v1/users/`,{
-    nickName : data.nickName,
-    imageUrl :data.imageUrl
+export const UpdateUser = async (data: UserForm) => {
+  const User = await api.put<User>(`/api/v1/users/`, {
+    nickName: data.nickName,
+    imageUrl: data.imageUrl,
   })
   return User.data
+}
+export const CreateFavorite = async (foodRecipeID: number) => {
+  const favorite = await api.post(`/api/v1/food-recipes/${foodRecipeID}/favorites`)
+  return favorite
+}
+export const DeleteFavorite = async (foodRecipeID: number) => {
+  const favorite = await api.delete(`/api/v1/food-recipes/${foodRecipeID}/favorites`)
+  return favorite
 }

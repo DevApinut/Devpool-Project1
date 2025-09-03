@@ -533,7 +533,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$auth
 ;
 ;
 const api = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].create({
-    baseURL: ("TURBOPACK compile-time value", "http://localhost:8080")
+    baseURL: ("TURBOPACK compile-time value", "http://localhost")
 });
 api.interceptors.request.use(async (config)=>{
     const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$auth$2f$react$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getSession"])();
@@ -547,7 +547,7 @@ api.interceptors.response.use((response)=>response, async (error)=>{
         // ถ้ามี refreshToken ให้เรียก endpoint refresh
         if (session?.refreshToken) {
             try {
-                const res = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].post(`${("TURBOPACK compile-time value", "http://localhost:8080")}/auth/refresh`, {
+                const res = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].post(`${("TURBOPACK compile-time value", "http://localhost")}/auth/refresh`, {
                     refresh_token: session.refreshToken
                 });
                 // สมมติว่า response มี accessToken ใหม่
@@ -571,6 +571,9 @@ api.interceptors.response.use((response)=>response, async (error)=>{
 "use strict";
 
 __turbopack_context__.s({
+    "CreateFavorite": ()=>CreateFavorite,
+    "DeleteFavorite": ()=>DeleteFavorite,
+    "UpdateUser": ()=>UpdateUser,
     "createRating": ()=>createRating,
     "createRecipe": ()=>createRecipe,
     "deleteMyRecipe": ()=>deleteMyRecipe,
@@ -578,6 +581,7 @@ __turbopack_context__.s({
     "fetchRecipes": ()=>fetchRecipes,
     "fetchRecipesByUser": ()=>fetchRecipesByUser,
     "getFavorite": ()=>getFavorite,
+    "getUser": ()=>getUser,
     "updateMyRecipe": ()=>updateMyRecipe
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$axios$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/axios.ts [app-ssr] (ecmascript)");
@@ -636,6 +640,25 @@ const createRating = async (data)=>{
 const getFavorite = async (data)=>{
     const recipeFavorite = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$axios$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["api"].get(`/api/v1/food-recipes/favorites?page=${data.page}&limit=${data.limit}&search=${data.search}`);
     return recipeFavorite;
+};
+const getUser = async ()=>{
+    const User = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$axios$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["api"].get(`/api/v1/users/`);
+    return User.data;
+};
+const UpdateUser = async (data)=>{
+    const User = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$axios$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["api"].put(`/api/v1/users/`, {
+        nickName: data.nickName,
+        imageUrl: data.imageUrl
+    });
+    return User.data;
+};
+const CreateFavorite = async (foodRecipeID)=>{
+    const favorite = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$axios$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["api"].post(`/api/v1/food-recipes/${foodRecipeID}/favorites`);
+    return favorite;
+};
+const DeleteFavorite = async (foodRecipeID)=>{
+    const favorite = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$axios$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["api"].delete(`/api/v1/food-recipes/${foodRecipeID}/favorites`);
+    return favorite;
 };
 }),
 "[project]/src/app/create-recipe/page.tsx [app-ssr] (ecmascript)": ((__turbopack_context__) => {
@@ -732,7 +755,7 @@ const CreateRecipe = ()=>{
                 closePopup: setPopup
             }, void 0, false, {
                 fileName: "[project]/src/app/create-recipe/page.tsx",
-                lineNumber: 79,
+                lineNumber: 88,
                 columnNumber: 17
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -740,7 +763,7 @@ const CreateRecipe = ()=>{
                 children: "สร้างสูตรอาหารของฉัน"
             }, void 0, false, {
                 fileName: "[project]/src/app/create-recipe/page.tsx",
-                lineNumber: 80,
+                lineNumber: 89,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$form$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Form"], {
@@ -758,7 +781,7 @@ const CreateRecipe = ()=>{
                                             children: "ชื่อเมนู"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/create-recipe/page.tsx",
-                                            lineNumber: 91,
+                                            lineNumber: 100,
                                             columnNumber: 17
                                         }, void 0),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$form$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FormControl"], {
@@ -768,28 +791,28 @@ const CreateRecipe = ()=>{
                                                 ...field
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/create-recipe/page.tsx",
-                                                lineNumber: 93,
+                                                lineNumber: 102,
                                                 columnNumber: 19
                                             }, void 0)
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/create-recipe/page.tsx",
-                                            lineNumber: 92,
+                                            lineNumber: 101,
                                             columnNumber: 17
                                         }, void 0),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$form$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FormMessage"], {}, void 0, false, {
                                             fileName: "[project]/src/app/create-recipe/page.tsx",
-                                            lineNumber: 99,
+                                            lineNumber: 108,
                                             columnNumber: 17
                                         }, void 0)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/create-recipe/page.tsx",
-                                    lineNumber: 90,
+                                    lineNumber: 99,
                                     columnNumber: 15
                                 }, void 0)
                         }, void 0, false, {
                             fileName: "[project]/src/app/create-recipe/page.tsx",
-                            lineNumber: 86,
+                            lineNumber: 95,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$form$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FormField"], {
@@ -804,7 +827,7 @@ const CreateRecipe = ()=>{
                                             children: "คำอธิบายเกียวกับอาหาร"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/create-recipe/page.tsx",
-                                            lineNumber: 111,
+                                            lineNumber: 120,
                                             columnNumber: 17
                                         }, void 0),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$textarea$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Textarea"], {
@@ -813,18 +836,18 @@ const CreateRecipe = ()=>{
                                             ...field
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/create-recipe/page.tsx",
-                                            lineNumber: 112,
+                                            lineNumber: 121,
                                             columnNumber: 17
                                         }, void 0)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/create-recipe/page.tsx",
-                                    lineNumber: 110,
+                                    lineNumber: 119,
                                     columnNumber: 15
                                 }, void 0)
                         }, void 0, false, {
                             fileName: "[project]/src/app/create-recipe/page.tsx",
-                            lineNumber: 103,
+                            lineNumber: 112,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$form$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FormField"], {
@@ -839,7 +862,7 @@ const CreateRecipe = ()=>{
                                             children: "วัตถุดิบ"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/create-recipe/page.tsx",
-                                            lineNumber: 128,
+                                            lineNumber: 137,
                                             columnNumber: 17
                                         }, void 0),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$textarea$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Textarea"], {
@@ -848,18 +871,18 @@ const CreateRecipe = ()=>{
                                             ...field
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/create-recipe/page.tsx",
-                                            lineNumber: 129,
+                                            lineNumber: 138,
                                             columnNumber: 17
                                         }, void 0)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/create-recipe/page.tsx",
-                                    lineNumber: 127,
+                                    lineNumber: 136,
                                     columnNumber: 15
                                 }, void 0)
                         }, void 0, false, {
                             fileName: "[project]/src/app/create-recipe/page.tsx",
-                            lineNumber: 120,
+                            lineNumber: 129,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$form$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FormField"], {
@@ -874,7 +897,7 @@ const CreateRecipe = ()=>{
                                             children: "วิธีการทำอาหาร"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/create-recipe/page.tsx",
-                                            lineNumber: 145,
+                                            lineNumber: 154,
                                             columnNumber: 17
                                         }, void 0),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$textarea$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Textarea"], {
@@ -883,18 +906,18 @@ const CreateRecipe = ()=>{
                                             ...field
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/create-recipe/page.tsx",
-                                            lineNumber: 146,
+                                            lineNumber: 155,
                                             columnNumber: 17
                                         }, void 0)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/create-recipe/page.tsx",
-                                    lineNumber: 144,
+                                    lineNumber: 153,
                                     columnNumber: 15
                                 }, void 0)
                         }, void 0, false, {
                             fileName: "[project]/src/app/create-recipe/page.tsx",
-                            lineNumber: 137,
+                            lineNumber: 146,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$form$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FormField"], {
@@ -909,7 +932,7 @@ const CreateRecipe = ()=>{
                                             children: "URL ของรูปภาพ"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/create-recipe/page.tsx",
-                                            lineNumber: 162,
+                                            lineNumber: 171,
                                             columnNumber: 17
                                         }, void 0),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -918,18 +941,18 @@ const CreateRecipe = ()=>{
                                             ...field
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/create-recipe/page.tsx",
-                                            lineNumber: 163,
+                                            lineNumber: 172,
                                             columnNumber: 17
                                         }, void 0)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/create-recipe/page.tsx",
-                                    lineNumber: 161,
+                                    lineNumber: 170,
                                     columnNumber: 15
                                 }, void 0)
                         }, void 0, false, {
                             fileName: "[project]/src/app/create-recipe/page.tsx",
-                            lineNumber: 154,
+                            lineNumber: 163,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$form$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FormField"], {
@@ -941,7 +964,7 @@ const CreateRecipe = ()=>{
                                             children: "ระดับความยาก"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/create-recipe/page.tsx",
-                                            lineNumber: 176,
+                                            lineNumber: 185,
                                             columnNumber: 17
                                         }, void 0),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$radio$2d$group$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["RadioGroup"], {
@@ -957,7 +980,7 @@ const CreateRecipe = ()=>{
                                                             id: "easy"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/create-recipe/page.tsx",
-                                                            lineNumber: 183,
+                                                            lineNumber: 192,
                                                             columnNumber: 21
                                                         }, void 0),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Label"], {
@@ -965,13 +988,13 @@ const CreateRecipe = ()=>{
                                                             children: "ง่าย"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/create-recipe/page.tsx",
-                                                            lineNumber: 184,
+                                                            lineNumber: 193,
                                                             columnNumber: 21
                                                         }, void 0)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/create-recipe/page.tsx",
-                                                    lineNumber: 182,
+                                                    lineNumber: 191,
                                                     columnNumber: 19
                                                 }, void 0),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -982,7 +1005,7 @@ const CreateRecipe = ()=>{
                                                             id: "medium"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/create-recipe/page.tsx",
-                                                            lineNumber: 187,
+                                                            lineNumber: 196,
                                                             columnNumber: 21
                                                         }, void 0),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Label"], {
@@ -990,13 +1013,13 @@ const CreateRecipe = ()=>{
                                                             children: "ปรานกลาง"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/create-recipe/page.tsx",
-                                                            lineNumber: 188,
+                                                            lineNumber: 197,
                                                             columnNumber: 21
                                                         }, void 0)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/create-recipe/page.tsx",
-                                                    lineNumber: 186,
+                                                    lineNumber: 195,
                                                     columnNumber: 19
                                                 }, void 0),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1007,7 +1030,7 @@ const CreateRecipe = ()=>{
                                                             id: "hard"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/create-recipe/page.tsx",
-                                                            lineNumber: 191,
+                                                            lineNumber: 200,
                                                             columnNumber: 21
                                                         }, void 0),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Label"], {
@@ -1015,30 +1038,30 @@ const CreateRecipe = ()=>{
                                                             children: "ยาก"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/create-recipe/page.tsx",
-                                                            lineNumber: 192,
+                                                            lineNumber: 201,
                                                             columnNumber: 21
                                                         }, void 0)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/create-recipe/page.tsx",
-                                                    lineNumber: 190,
+                                                    lineNumber: 199,
                                                     columnNumber: 19
                                                 }, void 0)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/create-recipe/page.tsx",
-                                            lineNumber: 177,
+                                            lineNumber: 186,
                                             columnNumber: 17
                                         }, void 0)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/create-recipe/page.tsx",
-                                    lineNumber: 175,
+                                    lineNumber: 184,
                                     columnNumber: 15
                                 }, void 0)
                         }, void 0, false, {
                             fileName: "[project]/src/app/create-recipe/page.tsx",
-                            lineNumber: 171,
+                            lineNumber: 180,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$form$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FormField"], {
@@ -1050,7 +1073,7 @@ const CreateRecipe = ()=>{
                                             children: "ระยะเวลาทำอาหาร"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/create-recipe/page.tsx",
-                                            lineNumber: 203,
+                                            lineNumber: 212,
                                             columnNumber: 17
                                         }, void 0),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$radio$2d$group$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["RadioGroup"], {
@@ -1066,7 +1089,7 @@ const CreateRecipe = ()=>{
                                                             id: "1"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/create-recipe/page.tsx",
-                                                            lineNumber: 210,
+                                                            lineNumber: 219,
                                                             columnNumber: 21
                                                         }, void 0),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Label"], {
@@ -1074,13 +1097,13 @@ const CreateRecipe = ()=>{
                                                             children: "5-10 นาที"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/create-recipe/page.tsx",
-                                                            lineNumber: 211,
+                                                            lineNumber: 220,
                                                             columnNumber: 21
                                                         }, void 0)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/create-recipe/page.tsx",
-                                                    lineNumber: 209,
+                                                    lineNumber: 218,
                                                     columnNumber: 19
                                                 }, void 0),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1091,7 +1114,7 @@ const CreateRecipe = ()=>{
                                                             id: "2"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/create-recipe/page.tsx",
-                                                            lineNumber: 214,
+                                                            lineNumber: 223,
                                                             columnNumber: 21
                                                         }, void 0),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Label"], {
@@ -1099,13 +1122,13 @@ const CreateRecipe = ()=>{
                                                             children: "11-30 นาที"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/create-recipe/page.tsx",
-                                                            lineNumber: 215,
+                                                            lineNumber: 224,
                                                             columnNumber: 21
                                                         }, void 0)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/create-recipe/page.tsx",
-                                                    lineNumber: 213,
+                                                    lineNumber: 222,
                                                     columnNumber: 19
                                                 }, void 0),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1116,7 +1139,7 @@ const CreateRecipe = ()=>{
                                                             id: "3"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/create-recipe/page.tsx",
-                                                            lineNumber: 218,
+                                                            lineNumber: 227,
                                                             columnNumber: 21
                                                         }, void 0),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Label"], {
@@ -1124,13 +1147,13 @@ const CreateRecipe = ()=>{
                                                             children: "31-60 นาที"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/create-recipe/page.tsx",
-                                                            lineNumber: 219,
+                                                            lineNumber: 228,
                                                             columnNumber: 21
                                                         }, void 0)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/create-recipe/page.tsx",
-                                                    lineNumber: 217,
+                                                    lineNumber: 226,
                                                     columnNumber: 19
                                                 }, void 0),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1141,7 +1164,7 @@ const CreateRecipe = ()=>{
                                                             id: "4"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/create-recipe/page.tsx",
-                                                            lineNumber: 222,
+                                                            lineNumber: 231,
                                                             columnNumber: 21
                                                         }, void 0),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Label"], {
@@ -1149,30 +1172,30 @@ const CreateRecipe = ()=>{
                                                             children: "มากกว่า 60 นาที"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/create-recipe/page.tsx",
-                                                            lineNumber: 223,
+                                                            lineNumber: 232,
                                                             columnNumber: 21
                                                         }, void 0)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/create-recipe/page.tsx",
-                                                    lineNumber: 221,
+                                                    lineNumber: 230,
                                                     columnNumber: 19
                                                 }, void 0)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/create-recipe/page.tsx",
-                                            lineNumber: 204,
+                                            lineNumber: 213,
                                             columnNumber: 17
                                         }, void 0)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/create-recipe/page.tsx",
-                                    lineNumber: 202,
+                                    lineNumber: 211,
                                     columnNumber: 15
                                 }, void 0)
                         }, void 0, false, {
                             fileName: "[project]/src/app/create-recipe/page.tsx",
-                            lineNumber: 198,
+                            lineNumber: 207,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -1181,24 +1204,24 @@ const CreateRecipe = ()=>{
                             children: "สร้างสูตรอาหาร"
                         }, void 0, false, {
                             fileName: "[project]/src/app/create-recipe/page.tsx",
-                            lineNumber: 229,
+                            lineNumber: 238,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/create-recipe/page.tsx",
-                    lineNumber: 82,
+                    lineNumber: 91,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/src/app/create-recipe/page.tsx",
-                lineNumber: 81,
+                lineNumber: 90,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/create-recipe/page.tsx",
-        lineNumber: 78,
+        lineNumber: 87,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };

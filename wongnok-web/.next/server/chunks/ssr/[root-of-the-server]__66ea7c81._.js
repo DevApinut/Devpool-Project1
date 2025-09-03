@@ -173,12 +173,12 @@ const CardRecipe = ({ name, imageUrl, description, difficulty, cookingDuration, 
                             objectFit: "cover"
                         }, void 0, false, {
                             fileName: "[project]/src/components/CardRecipe.tsx",
-                            lineNumber: 18,
+                            lineNumber: 19,
                             columnNumber: 9
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/src/components/CardRecipe.tsx",
-                        lineNumber: 17,
+                        lineNumber: 18,
                         columnNumber: 7
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -192,17 +192,17 @@ const CardRecipe = ({ name, imageUrl, description, difficulty, cookingDuration, 
                                             children: name
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/CardRecipe.tsx",
-                                            lineNumber: 23,
+                                            lineNumber: 24,
                                             columnNumber: 13
                                         }, ("TURBOPACK compile-time value", void 0)),
-                                        favorite.id == 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                        Number(favorite?.id) == 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                                             src: "icons/notfav.svg",
                                             width: 20,
                                             height: 20,
                                             alt: "not fav"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/CardRecipe.tsx",
-                                            lineNumber: 25,
+                                            lineNumber: 26,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         favorite.id != 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -212,13 +212,13 @@ const CardRecipe = ({ name, imageUrl, description, difficulty, cookingDuration, 
                                             alt: "not fav"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/CardRecipe.tsx",
-                                            lineNumber: 33,
+                                            lineNumber: 34,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/CardRecipe.tsx",
-                                    lineNumber: 22,
+                                    lineNumber: 23,
                                     columnNumber: 11
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -226,24 +226,24 @@ const CardRecipe = ({ name, imageUrl, description, difficulty, cookingDuration, 
                                     children: description
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/CardRecipe.tsx",
-                                    lineNumber: 36,
+                                    lineNumber: 37,
                                     columnNumber: 11
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/CardRecipe.tsx",
-                            lineNumber: 21,
+                            lineNumber: 22,
                             columnNumber: 9
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/src/components/CardRecipe.tsx",
-                        lineNumber: 20,
+                        lineNumber: 21,
                         columnNumber: 7
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/CardRecipe.tsx",
-                lineNumber: 16,
+                lineNumber: 17,
                 columnNumber: 5
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -262,20 +262,20 @@ const CardRecipe = ({ name, imageUrl, description, difficulty, cookingDuration, 
                                             height: 14
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/CardRecipe.tsx",
-                                            lineNumber: 45,
+                                            lineNumber: 46,
                                             columnNumber: 13
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                             children: difficulty.name
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/CardRecipe.tsx",
-                                            lineNumber: 51,
+                                            lineNumber: 52,
                                             columnNumber: 13
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/CardRecipe.tsx",
-                                    lineNumber: 44,
+                                    lineNumber: 45,
                                     columnNumber: 11
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -288,26 +288,26 @@ const CardRecipe = ({ name, imageUrl, description, difficulty, cookingDuration, 
                                             height: 14
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/CardRecipe.tsx",
-                                            lineNumber: 54,
+                                            lineNumber: 55,
                                             columnNumber: 13
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                             children: cookingDuration.name
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/CardRecipe.tsx",
-                                            lineNumber: 60,
+                                            lineNumber: 61,
                                             columnNumber: 13
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/CardRecipe.tsx",
-                                    lineNumber: 53,
+                                    lineNumber: 54,
                                     columnNumber: 11
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/CardRecipe.tsx",
-                            lineNumber: 43,
+                            lineNumber: 44,
                             columnNumber: 9
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -321,20 +321,20 @@ const CardRecipe = ({ name, imageUrl, description, difficulty, cookingDuration, 
                                                 src: user.imageUrl
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/CardRecipe.tsx",
-                                                lineNumber: 66,
+                                                lineNumber: 67,
                                                 columnNumber: 15
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AvatarFallback"], {
                                                 children: user.nickName
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/CardRecipe.tsx",
-                                                lineNumber: 67,
+                                                lineNumber: 68,
                                                 columnNumber: 15
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/CardRecipe.tsx",
-                                        lineNumber: 65,
+                                        lineNumber: 66,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -342,35 +342,35 @@ const CardRecipe = ({ name, imageUrl, description, difficulty, cookingDuration, 
                                         children: user.nickName
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/CardRecipe.tsx",
-                                        lineNumber: 69,
+                                        lineNumber: 70,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/CardRecipe.tsx",
-                                lineNumber: 64,
+                                lineNumber: 65,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         }, void 0, false, {
                             fileName: "[project]/src/components/CardRecipe.tsx",
-                            lineNumber: 63,
+                            lineNumber: 64,
                             columnNumber: 9
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/CardRecipe.tsx",
-                    lineNumber: 42,
+                    lineNumber: 43,
                     columnNumber: 7
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/src/components/CardRecipe.tsx",
-                lineNumber: 41,
+                lineNumber: 42,
                 columnNumber: 5
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/CardRecipe.tsx",
-        lineNumber: 15,
+        lineNumber: 16,
         columnNumber: 3
     }, ("TURBOPACK compile-time value", void 0));
 const __TURBOPACK__default__export__ = CardRecipe;
@@ -833,7 +833,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$auth
 ;
 ;
 const api = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].create({
-    baseURL: ("TURBOPACK compile-time value", "http://localhost:8080")
+    baseURL: ("TURBOPACK compile-time value", "http://localhost")
 });
 api.interceptors.request.use(async (config)=>{
     const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$auth$2f$react$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getSession"])();
@@ -847,7 +847,7 @@ api.interceptors.response.use((response)=>response, async (error)=>{
         // ถ้ามี refreshToken ให้เรียก endpoint refresh
         if (session?.refreshToken) {
             try {
-                const res = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].post(`${("TURBOPACK compile-time value", "http://localhost:8080")}/auth/refresh`, {
+                const res = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].post(`${("TURBOPACK compile-time value", "http://localhost")}/auth/refresh`, {
                     refresh_token: session.refreshToken
                 });
                 // สมมติว่า response มี accessToken ใหม่
@@ -871,6 +871,8 @@ api.interceptors.response.use((response)=>response, async (error)=>{
 "use strict";
 
 __turbopack_context__.s({
+    "CreateFavorite": ()=>CreateFavorite,
+    "DeleteFavorite": ()=>DeleteFavorite,
     "UpdateUser": ()=>UpdateUser,
     "createRating": ()=>createRating,
     "createRecipe": ()=>createRecipe,
@@ -949,6 +951,14 @@ const UpdateUser = async (data)=>{
         imageUrl: data.imageUrl
     });
     return User.data;
+};
+const CreateFavorite = async (foodRecipeID)=>{
+    const favorite = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$axios$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["api"].post(`/api/v1/food-recipes/${foodRecipeID}/favorites`);
+    return favorite;
+};
+const DeleteFavorite = async (foodRecipeID)=>{
+    const favorite = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$axios$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["api"].delete(`/api/v1/food-recipes/${foodRecipeID}/favorites`);
+    return favorite;
 };
 }),
 "[project]/src/app/page.tsx [app-ssr] (ecmascript)": ((__turbopack_context__) => {
@@ -1220,7 +1230,7 @@ function Home() {
                         href: `recipe-details/${recipe.id}`,
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$CardRecipe$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                             ...recipe
-                        }, recipe.id, false, {
+                        }, recipe?.id, false, {
                             fileName: "[project]/src/app/page.tsx",
                             lineNumber: 217,
                             columnNumber: 19

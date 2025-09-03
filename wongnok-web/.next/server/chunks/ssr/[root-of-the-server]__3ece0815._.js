@@ -393,7 +393,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$auth
 ;
 ;
 const api = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].create({
-    baseURL: ("TURBOPACK compile-time value", "http://localhost:8080")
+    baseURL: ("TURBOPACK compile-time value", "http://localhost")
 });
 api.interceptors.request.use(async (config)=>{
     const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$auth$2f$react$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getSession"])();
@@ -407,7 +407,7 @@ api.interceptors.response.use((response)=>response, async (error)=>{
         // ถ้ามี refreshToken ให้เรียก endpoint refresh
         if (session?.refreshToken) {
             try {
-                const res = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].post(`${("TURBOPACK compile-time value", "http://localhost:8080")}/auth/refresh`, {
+                const res = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].post(`${("TURBOPACK compile-time value", "http://localhost")}/auth/refresh`, {
                     refresh_token: session.refreshToken
                 });
                 // สมมติว่า response มี accessToken ใหม่
@@ -431,6 +431,9 @@ api.interceptors.response.use((response)=>response, async (error)=>{
 "use strict";
 
 __turbopack_context__.s({
+    "CreateFavorite": ()=>CreateFavorite,
+    "DeleteFavorite": ()=>DeleteFavorite,
+    "UpdateUser": ()=>UpdateUser,
     "createRating": ()=>createRating,
     "createRecipe": ()=>createRecipe,
     "deleteMyRecipe": ()=>deleteMyRecipe,
@@ -438,6 +441,7 @@ __turbopack_context__.s({
     "fetchRecipes": ()=>fetchRecipes,
     "fetchRecipesByUser": ()=>fetchRecipesByUser,
     "getFavorite": ()=>getFavorite,
+    "getUser": ()=>getUser,
     "updateMyRecipe": ()=>updateMyRecipe
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$axios$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/axios.ts [app-ssr] (ecmascript)");
@@ -496,6 +500,25 @@ const createRating = async (data)=>{
 const getFavorite = async (data)=>{
     const recipeFavorite = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$axios$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["api"].get(`/api/v1/food-recipes/favorites?page=${data.page}&limit=${data.limit}&search=${data.search}`);
     return recipeFavorite;
+};
+const getUser = async ()=>{
+    const User = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$axios$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["api"].get(`/api/v1/users/`);
+    return User.data;
+};
+const UpdateUser = async (data)=>{
+    const User = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$axios$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["api"].put(`/api/v1/users/`, {
+        nickName: data.nickName,
+        imageUrl: data.imageUrl
+    });
+    return User.data;
+};
+const CreateFavorite = async (foodRecipeID)=>{
+    const favorite = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$axios$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["api"].post(`/api/v1/food-recipes/${foodRecipeID}/favorites`);
+    return favorite;
+};
+const DeleteFavorite = async (foodRecipeID)=>{
+    const favorite = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$axios$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["api"].delete(`/api/v1/food-recipes/${foodRecipeID}/favorites`);
+    return favorite;
 };
 }),
 "[project]/src/app/edit-recipe/[recipeId]/page.tsx [app-ssr] (ecmascript)": ((__turbopack_context__) => {

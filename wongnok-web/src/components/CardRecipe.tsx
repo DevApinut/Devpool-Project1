@@ -3,6 +3,7 @@ import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar'
 import { Card, CardContent, CardFooter } from './ui/card'
 import Image from 'next/image'
 
+
 const CardRecipe = ({
   name,
   imageUrl,
@@ -21,7 +22,7 @@ const CardRecipe = ({
         <CardContent>
           <div className='flex justify-between'>
             <h1 className='font-bold'>{name}</h1>
-            {favorite.id == 0 && (
+            {Number(favorite?.id) == 0 && (
               <Image
                 src='icons/notfav.svg'
                 width={20}

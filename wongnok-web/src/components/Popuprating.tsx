@@ -9,18 +9,13 @@ import React, { useEffect, useState } from 'react'
 type propsRecieve = {
   recipeId: number
   closePopup: (value: boolean) => void
-  
 }
 
-
-
-const PopupRating = ({ recipeId, closePopup  }: propsRecieve) => {
+const PopupRating = ({ recipeId, closePopup }: propsRecieve) => {
   const [selected, setSelected] = useState(0)
   const [showModal, setShowModal] = useState(false)
   const [exiting, setExiting] = useState(false)
-  
 
- 
   useEffect(() => {
     const timer = setTimeout(() => setShowModal(true), 400)
     return () => clearTimeout(timer)
@@ -42,10 +37,11 @@ const PopupRating = ({ recipeId, closePopup  }: propsRecieve) => {
   })
 
   const handlerRating = (rating: number) => {
-    
     giveRating({
+      id: 0, // หรือ undefined ถ้า backend ไม่ใช้
+      UserID: '', // หรือส่ง user id จริง ถ้ามี
       foodRecipeID: recipeId,
-      score: rating,      
+      score: rating,
     })
   }
 

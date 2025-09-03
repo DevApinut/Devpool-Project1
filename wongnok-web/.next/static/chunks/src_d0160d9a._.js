@@ -670,6 +670,8 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
 var { k: __turbopack_refresh__, m: module } = __turbopack_context__;
 {
 __turbopack_context__.s({
+    "CreateFavorite": ()=>CreateFavorite,
+    "DeleteFavorite": ()=>DeleteFavorite,
     "UpdateUser": ()=>UpdateUser,
     "createRating": ()=>createRating,
     "createRecipe": ()=>createRecipe,
@@ -753,8 +755,20 @@ const UpdateUser = async (data)=>{
     return User.data;
 };
 _c = UpdateUser;
-var _c;
+const CreateFavorite = async (foodRecipeID)=>{
+    const favorite = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$axios$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["api"].post("/api/v1/food-recipes/".concat(foodRecipeID, "/favorites"));
+    return favorite;
+};
+_c1 = CreateFavorite;
+const DeleteFavorite = async (foodRecipeID)=>{
+    const favorite = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$axios$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["api"].delete("/api/v1/food-recipes/".concat(foodRecipeID, "/favorites"));
+    return favorite;
+};
+_c2 = DeleteFavorite;
+var _c, _c1, _c2;
 __turbopack_context__.k.register(_c, "UpdateUser");
+__turbopack_context__.k.register(_c1, "CreateFavorite");
+__turbopack_context__.k.register(_c2, "DeleteFavorite");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(module, globalThis.$RefreshHelpers$);
 }
@@ -1171,7 +1185,7 @@ const Myfavorite = ()=>{
             columnNumber: 9
         }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false);
-    if (isRecipeLoading || status === 'loading') return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+    if (isRecipeLoading) return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "w-full flex justify-center items-center my-8",

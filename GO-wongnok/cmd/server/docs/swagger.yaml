@@ -351,6 +351,43 @@ paths:
       tags:
       - food-recipes
   /api/v1/food-recipes/{id}/favorites:
+    delete:
+      consumes:
+      - application/json
+      description: delete favorite by fooderecipeid
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/dto.FavoriteResponse'
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties: true
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            additionalProperties: true
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties: true
+            type: object
+      security:
+      - BearerAuth: []
+      summary: Create a favorite
+      tags:
+      - favorite
     get:
       consumes:
       - application/json

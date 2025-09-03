@@ -147,7 +147,7 @@ func (handler Handler) Create(ctx *gin.Context) {
 
 // Delete godoc
 // @Summary Create a favorite
-// @Description Create a new favorite for a food recipe by userID
+// @Description delete favorite by fooderecipeid
 // @Tags favorite
 // @Accept json
 // @Produce json
@@ -157,7 +157,7 @@ func (handler Handler) Create(ctx *gin.Context) {
 // @Failure 401 {object} map[string]interface{}
 // @Failure 500 {object} map[string]interface{}
 // @Security BearerAuth
-// @Router /api/v1/food-recipes/{id}/favorites [post]
+// @Router /api/v1/food-recipes/{id}/favorites [delete]
 func (handler Handler) Delete(ctx *gin.Context) {
 	claims, err := helper.DecodeClaims(ctx)
 	if err != nil {

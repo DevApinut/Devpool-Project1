@@ -216,6 +216,8 @@
     color: inherit;
     -webkit-text-decoration: inherit;
     -webkit-text-decoration: inherit;
+    -webkit-text-decoration: inherit;
+    -webkit-text-decoration: inherit;
     text-decoration: inherit;
   }
 
@@ -1581,19 +1583,11 @@
     opacity: .5;
   }
 
-  .selection\:bg-primary ::selection {
+  .selection\:bg-primary ::selection, .selection\:bg-primary::selection {
     background-color: var(--primary);
   }
 
-  .selection\:bg-primary::selection {
-    background-color: var(--primary);
-  }
-
-  .selection\:text-primary-foreground ::selection {
-    color: var(--primary-foreground);
-  }
-
-  .selection\:text-primary-foreground::selection {
+  .selection\:text-primary-foreground ::selection, .selection\:text-primary-foreground::selection {
     color: var(--primary-foreground);
   }
 
@@ -1667,9 +1661,7 @@
     .hover\:bg-accent:hover {
       background-color: var(--accent);
     }
-  }
 
-  @media (hover: hover) {
     .hover\:bg-destructive\/90:hover {
       background-color: var(--destructive);
     }
@@ -1679,15 +1671,11 @@
         background-color: color-mix(in oklab, var(--destructive) 90%, transparent);
       }
     }
-  }
 
-  @media (hover: hover) {
     .hover\:bg-pinklittle:hover {
       background-color: #ffdfdf;
     }
-  }
 
-  @media (hover: hover) {
     .hover\:bg-primary\/90:hover {
       background-color: var(--primary);
     }
@@ -1697,23 +1685,17 @@
         background-color: color-mix(in oklab, var(--primary) 90%, transparent);
       }
     }
-  }
 
-  @media (hover: hover) {
     .hover\:bg-secondary\/80:hover {
       background-color: rgba(173, 173, 173, .8);
       background-color: color(display-p3 .678431 .678431 .678431 / .8);
-      background-color: lab(70.7249% 0 -.0000119209 / .8);
+      background-color: lab(70.7248% -.0000298023 0 / .8);
     }
-  }
 
-  @media (hover: hover) {
     .hover\:text-accent-foreground:hover {
       color: var(--accent-foreground);
     }
-  }
 
-  @media (hover: hover) {
     .hover\:underline:hover {
       -webkit-text-decoration-line: underline;
       text-decoration-line: underline;
@@ -1841,39 +1823,27 @@
     .sm\:block {
       display: block;
     }
-  }
 
-  @media (min-width: 40rem) {
     .sm\:max-w-lg {
       max-width: var(--container-lg);
     }
-  }
 
-  @media (min-width: 40rem) {
     .sm\:flex-row {
       flex-direction: row;
     }
-  }
 
-  @media (min-width: 40rem) {
     .sm\:justify-end {
       justify-content: flex-end;
     }
-  }
 
-  @media (min-width: 40rem) {
     .sm\:pr-2\.5 {
       padding-right: calc(var(--spacing) * 2.5);
     }
-  }
 
-  @media (min-width: 40rem) {
     .sm\:pl-2\.5 {
       padding-left: calc(var(--spacing) * 2.5);
     }
-  }
 
-  @media (min-width: 40rem) {
     .sm\:text-left {
       text-align: left;
     }
@@ -1920,9 +1890,7 @@
         background-color: color-mix(in oklab, var(--accent) 50%, transparent);
       }
     }
-  }
 
-  @media (hover: hover) {
     .dark\:hover\:bg-input\/50:is(.dark *):hover {
       background-color: var(--input);
     }
@@ -2007,9 +1975,7 @@
     a.\[a\&\]\:hover\:bg-accent:hover {
       background-color: var(--accent);
     }
-  }
 
-  @media (hover: hover) {
     a.\[a\&\]\:hover\:bg-destructive\/90:hover {
       background-color: var(--destructive);
     }
@@ -2019,9 +1985,7 @@
         background-color: color-mix(in oklab, var(--destructive) 90%, transparent);
       }
     }
-  }
 
-  @media (hover: hover) {
     a.\[a\&\]\:hover\:bg-primary\/90:hover {
       background-color: var(--primary);
     }
@@ -2031,17 +1995,13 @@
         background-color: color-mix(in oklab, var(--primary) 90%, transparent);
       }
     }
-  }
 
-  @media (hover: hover) {
     a.\[a\&\]\:hover\:bg-secondary\/90:hover {
       background-color: rgba(173, 173, 173, .9);
       background-color: color(display-p3 .678431 .678431 .678431 / .9);
-      background-color: lab(70.7249% 0 -.0000119209 / .9);
+      background-color: lab(70.7248% -.0000298023 0 / .9);
     }
-  }
 
-  @media (hover: hover) {
     a.\[a\&\]\:hover\:text-accent-foreground:hover {
       color: var(--accent-foreground);
     }
@@ -2219,15 +2179,15 @@
     --popover-foreground: lab(2.75381% 0 0);
     --primary: lab(7.78201% -.0000149012 0);
     --primary-foreground: lab(98.26% 0 0);
-    --secondary: lab(70.7216% 0 -.0000119209);
+    --secondary: lab(70.7216% -.0000298023 -.0000119209);
     --secondary-foreground: lab(7.78201% -.0000149012 0);
-    --muted: lab(96.52% -.0000596046 0);
+    --muted: lab(96.52% -.0000298023 .0000119209);
     --muted-foreground: lab(48.496% 0 0);
-    --accent: lab(96.52% -.0000596046 0);
+    --accent: lab(96.52% -.0000298023 .0000119209);
     --accent-foreground: lab(7.78201% -.0000149012 0);
     --destructive: lab(48.4493% 77.4328 61.5452);
-    --border: lab(90.952% -.0000596046 0);
-    --input: lab(90.952% -.0000596046 0);
+    --border: lab(90.952% 0 -.0000119209);
+    --input: lab(90.952% 0 -.0000119209);
     --ring: lab(66.128% -.0000298023 .0000119209);
     --chart-1: lab(57.1026% 64.2584 89.8886);
     --chart-2: lab(55.0223% -41.0774 -3.90277);
@@ -2238,9 +2198,9 @@
     --sidebar-foreground: lab(2.75381% 0 0);
     --sidebar-primary: lab(7.78201% -.0000149012 0);
     --sidebar-primary-foreground: lab(98.26% 0 0);
-    --sidebar-accent: lab(96.52% -.0000596046 0);
+    --sidebar-accent: lab(96.52% -.0000298023 .0000119209);
     --sidebar-accent-foreground: lab(7.78201% -.0000149012 0);
-    --sidebar-border: lab(90.952% -.0000596046 0);
+    --sidebar-border: lab(90.952% 0 -.0000119209);
     --sidebar-ring: lab(66.128% -.0000298023 .0000119209);
   }
 }
@@ -2324,15 +2284,15 @@
     --card-foreground: lab(98.26% 0 0);
     --popover: lab(7.78201% -.0000149012 0);
     --popover-foreground: lab(98.26% 0 0);
-    --primary: lab(90.952% -.0000596046 0);
+    --primary: lab(90.952% 0 -.0000119209);
     --primary-foreground: lab(7.78201% -.0000149012 0);
-    --secondary: lab(15.204% 0 0);
+    --secondary: lab(15.204% 0 -.00000596046);
     --secondary-foreground: lab(98.26% 0 0);
-    --muted: lab(15.204% 0 0);
+    --muted: lab(15.204% 0 -.00000596046);
     --muted-foreground: lab(66.128% -.0000298023 .0000119209);
-    --accent: lab(15.204% 0 0);
+    --accent: lab(15.204% 0 -.00000596046);
     --accent-foreground: lab(98.26% 0 0);
-    --destructive: lab(63.7053% 60.7449 31.3109);
+    --destructive: lab(63.7053% 60.745 31.3109);
     --border: lab(100% 0 0 / .1);
     --input: lab(100% 0 0 / .15);
     --ring: lab(48.496% 0 0);
@@ -2340,12 +2300,12 @@
     --chart-2: lab(66.9756% -58.27 19.5419);
     --chart-3: lab(72.7183% 31.8672 97.9407);
     --chart-4: lab(52.0183% 66.11 -78.2316);
-    --chart-5: lab(56.101% 79.4329 31.4532);
+    --chart-5: lab(56.101% 79.4328 31.4532);
     --sidebar: lab(7.78201% -.0000149012 0);
     --sidebar-foreground: lab(98.26% 0 0);
     --sidebar-primary: lab(36.9089% 35.0961 -85.6872);
     --sidebar-primary-foreground: lab(98.26% 0 0);
-    --sidebar-accent: lab(15.204% 0 0);
+    --sidebar-accent: lab(15.204% 0 -.00000596046);
     --sidebar-accent-foreground: lab(98.26% 0 0);
     --sidebar-border: lab(100% 0 0 / .1);
     --sidebar-ring: lab(48.496% 0 0);
@@ -2524,7 +2484,7 @@
 }
 
 @keyframes enter {
-  from {
+  0% {
     opacity: var(--tw-enter-opacity, 1);
     transform: translate3d(var(--tw-enter-translate-x, 0), var(--tw-enter-translate-y, 0), 0) scale3d(var(--tw-enter-scale, 1), var(--tw-enter-scale, 1), var(--tw-enter-scale, 1)) rotate(var(--tw-enter-rotate, 0));
   }

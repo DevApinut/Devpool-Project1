@@ -8,10 +8,12 @@ import Link from 'next/link'
 import React, { useState } from 'react'
 import Star from '@/components/Rating'
 import DeleteRecipe from '@/components/DeleteRecipe'
-import { fetchRecipeDetails } from '@/services/recipe.service'
-import { useQuery } from '@tanstack/react-query'
+import { CreateFavorite, DeleteFavorite, fetchRecipeDetails } from '@/services/recipe.service'
+import { useMutation, useQuery } from '@tanstack/react-query'
 import PopupRating from '@/components/Popuprating'
 import PopupPermitRating from '@/components/PopupPermitRating'
+import { useRouter } from 'next/navigation'
+
 
 type RecipeDetailsIdProps = {
   params: Promise<{ recipeId: string }>
@@ -24,17 +26,44 @@ export default function RecipeDetailsId({ params }: RecipeDetailsIdProps) {
   const { recipeId } = React.use(params)
   const { data: session, status } = useSession()
 
+  const router = useRouter()
+
   const { data, isLoading, isError } = useQuery({
     queryKey: ['recipeDetail', recipeId],
     queryFn: () => fetchRecipeDetails(Number(recipeId)),
   })
 
+  const { mutateAsync: AddFavorite } = useMutation({
+    mutationFn: (foodRecipeID: number) => CreateFavorite(foodRecipeID),
+    onError: () => {
+      console.log("error update")      
+    },
+    onSuccess: () => {
+      router.replace('/')
+    },
+  })
+  
+  const { mutateAsync: RemoveFavorite } = useMutation({
+    mutationFn: (foodRecipeID: number) => DeleteFavorite(foodRecipeID),
+    onError: () => {
+      console.log("error update")      
+    },
+    onSuccess: () => {
+      router.replace('/')
+    },
+  })
   if (isLoading || status === 'loading') return <div>Loading...</div>
 
   if (isError) return <div>Error</div>
+
+
+
+
+
+
+
   console.log(session?.userId)
   console.log(data?.data.user.id)
-
 
   // Add rating state and max stars
   // Show average rating from data (read-only)
@@ -66,7 +95,10 @@ export default function RecipeDetailsId({ params }: RecipeDetailsIdProps) {
           data?.data?.user?.id &&
           data?.data?.user?.id === session.userId && (
             <div className='flex justify-between items-center'>
-              <h1 className='font-bold text-4xl'>{data?.data.name}</h1>
+              <div>
+                <h1 className='font-bold text-4xl'>{data?.data.name}</h1>
+              </div>
+
               <div className='flex justify-center '>
                 <Link href={`/edit-recipe/${recipeId}`}>
                   <Button
@@ -110,6 +142,31 @@ export default function RecipeDetailsId({ params }: RecipeDetailsIdProps) {
           </Avatar>
           <div className='mx-3'>
             {data?.data.user.nickName}
+            
+            {session?.userId && data?.data.favorite.id == 0 &&<Button
+              className='text-primary-500 mx-2 cursor-pointer bg-white border'
+              variant='secondary' onClick={()=>AddFavorite(Number(data?.data.id))}
+            >
+              <Image
+                src='/icons/fav.svg'
+                width={12}
+                height={12}
+                alt='edit logo'
+              />
+              เพิ่มรายการโปรด
+            </Button>}
+            {session?.userId && data?.data.favorite.id != 0 &&<Button
+              className='text-primary-500 mx-2 cursor-pointer bg-white border'
+              variant='secondary' onClick={()=>RemoveFavorite(Number(data?.data.id))}
+            >
+              <Image
+                src='/icons/notfav.svg'
+                width={12}
+                height={12}
+                alt='edit logo'
+              />
+              ลบออกจากรายการโปรด
+            </Button>}
           </div>
         </div>
       </div>
@@ -180,7 +237,12 @@ export default function RecipeDetailsId({ params }: RecipeDetailsIdProps) {
           <div
             className='flex jusfify-center items-center mx-8'
             onClick={() => {
-              if (data?.data?.rating?.score == 0 && session?.userId && session?.accessToken && data?.data?.user.id != session?.userId) {
+              if (
+                data?.data?.rating?.score == 0 &&
+                session?.userId &&
+                session?.accessToken &&
+                data?.data?.user.id != session?.userId
+              ) {
                 setClosePopupRating(true)
               } else {
                 SetPermitRating(true)

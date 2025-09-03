@@ -108,12 +108,18 @@ func (repo Repository) Update(id int) error {
 
 func (repo Repository) Count(UserID string, search string) (int64, error) {
 	var count int64
-	var recipes model.FoodRecipes
-	db := repo.DB.Model(&model.FoodRecipe{}).Joins("JOIN favorites fav ON food_recipes.id = fav.food_recipe_id").Where("fav.user_id = ?", UserID).Preload(clause.Associations).Find(&recipes)
+
+	db := repo.DB.Model(&model.FoodRecipe{}).
+		Joins("JOIN favorites fav ON food_recipes.id = fav.food_recipe_id").
+		Where("fav.user_id = ?", UserID)
+
 	if search != "" {
-		db = db.Where("name LIKE ?", "%"+search+"%").Or("description LIKE ?", "%"+search+"%")
+		db = db.Where("food_recipes.name LIKE ? OR food_recipes.description LIKE ?", "%"+search+"%", "%"+search+"%")
 	}
-	db = db.Count(&count)
+
+	if err := db.Count(&count).Error; err != nil {
+		return 0, err
+	}
 
 	return count, nil
 }
