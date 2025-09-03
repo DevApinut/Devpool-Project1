@@ -140,6 +140,7 @@ func main() {
 
 	// User
 	group.GET("/users/:id/food-recipes", middleware.Authorize(verifierSkipClientIDCheck), userHandler.GetRecipes)
+	group.GET("/users/", middleware.Authorize(verifierSkipClientIDCheck), userHandler.Get)
 	group.POST("/users/", middleware.Authorize(verifierSkipClientIDCheck), userHandler.Create)
 	group.PUT("/users/", middleware.Authorize(verifierSkipClientIDCheck), userHandler.Update)
 

@@ -23,6 +23,8 @@ type User = {
   id: string
   firstName: string
   lastName: string
+  imageUrl: string
+  nickName: string
 }
 
 export type CardRecipeProps = {
@@ -84,7 +86,7 @@ export default function Home() {
     },
   })
 
-  console.log(recipesData)
+  console.log(recipesData.results)
   const limitDataPerPage = 5
   const pathname = usePathname()
 

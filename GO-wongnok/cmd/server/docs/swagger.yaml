@@ -116,13 +116,27 @@ definitions:
       userID:
         type: string
     type: object
+  dto.UserRequest:
+    properties:
+      imageUrl:
+        type: string
+      nickName:
+        type: string
+    required:
+    - imageUrl
+    - nickName
+    type: object
   dto.UserResponse:
     properties:
       firstName:
         type: string
       id:
         type: string
+      imageUrl:
+        type: string
       lastName:
+        type: string
+      nickName:
         type: string
     type: object
 host: localhost:8080
@@ -521,6 +535,117 @@ paths:
       summary: GetByuser favorites
       tags:
       - favorite
+  /api/v1/users/:
+    get:
+      consumes:
+      - application/json
+      description: Get a food recipe by user ID
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.UserResponse'
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties: true
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            additionalProperties: true
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties: true
+            type: object
+      security:
+      - BearerAuth: []
+      summary: Get a food recipe by user ID
+      tags:
+      - users
+    post:
+      consumes:
+      - application/json
+      description: Create a user
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/dto.UserResponse'
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties: true
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            additionalProperties: true
+            type: object
+        "403":
+          description: Forbidden
+          schema:
+            additionalProperties: true
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties: true
+            type: object
+      security:
+      - BearerAuth: []
+      summary: Create a User
+      tags:
+      - users
+    put:
+      consumes:
+      - application/json
+      description: Upadate a user
+      parameters:
+      - description: User data
+        in: body
+        name: recipe
+        required: true
+        schema:
+          $ref: '#/definitions/dto.UserRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/dto.UserResponse'
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties: true
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            additionalProperties: true
+            type: object
+        "403":
+          description: Forbidden
+          schema:
+            additionalProperties: true
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties: true
+            type: object
+      security:
+      - BearerAuth: []
+      summary: Update a User
+      tags:
+      - users
   /api/v1/users/{id}/food-recipes:
     get:
       consumes:
@@ -538,7 +663,7 @@ paths:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/dto.FoodRecipesResponse'
+            $ref: '#/definitions/dto.UserResponse'
         "400":
           description: Bad Request
           schema:

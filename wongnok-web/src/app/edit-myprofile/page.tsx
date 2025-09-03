@@ -1,6 +1,5 @@
 'use client'
 import { Button } from '@/components/ui/button'
-import Link from 'next/link'
 import Image from 'next/image'
 import {
   Form,
@@ -11,34 +10,74 @@ import {
   FormMessage,
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
-import { useForm } from 'react-hook-form'
+import { SubmitHandler, useForm } from 'react-hook-form'
+import { useMutation, useQuery } from '@tanstack/react-query'
+import { getUser, UpdateUser, User } from '@/services/recipe.service'
+import { UserForm } from '../create-recipe/page'
+import { useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 
-const MyProfile = () => {
-  const form = useForm()
+const EditMyProfile = () => {
+  const router = useRouter()
+  const { data, isLoading, isError } = useQuery<User>({
+    queryKey: ['recipeDetail'],
+    queryFn: () => getUser(),
+  })
+  const form = useForm<UserForm>({
+    defaultValues: {
+      nickName: '',
+      imageUrl: '',
+    },
+  })
+
+  const { mutateAsync: UpdateProfile } = useMutation({
+    mutationFn: UpdateUser,
+    onError: () => {
+      console.log("error update")      
+    },
+    onSuccess: () => {
+      router.replace('/')
+    },
+  })
+  useEffect(() => {
+    if (data) {
+      form.reset({
+        nickName: data.nickName ?? '',
+        imageUrl: data.imageUrl ?? '',
+      })
+    }
+  }, [data, form])
+  if (isLoading || status === 'loading') return <div>Loading...</div>
+  if (isError) return <div>Error</div>
+
+  const onSubmit: SubmitHandler<UserForm> = (data) => {
+UpdateProfile(data)
+  }
   return (
     <div className=' flex flex-col'>
       <div className='flex justify-between items-center py-8'>
-        <h1 className='font-bold text-4xl'>สูตรอาหารของฉัน</h1>
-        <Link href={'/create-recipe'}>
-          <Button className='border text-primary-500' variant='ghost'>
-            <Image
-              src='icons/Edit.svg'
-              width={12}
-              height={12}
-              alt='edit logo'
-            />
-            แก้ไขโปรไฟล์
-          </Button>
-        </Link>
+        <h1 className='font-bold text-4xl'>แก้ไขโปรไฟล์ของฉัน</h1>
       </div>
       <div className='flex-1 flex justify-center my-10'>
         <div className='flex flex-col justify-center items-center'>
-          <div className='bg-slate-200 w-[152px] h-[152px] rounded-full'></div>
-          <div className='my-5'>Apinut</div>
+          <div className='bg-slate-200 w-[152px] h-[152px] rounded-full'>
+            <Image
+              src={`${data?.imageUrl}`}
+              alt='logo profile'
+              width={152}
+              height={152}
+            />
+          </div>
+          <div className='my-5'>
+            {data?.firstName} {data?.lastName}
+          </div>
           <Form {...form}>
-            <form className='flex flex-col gap-y-4 w-[584px]'>
+            <form
+              className='flex flex-col gap-y-4 w-[584px]'
+              onSubmit={form.handleSubmit(onSubmit)}
+            >
               <FormField
-                name='name'
+                name='nickName'
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>ชื่อเล่น</FormLabel>
@@ -53,6 +92,25 @@ const MyProfile = () => {
                   </FormItem>
                 )}
               />
+              <FormField
+                name='imageUrl'
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>ImageUrl</FormLabel>
+                    <FormControl>
+                      <Input
+                        className='rounded-[20px]'
+                        placeholder='ImageUrl'
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <Button className='bg-primary-500 cursor-pointer' type='submit'>
+                อัพเดทโปรไฟล์
+              </Button>
             </form>
           </Form>
         </div>
@@ -61,4 +119,4 @@ const MyProfile = () => {
   )
 }
 
-export default MyProfile
+export default EditMyProfile

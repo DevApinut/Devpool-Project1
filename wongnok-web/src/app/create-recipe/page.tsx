@@ -31,6 +31,10 @@ export type RecipeForm = {
   difficulty: string
   duration: string
 }
+export type UserForm = {
+  imageUrl?: string
+  nickName : string
+}
 
 const RecipeSchema = z.object({
   name: z.string().min(2, { message: 'กรุณากรอกอย่างน้อย 2 ตัวอักษร' }),

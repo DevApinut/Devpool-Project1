@@ -1,11 +1,13 @@
-import { RecipeForm } from '@/app/create-recipe/page'
+import { RecipeForm, UserForm } from '@/app/create-recipe/page'
 import { RecipeFormUpdate } from '@/app/edit-recipe/[recipeId]/page'
 import { api } from '@/lib/axios'
 
-type User = {
+export type User = {
   id: string
   firstName: string
   lastName: string
+  imageUrl: string
+  nickName: string
 }
 
 type CookingDuration = {
@@ -137,4 +139,15 @@ export const getFavorite = async (data: fetchRecipeRequest) => {
   const recipeFavorite= await api.get<{ results: Recipe[];total: number }>(`/api/v1/food-recipes/favorites?page=${data.page}&limit=${data.limit}&search=${data.search}`,)
   return recipeFavorite
 
+}
+export const getUser = async () => {
+  const User= await api.get<User>(`/api/v1/users/`,)
+  return User.data
+}
+export const UpdateUser = async (data : UserForm) => {
+  const User= await api.put<User>(`/api/v1/users/`,{
+    nickName : data.nickName,
+    imageUrl :data.imageUrl
+  })
+  return User.data
 }

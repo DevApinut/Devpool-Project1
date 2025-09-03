@@ -1,10 +1,20 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
   images: {
-    remotePatterns: [new URL('https://foodish-api.com/images/**')],
-  }
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'foodish-api.com',
+        pathname: '/images/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'avatar.iran.liara.run',
+        pathname: '/public/**',
+      },
+    ],
+  },
 };
 
 export default nextConfig;

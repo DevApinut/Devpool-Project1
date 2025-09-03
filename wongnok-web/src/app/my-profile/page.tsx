@@ -12,13 +12,24 @@ import {
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
 import { useForm } from 'react-hook-form'
+import { useQuery } from '@tanstack/react-query'
+import { getUser, User } from '@/services/recipe.service'
 
-const EditMyProfile = () => {
-    const form = useForm();
+const MyProfile = () => {
+
+  const { data, isLoading, isError } = useQuery<User>({
+    queryKey: ['recipeDetail'],
+    queryFn: () => getUser(),
+  })
+  const form = useForm()
+  if (isLoading || status === 'loading') return <div>Loading...</div>
+  if (isError) return <div>Error</div>
+
+  console.log(data)
   return (
     <div className=' flex flex-col'>
       <div className='flex justify-between items-center py-8'>
-        <h1 className='font-bold text-4xl'>สูตรอาหารของฉัน</h1>
+        <h1 className='font-bold text-4xl'>โปรไฟล์ของฉัน</h1>
         <Link href={'/edit-myprofile'}>
           <Button className='border text-primary-500' variant='ghost'>
             <Image
@@ -33,11 +44,13 @@ const EditMyProfile = () => {
       </div>
       <div className='flex-1 flex justify-center my-10'>
         <div className='flex flex-col justify-center items-center'>
-          <div className='bg-slate-200 w-[152px] h-[152px] rounded-full'></div>
-          <div className='my-5'>Apinut</div>
+          <div className='bg-slate-200 w-[152px] h-[152px] rounded-full'>
+            <Image src={`${data?.imageUrl}`} alt="logo profile" width={152} height={152}/>
+          </div>
+          <div className='my-5'>{data?.firstName} {data?.lastName}</div>
           <Form {...form}>
             <form className='flex flex-col gap-y-4 w-[584px]'>
-              <FormField                
+              <FormField
                 name='name'
                 render={({ field }) => (
                   <FormItem>
@@ -47,6 +60,7 @@ const EditMyProfile = () => {
                         className='rounded-[20px]'
                         placeholder='ชื่อเล่นของฉัน'
                         {...field}
+                        value={data?.nickName}
                       />
                     </FormControl>
                     <FormMessage />
@@ -61,4 +75,4 @@ const EditMyProfile = () => {
   )
 }
 
-export default EditMyProfile
+export default MyProfile

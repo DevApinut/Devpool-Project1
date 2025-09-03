@@ -14,6 +14,7 @@ type IHandler interface {
 	GetRecipes(ctx *gin.Context)
 	Update(ctx *gin.Context)
 	Create(ctx *gin.Context)
+	Get(ctx *gin.Context)
 }
 
 type Handler struct {
@@ -33,7 +34,7 @@ func NewHandler(db *gorm.DB) *Handler {
 // @Accept json
 // @Produce json
 // @Param id path string true "User ID"
-// @Success 200 {object} dto.FoodRecipesResponse
+// @Success 200 {object} dto.UserResponse
 // @Failure 400 {object} map[string]interface{}
 // @Failure 401 {object} map[string]interface{}
 // @Failure 500 {object} map[string]interface{}
@@ -57,6 +58,48 @@ func (handler Handler) GetRecipes(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, recipes.ToResponse(int64(len(recipes))))
 }
 
+// GetRecipes godoc
+// @Summary Get a food recipe by user ID
+// @Description Get a food recipe by user ID
+// @Tags users
+// @Accept json
+// @Produce json
+// @Success 200 {object} dto.UserResponse
+// @Failure 400 {object} map[string]interface{}
+// @Failure 401 {object} map[string]interface{}
+// @Failure 500 {object} map[string]interface{}
+// @Security BearerAuth
+// @Router /api/v1/users/ [get]
+func (handler Handler) Get(ctx *gin.Context) {
+
+	claims, err := helper.DecodeClaims(ctx)
+	if err != nil {
+		ctx.JSON(http.StatusUnauthorized, gin.H{"message": err.Error()})
+		return
+	}
+
+	user, err := handler.Service.GetByID(claims)
+	if err != nil {
+		ctx.JSON(http.StatusInternalServerError, gin.H{"message": err.Error()})
+		return
+	}
+
+	ctx.JSON(http.StatusOK, user.ToResponse())
+}
+
+// Create godoc
+// @Summary Create a User
+// @Description Create a user
+// @Tags users
+// @Accept json
+// @Produce json
+// @Success 201 {object} dto.UserResponse
+// @Failure 400 {object} map[string]interface{}
+// @Failure 401 {object} map[string]interface{}
+// @Failure 403 {object} map[string]interface{}
+// @Failure 500 {object} map[string]interface{}
+// @Security BearerAuth
+// @Router /api/v1/users/ [post]
 func (handler Handler) Create(ctx *gin.Context) {
 	claims, err := helper.DecodeClaims(ctx)
 	if err != nil {
@@ -73,6 +116,20 @@ func (handler Handler) Create(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, user.ToResponse())
 }
 
+// Create godoc
+// @Summary Update a User
+// @Description Upadate a user
+// @Tags users
+// @Accept json
+// @Produce json
+// @Param recipe body dto.UserRequest true "User data"
+// @Success 201 {object} dto.UserResponse
+// @Failure 400 {object} map[string]interface{}
+// @Failure 401 {object} map[string]interface{}
+// @Failure 403 {object} map[string]interface{}
+// @Failure 500 {object} map[string]interface{}
+// @Security BearerAuth
+// @Router /api/v1/users/ [put]
 func (handler Handler) Update(ctx *gin.Context) {
 	claims, err := helper.DecodeClaims(ctx)
 	if err != nil {
@@ -80,17 +137,16 @@ func (handler Handler) Update(ctx *gin.Context) {
 		return
 	}
 	var request dto.UserRequest
-	var users model.User
 
 	if err := ctx.BindJSON(&request); err != nil {
 		ctx.JSON(http.StatusBadRequest, gin.H{"message": err.Error()})
 		return
 	}
-	user, err := handler.Service.Update(users.FromRequest(request, claims))
+	userStruct := model.User{}.FromRequest(request, claims)
+	user, err := handler.Service.Update(userStruct)
 	if err != nil {
 		ctx.JSON(http.StatusInternalServerError, gin.H{"message": err.Error()})
 		return
 	}
-
 	ctx.JSON(http.StatusOK, user.ToResponse())
 }
