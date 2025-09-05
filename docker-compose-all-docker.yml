@@ -23,8 +23,8 @@ services:
     container_name: keycloak
     command: start-dev --import-realm --features=scripts --spi-script-upload-enabled=true
     ports:
-      # - "8080"
-      - "7000:8080"
+      - "8080"
+      # - "7000:8080"
     environment:
       KC_DB: postgres
       KC_DB_URL_HOST: postgres
@@ -63,7 +63,7 @@ services:
       - KEYCLOAK_CLIENT_SECRET=zDFCurmEkhGN1iIxA3NhmpVlft2qCncJ      
       - KEYCLOAK_REDIRECT_URL=http://localhost/api/v1/callback
       - KEYCLOAK_REALM=Devpool_project
-      - KEYCLOAK_URL=http://localhost:7000
+      - KEYCLOAK_URL=http://localhost
     extra_hosts:
       - "localhost:host-gateway"      
     # volumes:
@@ -87,9 +87,9 @@ services:
      - NEXT_PUBLIC_BASE_PATH=http://localhost
      - KEYCLOAK_CLIENT_ID=wongnok
      - KEYCLOAK_CLIENT_SECRET=zDFCurmEkhGN1iIxA3NhmpVlft2qCncJ
-     - KEYCLOAK_ISSUER=http://localhost:7000/realms/Devpool_project
+     - KEYCLOAK_ISSUER=http://localhost/realms/Devpool_project
      - NEXTAUTH_SECRET=dsafqr234af
-     - NEXTAUTH_URL=http://localhost
+     - NEXTAUTH_URL=http://localhost/
     volumes:
       - ./wongnok-web:/app
       - /app/node_modules
