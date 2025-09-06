@@ -139,7 +139,7 @@ definitions:
       nickName:
         type: string
     type: object
-host: localhost:8080
+host: localhost
 info:
   contact: {}
   description: This is an wongnok server.

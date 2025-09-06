@@ -32,7 +32,7 @@ import (
 // @title Wongnok API
 // @version 1.0
 // @description This is an wongnok server.
-// @host localhost:8080
+// @host localhost
 // @BasePath /
 // @securityDefinitions.apikey BearerAuth
 // @in header
